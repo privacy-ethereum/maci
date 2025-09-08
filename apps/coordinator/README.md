@@ -7,18 +7,72 @@ Please refer to [Offchain relayer service documentation](https://maci.pse.dev/do
 1. [Node.js](https://nodejs.org/en) version 20.0.0.
 2. [pnpm](https://pnpm.io/installation) package manager.
 3. [rapidsnark](https://github.com/iden3/rapidsnark) program.
+4. (Optional) [Redis](https://redis.io/docs/latest/operate/oss_and_stack/install/archive/install-redis/) database if you want to use the scheduler module.
 
-## Instructions
+- Please note that the build process might fail in a Windows environment. If you are using Windows, it is recommended to use Windows Subsystem for Linux (WSL) or a virtual machine with a Linux distribution.
 
-1. Add `.env` file (see `.env.example`).
-2. Remember to set up the rapidsnark file variable.
-3. Generate RSA key pair with `pnpm run generate-keypair`.
-4. Download zkey files using `pnpm run download-zkeys:{type}` (only test type is available for now).
-5. Make sure you copied RSA public key to your application. This will be needed for encrypting `Authorization` header and coordinator private key for proof generation. Also it can be accessed through API method `GET v1/proof/publicKey`.
-6. Run `pnpm run start` to run the service.
-7. All API calls must be called with `Authorization` header, where the value is encrypted with RSA public key you generated before. Header value contains message signature and message digest created by `COORDINATOR_ADDRESSES`. The format is `publicEncrypt({signature}:{digest})`.
-   Make sure you set `COORDINATOR_ADDRESSES` env variable and sign any message with the addresses from your application (see [AccountSignatureGuard](./ts/auth/AccountSignatureGuard.service.ts)).
-8. Proofs can be generated with `POST v1/proof/generate` API method or with Websockets (see [dto spec](./ts/proof/dto.ts), [controller](./ts/app.controller.ts) and [wsgateway](./ts/events/events.gateway.ts)).
+## Install and build it from source
+
+1. Install dependencies and build the project
+
+```bash
+pnpm install
+pnpm run build
+```
+
+2. Install Redis database (if the scheduler module is going to be used) using [the official guide](https://redis.io/docs/latest/operate/oss_and_stack/install/archive/install-redis/)
+
+3. Download the zkeys
+
+```bash
+pnpm run download-zkeys:test
+# for production zkeys
+# pnpm run download-zkeys:ceremony
+```
+
+4. Move to the coordinator service directory
+
+```bash
+cd apps/coordinator
+```
+
+5. Generate the RSA key pair to encrypt values throughout the communication workflow
+
+```bash
+pnpm run generate-keypair
+```
+
+6. Setup .env file (see `.env.example` for reference)
+
+```bash
+cp .env.example .env
+```
+
+7. Run the NestJS application
+
+```bash
+pnpm run start
+# or
+pnpm run start:prod
+```
+
+## Docker
+
+Remember to run it from the monorepo root directory.
+
+```bash
+# Build docker
+docker compose -f apps/coordinator/docker-compose.yml build
+
+# Run container detached
+docker compose -f apps/coordinator/docker-compose.yml up -d
+
+# Enter the container
+docker compose -f apps/coordinator/docker-compose.yml exec coordinator-service /bin/sh
+
+# Stop container
+docker compose -f apps/coordinator/docker-compose.yml down
+```
 
 ## Subgraph deployment
 
@@ -46,22 +100,4 @@ After deployment, subgraph url will be available in studio dashboard and you can
 
 ```
 https://api.studio.thegraph.com/.../{SUBGRAPH_NAME}/version/latest
-```
-
-## Docker
-
-Remember to run it from the monorepo root directory.
-
-```bash
-# Build docker
-docker compose -f apps/coordinator/docker-compose.yml build
-
-# Run container detached
-docker compose -f apps/coordinator/docker-compose.yml up -d
-
-# Enter the container
-docker compose -f apps/coordinator/docker-compose.yml exec coordinator-service /bin/sh
-
-# Stop container
-docker compose -f apps/coordinator/docker-compose.yml down
 ```
