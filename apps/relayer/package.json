@@ -51,7 +51,7 @@
     "@maci-protocol/domainobjs": "^3.0.0",
     "@maci-protocol/sdk": "^1.0.0",
     "@maci-protocol/testing": "^1.0.0",
-    "mongoose": "^8.17.0",
+    "mongoose": "^8.18.1",
     "multiformats": "^13.3.2",
     "mustache": "^4.2.0",
     "reflect-metadata": "^0.2.0",
