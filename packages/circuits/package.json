@@ -65,7 +65,7 @@
     "chai-as-promised": "^8.0.1",
     "fast-check": "^4.2.0",
     "glob": "^11.0.3",
-    "mocha": "^11.7.1",
+    "mocha": "^11.7.2",
     "ts-mocha": "^11.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.9.2"

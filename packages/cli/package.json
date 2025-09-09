@@ -48,7 +48,7 @@
     "@types/snarkjs": "^0.7.9",
     "chai": "^4.3.10",
     "chai-as-promised": "^8.0.1",
-    "mocha": "^11.7.1",
+    "mocha": "^11.7.2",
     "nyc": "^17.1.0",
     "snarkjs": "^0.7.5",
     "ts-mocha": "^11.1.0",
