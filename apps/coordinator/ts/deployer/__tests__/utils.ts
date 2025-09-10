@@ -45,13 +45,6 @@ export const testMaciDeploymentConfig: IDeployMaciConfig = {
       tallyProcessingStateTreeDepth: "1",
     },
   },
-  Poseidon: {
-    // poseidon contracts on optimism sepolia
-    poseidonT3: "0x07490eba00dc4ACA6721D052Fa4C5002Aa077233",
-    poseidonT4: "0xbb0e724CE02e5E7eDd31e632dc6e59F229a1126d",
-    poseidonT5: "0xE0398F7DFAC494c530F6404AfEaC8669ABeD2679",
-    poseidonT6: "0xfD77833F10a29c76A6a0ede235Eb651D744d0E2F",
-  },
 };
 
 /**
