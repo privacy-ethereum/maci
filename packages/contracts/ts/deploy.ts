@@ -155,7 +155,7 @@ export const deployContract = async <T extends BaseContract>(
   const deployment = Deployment.getInstance({ hre });
   deployment.setHre(hre);
 
-  return deployment.deployContract({ name: contractName as EContracts, signer }, ...args);
+  return await deployment.deployContract({ name: contractName as EContracts, signer }, ...args);
 };
 
 /**
