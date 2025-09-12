@@ -241,7 +241,7 @@ describe("E2E Deployment Tests", () => {
         startBlock: Number(maciCreatedAt),
         network: ESupportedChains.OptimismSepolia,
         name: process.env.SUBGRAPH_NAME,
-        tag: `v0.0.${maciCreatedAt}`, // different versions per test using block number
+        tag: `v0.0.${+new Date()}`, // different versions per test using timestamp
       }),
     });
 

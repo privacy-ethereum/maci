@@ -18,7 +18,7 @@ env:
   COORDINATOR_POLL_JOINED_ZKEY_NAME: ${{ vars.COORDINATOR_POLL_JOINED_ZKEY_NAME }}
   COORDINATOR_RAPIDSNARK_EXE: ${{ vars.COORDINATOR_RAPIDSNARK_EXE }}
   COORDINATOR_ZKEY_PATH: "../../zkeys"
-  COORDINATOR_RPC_URL: ${{ secrets.COORDINATOR_RPC_URL }}
+  COORDINATOR_RPC_URL: "http://localhost:8545"
   COORDINATOR_ADDRESSES: ${{ vars.COORDINATOR_ADDRESSES }}
   COORDINATOR_ALLOWED_ORIGINS: ${{ vars.COORDINATOR_ALLOWED_ORIGINS }}
   COORDINATOR_REDIS_HOST: ${{ vars.COORDINATOR_REDIS_HOST }}
@@ -29,7 +29,7 @@ env:
   SUBGRAPH_DEPLOY_KEY: ${{ secrets.COORDINATOR_SUBGRAPH_DEPLOY_KEY }}
   SUBGRAPH_FOLDER: ${{ vars.COORDINATOR_SUBGRAPH_FOLDER }}
   ZERODEV_BUNDLER_RPC_OP_SEPOLIA: ${{ secrets.COORDINATOR_ZERODEV_BUNDLER_RPC_OP_SEPOLIA }}
-  PRIVATE_KEY: ${{ secrets.COORDINATOR_TEST_PRIVATE_KEY }}
+  MNEMONIC: ${{ secrets.COORDINATOR_TEST_MNEMONIC }}
 
 jobs:
   build-and-test:
@@ -86,10 +86,20 @@ jobs:
         run: |
           pnpm run generate-keypair
 
+      - name: Run hardhat
+        run: |
+          pnpm run hardhat &
+          sleep 5
+        working-directory: apps/coordinator
+
       - name: Run E2E tests
         working-directory: apps/coordinator
         run: |
           pnpm run test:e2e
+
+      - name: Stop Hardhat
+        if: always()
+        run: kill $(lsof -t -i:8545)
 
       - name: Notify on failure
         if: ${{ always() && (failure() || cancelled()) }}
