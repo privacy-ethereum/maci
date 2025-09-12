@@ -45,7 +45,7 @@
     "dotenv": "^17.2.0",
     "ethers": "^6.15.0",
     "hardhat": "^2.25.0",
-    "helia": "^5.4.2",
+    "helia": "^5.5.1",
     "helmet": "^8.1.0",
     "lodash": "^4.17.21",
     "@maci-protocol/domainobjs": "^3.0.0",
