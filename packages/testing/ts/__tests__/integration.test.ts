@@ -52,7 +52,7 @@ import {
   POLL_STATE_TREE_DEPTH,
 } from "../constants";
 import { type ITestSuite } from "../types";
-import { expectTally, generateTestUserCommands, isArm, writeBackupFile, backupFolder } from "../utils";
+import { expectTally, generateTestUserCommands, writeBackupFile, backupFolder } from "../utils";
 
 chai.use(chaiAsPromised);
 
@@ -67,7 +67,7 @@ describe("Integration tests", function test() {
   this.timeout(10000000);
 
   // check on which system we are running
-  const useWasm = isArm();
+  const useWasm = false;
 
   // global variables we need shared between tests
   let maciState: MaciState;

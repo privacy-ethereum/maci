@@ -18,7 +18,6 @@ import {
   timeTravel,
   type IGenerateProofsArgs,
   type ITallyData,
-  isArm,
   deployMaci,
   type IMaciContracts,
   deployFreeForAllSignUpPolicy,
@@ -64,7 +63,7 @@ import {
 import { clean, getBackupFilenames, relayTestMessages } from "../utils";
 
 describe("keyChange tests", function test() {
-  const useWasm = isArm();
+  const useWasm = false;
   this.timeout(900000);
 
   let maciAddresses: IMaciContracts;

@@ -20,7 +20,6 @@ import {
   deployVerifyingKeysRegistryContract,
   timeTravel,
   type IGenerateProofsArgs,
-  isArm,
   deployMaci,
   type IMaciContracts,
   deployFreeForAllSignUpPolicy,
@@ -78,7 +77,7 @@ import { clean, getBackupFilenames, relayTestMessages } from "../utils";
     7 signups and 1 message, another polls and 6 messages
  */
 describe("e2e tests", function test() {
-  const useWasm = isArm();
+  const useWasm = false;
   this.timeout(900000);
 
   let maciAddresses: IMaciContracts;

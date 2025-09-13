@@ -1,0 +1,92 @@
+name: Nightly Unit Tests Macos
+
+on:
+  pull_request:
+
+env:
+  NODE_OPTIONS: "--max-old-space-size=4096"
+
+jobs:
+  macos-test:
+    strategy:
+      fail-fast: false
+      matrix:
+        command: ["test:stress"]
+
+    runs-on: macos-15
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Download circom Binary v2.1.6
+        run: |
+          wget -qO ${{ github.workspace }}/circom https://github.com/iden3/circom/releases/download/v2.1.6/circom-macos-amd64
+          chmod +x ${{ github.workspace }}/circom
+          echo "${{ github.workspace }}" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: |
+          brew install gmp libsodium nasm
+
+      - name: Download rapidsnark (v0.0.7)
+        run: |
+          mkdir -p ~/rapidsnark/build
+          curl -L -o ~/rapidsnark/rapidsnark.zip https://github.com/iden3/rapidsnark/releases/download/v0.0.7/rapidsnark-macOS-arm64-v0.0.7.zip
+          unzip -q ~/rapidsnark/rapidsnark.zip -d ~/rapidsnark/
+          cp ~/rapidsnark/rapidsnark-macOS-arm64-v0.0.7/bin/prover ~/rapidsnark/build/prover
+          chmod +x ~/rapidsnark/build/prover
+
+      - name: Verify Rapidsnark Version
+        run: |
+          ~/rapidsnark/build/prover --help
+
+      - name: Install
+        run: |
+          pnpm install --frozen-lockfile --prefer-offline
+
+      - name: Build
+        run: |
+          pnpm run build
+
+      - name: Run hardhat fork
+        run: |
+          cd packages/contracts
+          cp ./deploy-config-example.json ./deploy-config.json
+          pnpm run hardhat &
+
+      - name: Calculate circuits hash
+        id: hash_circuits
+        run: |
+          CIRCUIT_HASH=$(find packages/circuits -type f -name '*.circom' -exec sha1sum {} \; | sort | sha1sum | cut -d ' ' -f1)
+          echo "CIRCUIT_HASH=$CIRCUIT_HASH" >> $GITHUB_ENV
+          echo "CIRCUIT_HASH=$CIRCUIT_HASH" >> $GITHUB_OUTPUT
+
+      - name: Cache zkeys
+        id: cache_zkeys
+        uses: actions/cache@v4
+        with:
+          path: zkeys
+          key: zkeys-${{ steps.hash_circuits.outputs.CIRCUIT_HASH }}
+          restore-keys: |
+            zkeys-
+
+      - name: Download zkeys
+        run: |
+          pnpm download-zkeys:test
+
+      - name: ${{ matrix.command }}
+        run: pnpm run ${{ matrix.command }}
+
+      - name: Stop Hardhat
+        if: always()
+        run: kill $(lsof -t -i:8545)

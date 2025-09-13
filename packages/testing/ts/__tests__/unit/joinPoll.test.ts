@@ -33,9 +33,8 @@ import {
   pollDuration,
   verifyingKeysArgs,
 } from "../../constants";
-import { isArm } from "../../utils";
 
-const useWasm = isArm();
+const useWasm = false;
 
 describe("joinPoll", function test() {
   let signer: Signer;

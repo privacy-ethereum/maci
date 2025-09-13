@@ -16,7 +16,6 @@ import {
   generateProofs,
   deployVerifyingKeysRegistryContract,
   timeTravel,
-  isArm,
   deployMaci,
   deployFreeForAllSignUpPolicy,
   deployConstantInitialVoiceCreditProxy,
@@ -71,7 +70,7 @@ import { clean, getBackupFilenames, relayTestMessages } from "../utils";
     30 signups, 30 invalid and 1 valid messages
  */
 describe("e2e tests with full credits voting", function test() {
-  const useWasm = isArm();
+  const useWasm = false;
   this.timeout(900000);
 
   let maciAddresses: IMaciContracts;

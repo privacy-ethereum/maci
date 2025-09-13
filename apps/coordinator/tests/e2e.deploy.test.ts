@@ -1,5 +1,5 @@
 import { Keypair } from "@maci-protocol/domainobjs";
-import { isArm, joinPoll, signup, sleepUntil, ESupportedChains, ContractStorage } from "@maci-protocol/sdk";
+import { joinPoll, signup, sleepUntil, ESupportedChains, ContractStorage } from "@maci-protocol/sdk";
 import { ValidationPipe, type INestApplication } from "@nestjs/common";
 import { Test } from "@nestjs/testing";
 import dotenv from "dotenv";
@@ -52,7 +52,7 @@ const VOTE_OPTIONS: Record<string, number> = {
   "1": 0,
 };
 
-const useWasm = isArm();
+const useWasm = false;
 
 describe("E2E Deployment Tests", () => {
   let signer: Signer;

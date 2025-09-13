@@ -17,14 +17,14 @@
     "build": "tsc",
     "types": "tsc -p tsconfig.json --noEmit",
     "test": "ts-mocha --exit ./ts/__tests__/**/*.test.ts",
-    "test:integration": "NODE_OPTIONS=--max-old-space-size=4096 ts-mocha --exit  ./ts/__tests__/integration.test.ts",
+    "test:integration": "ts-mocha --exit  ./ts/__tests__/integration.test.ts",
     "test:e2e": "NODE_ENV=test ts-mocha --exit ./ts/__tests__/e2e*.test.ts",
     "test:e2e-qv": "NODE_ENV=test ts-mocha --exit ./ts/__tests__/e2e.test.ts",
     "test:e2e-non-qv": "NODE_ENV=test ts-mocha --exit ./ts/__tests__/e2e.nonQv.test.ts",
     "test:e2e-full": "NODE_ENV=test ts-mocha --exit ./ts/__tests__/e2e.full.test.ts",
     "test:keyChange": "NODE_ENV=test ts-mocha --exit ./ts/__tests__/keyChange.test.ts",
     "test:unit": "NODE_ENV=test ts-mocha --exit ./ts/__tests__/unit/*.test.ts",
-    "test:stress": "NODE_OPTIONS=--max-old-space-size=4096 NODE_ENV=test ts-mocha --exit ./ts/__tests__/stress/*.test.ts"
+    "test:stress": "NODE_ENV=test ts-mocha --exit ./ts/__tests__/stress/*.test.ts"
   },
   "devDependencies": {
     "@types/chai-as-promised": "^8.0.2",
