@@ -13,7 +13,7 @@ import {
   mergeSignups,
   verify,
   generateTallyCommitments,
-  getPollParams,ФС
+  getPollParams,
   setVerifyingKeys,
   EMode,
   extractAllVerifyingKeys,
@@ -31,7 +31,7 @@ import {
   deployVerifier,
   deployConstantInitialVoiceCreditProxyFactory,
 } from "@maci-protocol/sdk";
-import chai from "chai";
+import chai from "chai";АА
 import chaiAsPromised from "chai-as-promised";
 import { type Signer } from "ethers";
 
