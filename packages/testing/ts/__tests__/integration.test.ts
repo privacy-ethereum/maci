@@ -13,7 +13,7 @@ import {
   mergeSignups,
   verify,
   generateTallyCommitments,
-  getPollParams,
+  getPollParams,ФС
   setVerifyingKeys,
   EMode,
   extractAllVerifyingKeys,
@@ -368,7 +368,9 @@ describe("Integration tests", function test() {
       await timeTravel({ seconds: pollDuration, signer });
 
       // merge signups
-      await expect(mergeSignups({ pollId, maciAddress: contracts.maciContractAddress, signer })).to.not.be.rejected;
+      await expect(
+        mergeSignups({ pollId, maciAddress: contracts.maciContractAddress, signer }),
+      ).to.eventually.not.be.rejectedWith();
 
       const ipfsMessageBackupFiles = await fs.promises
         .readdir(backupFolder)
