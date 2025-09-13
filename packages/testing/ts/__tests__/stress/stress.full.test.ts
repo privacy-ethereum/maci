@@ -246,7 +246,7 @@ Object.entries(filePerMode).forEach((data) => {
             pollId: 0n,
             pollJoiningZkey: testPollJoiningZkeyPath,
             useWasm,
-            pollWasm: testPollJoiningWasmPath,
+            pollJoiningWasm: testPollJoiningWasmPath,
             pollWitnessGenerator: testPollJoiningWitnessPath,
             rapidsnark: testRapidsnarkPath,
             sgDataArg: DEFAULT_SG_DATA,
