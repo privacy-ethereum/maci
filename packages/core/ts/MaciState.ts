@@ -1,10 +1,10 @@
-import { IncrementalQuinTree } from "@maci-protocol/crypto";
+import { type IncrementalQuinTree } from "@maci-protocol/crypto";
 import { PublicKey, type Keypair, padKey } from "@maci-protocol/domainobjs";
 
 import type { IJsonMaciState, IJsonPoll, IMaciState, ITreeDepths } from "./utils/types";
 
 import { Poll } from "./Poll";
-import { EMode, STATE_TREE_ARITY } from "./utils/constants";
+import { type EMode, STATE_TREE_ARITY } from "./utils/constants";
 
 /**
  * A representation of the MACI contract.

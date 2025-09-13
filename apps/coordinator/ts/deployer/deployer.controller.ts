@@ -3,6 +3,7 @@ import { Body, Controller, HttpException, HttpStatus, Logger, Post, UseGuards } 
 import { ApiBearerAuth, ApiBody, ApiResponse, ApiTags } from "@nestjs/swagger";
 
 import { AccountSignatureGuard } from "../auth/AccountSignatureGuard.service";
+import { mapErrorToHttpStatus } from "../common/http";
 
 import { DeployerService } from "./deployer.service";
 import { DeployerServiceDeployMaciDto, DeployerServiceDeployPollDto } from "./dto";
@@ -32,13 +33,17 @@ export class DeployerController {
    */
   @ApiBody({ type: DeployerServiceDeployMaciDto })
   @ApiResponse({ status: HttpStatus.CREATED, description: "The MACI contracts were successfully deployed" })
-  @ApiResponse({ status: HttpStatus.FORBIDDEN, description: "Forbidden" })
-  @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: "BadRequest" })
+  @ApiResponse({ status: HttpStatus.FORBIDDEN, description: "Invalid approval signature" })
+  @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: "Unsupported input (network/policy/voice credit proxy)" })
+  @ApiResponse({
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
+    description: "Deployment failed or configuration error (e.g., RPC URL not set, contract deployment failed)",
+  })
   @Post("maci")
   async deployMACIContracts(@Body() args: DeployerServiceDeployMaciDto): Promise<{ address: string }> {
     return this.deployerService.deployMaci(args).catch((error: Error) => {
       this.logger.error(`Error:`, error);
-      throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+      throw new HttpException(error.message, mapErrorToHttpStatus(error));
     });
   }
 
@@ -50,13 +55,21 @@ export class DeployerController {
    */
   @ApiBody({ type: DeployerServiceDeployPollDto })
   @ApiResponse({ status: HttpStatus.CREATED, description: "The Poll was successfully deployed" })
-  @ApiResponse({ status: HttpStatus.FORBIDDEN, description: "Forbidden" })
-  @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: "BadRequest" })
+  @ApiResponse({ status: HttpStatus.FORBIDDEN, description: "Invalid approval signature" })
+  @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: "Unsupported input (network/policy/voice credit proxy)" })
+  @ApiResponse({
+    status: HttpStatus.PRECONDITION_FAILED,
+    description: "Required contracts not deployed (MACI/Verifier/VerifyingKeysRegistry)",
+  })
+  @ApiResponse({
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
+    description: "Poll deployment failed (failed to deploy poll/set verifying keys/set MACI instance on policy)",
+  })
   @Post("poll")
   async deployPoll(@Body() args: DeployerServiceDeployPollDto): Promise<{ pollId: string }> {
     return this.deployerService.deployPoll(args).catch((error: Error) => {
       this.logger.error(`Error:`, error);
-      throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+      throw new HttpException(error.message, mapErrorToHttpStatus(error));
     });
   }
 }

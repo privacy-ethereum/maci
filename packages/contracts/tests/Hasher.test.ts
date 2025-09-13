@@ -1,11 +1,11 @@
 import { sha256Hash, hashLeftRight, hash3, hash4, hash5, generateRandomSalt } from "@maci-protocol/crypto";
 import { expect } from "chai";
-import { BigNumberish } from "ethers";
+import { type BigNumberish } from "ethers";
 
 import { linkPoseidonLibraries } from "../tasks/helpers/abi";
 import { deployPoseidonContracts, createContractFactory } from "../ts/deploy";
 import { getDefaultSigner } from "../ts/utils";
-import { Hasher, Hasher__factory as HasherFactory } from "../typechain-types";
+import { type Hasher, Hasher__factory as HasherFactory } from "../typechain-types";
 
 describe("Hasher", () => {
   let hasherContract: Hasher;

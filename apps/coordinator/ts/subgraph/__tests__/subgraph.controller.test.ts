@@ -59,7 +59,7 @@ describe("SubgraphController", () => {
       mockSubgraphService.deploy.mockRejectedValue(error);
 
       await expect(subgraphController.deploy(defaultSubgraphDeployArgs)).rejects.toThrow(
-        new HttpException(error.message, HttpStatus.BAD_REQUEST),
+        new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR),
       );
     });
   });

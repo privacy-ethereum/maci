@@ -1,6 +1,6 @@
-import { TAbi } from "@maci-protocol/contracts";
-import { EMode } from "@maci-protocol/core";
-import { PublicKey } from "@maci-protocol/domainobjs";
+import { type TAbi } from "@maci-protocol/contracts";
+import { type EMode } from "@maci-protocol/core";
+import { type PublicKey } from "@maci-protocol/domainobjs";
 
 import type { Signer } from "ethers";
 

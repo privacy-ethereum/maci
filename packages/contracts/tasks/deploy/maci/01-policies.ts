@@ -31,7 +31,7 @@ import {
   EContracts,
   EPolicyFactories,
   EPolicies,
-  IDeployParams,
+  type IDeployParams,
 } from "../../helpers/types";
 
 const deployment = Deployment.getInstance();

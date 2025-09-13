@@ -1,11 +1,11 @@
-import { Reflector } from "@nestjs/core";
+import { type Reflector } from "@nestjs/core";
 import dotenv from "dotenv";
 import { getBytes, hashMessage } from "ethers";
 import hardhat from "hardhat";
 
 import type { ExecutionContext } from "@nestjs/common";
 
-import { CryptoService } from "../../crypto/crypto.service";
+import { type CryptoService } from "../../crypto/crypto.service";
 import { AccountSignatureGuard, PUBLIC_METADATA_KEY, Public } from "../AccountSignatureGuard.service";
 
 dotenv.config();

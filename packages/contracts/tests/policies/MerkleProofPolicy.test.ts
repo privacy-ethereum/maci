@@ -1,7 +1,7 @@
 import { Keypair } from "@maci-protocol/domainobjs";
-import { StandardMerkleTree } from "@openzeppelin/merkle-tree";
+import { type StandardMerkleTree } from "@openzeppelin/merkle-tree";
 import { expect } from "chai";
-import { AbiCoder, Signer, ZeroAddress, encodeBytes32String } from "ethers";
+import { AbiCoder, type Signer, ZeroAddress, encodeBytes32String } from "ethers";
 
 import type { MACI, MerkleProofPolicy, MerkleProofChecker } from "../../typechain-types";
 

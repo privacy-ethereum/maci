@@ -26,7 +26,7 @@ import {
   padKey,
   type IMessageContractParams,
 } from "@maci-protocol/domainobjs";
-import { LeanIMT, LeanIMTHashFunction } from "@zk-kit/lean-imt";
+import { LeanIMT, type LeanIMTHashFunction } from "@zk-kit/lean-imt";
 import omit from "lodash/omit";
 
 import assert from "assert";

@@ -2,7 +2,7 @@ import { info, logGreen } from "../../../ts/logger";
 import { EDeploySteps } from "../../helpers/constants";
 import { ContractStorage } from "../../helpers/ContractStorage";
 import { Deployment } from "../../helpers/Deployment";
-import { EContracts, IDeployParams } from "../../helpers/types";
+import { EContracts, type IDeployParams } from "../../helpers/types";
 
 const deployment = Deployment.getInstance();
 const storage = ContractStorage.getInstance();

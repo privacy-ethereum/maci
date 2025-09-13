@@ -1,6 +1,6 @@
 import { Keypair } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
-import { Signer, ZeroAddress } from "ethers";
+import { type Signer, ZeroAddress } from "ethers";
 
 import type { MACI, ZupassChecker, ZupassPolicy } from "../../typechain-types";
 

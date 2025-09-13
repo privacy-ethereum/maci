@@ -24,7 +24,7 @@ env:
   SUBGRAPH_DEPLOY_KEY: "subgraph-deploy-key"
   SUBGRAPH_FOLDER: "./node_modules/@maci-protocol/subgraph"
   ZERODEV_BUNDLER_RPC_OP_SEPOLIA: "https://rpc.zerodev.app/api/v3"
-  PRIVATE_KEY: "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
+  MNEMONIC: ${{ secrets.COORDINATOR_TEST_MNEMONIC }}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
@@ -32,7 +32,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v5
@@ -41,7 +41,7 @@ jobs:
           version: 9
 
       - name: Use Node.js 20
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: "pnpm"

@@ -4,20 +4,20 @@ import { EMode, MaciState } from "@maci-protocol/core";
 import { NOTHING_UP_MY_SLEEVE } from "@maci-protocol/crypto";
 import { Keypair, Message, VoteCommand, PublicKey, StateLeaf } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
-import { AbiCoder, decodeBase58, encodeBase58, getBytes, hexlify, Signer, ZeroAddress } from "ethers";
-import { EthereumProvider } from "hardhat/types";
+import { AbiCoder, decodeBase58, encodeBase58, getBytes, hexlify, type Signer, ZeroAddress } from "ethers";
+import { type EthereumProvider } from "hardhat/types";
 
 import { deployFreeForAllSignUpPolicy } from "../ts/deploy";
-import { IVerifyingKeyStruct } from "../ts/types";
+import { type IVerifyingKeyStruct } from "../ts/types";
 import { getBlockTimestamp, getDefaultSigner, getSigners } from "../ts/utils";
 import {
   Poll__factory as PollFactory,
-  MACI,
-  Poll as PollContract,
-  Verifier,
-  VerifyingKeysRegistry,
-  IBasePolicy,
-  ConstantInitialVoiceCreditProxy,
+  type MACI,
+  type Poll as PollContract,
+  type Verifier,
+  type VerifyingKeysRegistry,
+  type IBasePolicy,
+  type ConstantInitialVoiceCreditProxy,
 } from "../typechain-types";
 
 import {

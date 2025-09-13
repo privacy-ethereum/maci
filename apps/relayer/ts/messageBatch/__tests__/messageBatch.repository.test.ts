@@ -1,8 +1,8 @@
 import { jest } from "@jest/globals";
-import { Model } from "mongoose";
+import { type Model } from "mongoose";
 
 import { MessageBatchRepository } from "../messageBatch.repository.js";
-import { MessageBatch } from "../messageBatch.schema.js";
+import { type MessageBatch } from "../messageBatch.schema.js";
 
 import { defaultMessageBatches } from "./utils.js";
 

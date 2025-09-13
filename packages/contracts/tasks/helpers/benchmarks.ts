@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
-import { Message, Keypair } from "@maci-protocol/domainobjs";
+import { type Message, type Keypair } from "@maci-protocol/domainobjs";
 import { TransactionReceipt } from "ethers";
 
 import { error, logGreen, logRed, success } from "../../ts/logger";
-import { MACI, Poll } from "../../typechain-types";
+import { type MACI, type Poll } from "../../typechain-types";
 
-import { Deployment } from "./Deployment";
+import { type Deployment } from "./Deployment";
 import { EContracts } from "./types";
 
 /**

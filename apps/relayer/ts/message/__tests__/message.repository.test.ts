@@ -1,10 +1,10 @@
 import { jest } from "@jest/globals";
 import { Keypair } from "@maci-protocol/domainobjs";
 import { ZeroAddress } from "ethers";
-import { Model } from "mongoose";
+import { type Model } from "mongoose";
 
 import { MessageRepository } from "../message.repository.js";
-import { Message } from "../message.schema.js";
+import { type Message } from "../message.schema.js";
 
 import { defaultSaveMessagesArgs } from "./utils.js";
 

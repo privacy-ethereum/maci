@@ -315,6 +315,7 @@ export const verifyingKeysArgs = async (
   const keysResults = await Promise.all(
     modes.map((mode) => {
       const { messageProcessorZkeyPath, voteTallyZkeyPath } = zkeysByMode[mode];
+
       return extractAllVerifyingKeys({
         messageProcessorZkeyPath,
         voteTallyZkeyPath,

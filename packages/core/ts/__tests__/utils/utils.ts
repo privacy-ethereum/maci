@@ -1,8 +1,8 @@
-import { Signature } from "@maci-protocol/crypto";
-import { VoteCommand, Message, Keypair, PublicKey } from "@maci-protocol/domainobjs";
+import { type Signature } from "@maci-protocol/crypto";
+import { VoteCommand, type Message, Keypair, type PublicKey } from "@maci-protocol/domainobjs";
 
 import { MaciState } from "../../MaciState";
-import { Poll } from "../../Poll";
+import { type Poll } from "../../Poll";
 import { EMode, STATE_TREE_DEPTH } from "../../utils/constants";
 
 import { duration, maxVoteOptions, messageBatchSize, treeDepths } from "./constants";

@@ -2,7 +2,7 @@ import { ESupportedChains } from "@maci-protocol/sdk";
 import { zeroAddress } from "viem";
 
 import { HealthController } from "../health.controller";
-import { HealthService } from "../health.service";
+import { type HealthService } from "../health.service";
 
 describe("HealthController", () => {
   const mockHealthService = {

@@ -1,14 +1,14 @@
-import { generateMaciStateFromContract } from "@maci-protocol/sdk";
+import {
+  type generateMaciStateFromContract,
+  type MACI,
+  type Verifier,
+  type VerifyingKeysRegistry,
+  type FreeForAllPolicy,
+  type ConstantInitialVoiceCreditProxy,
+  type IIpfsMessage,
+} from "@maci-protocol/sdk";
 
 import type { User } from "./user";
-import type {
-  MACI,
-  Verifier,
-  VerifyingKeysRegistry,
-  FreeForAllPolicy,
-  ConstantInitialVoiceCreditProxy,
-  IIpfsMessage,
-} from "@maci-protocol/sdk";
 import type { Signer } from "ethers";
 
 /**

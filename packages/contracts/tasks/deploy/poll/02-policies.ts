@@ -19,10 +19,10 @@ import type {
   SemaphorePolicyFactory,
   ZupassCheckerFactory,
   ZupassPolicyFactory,
+  MACI,
 } from "../../../typechain-types";
 
 import { info, logGreen } from "../../../ts/logger";
-import { MACI } from "../../../typechain-types";
 import { EDeploySteps, ESupportedChains } from "../../helpers/constants";
 import { ContractStorage } from "../../helpers/ContractStorage";
 import { Deployment } from "../../helpers/Deployment";
@@ -32,7 +32,7 @@ import {
   EContracts,
   EPolicyFactories,
   EPolicies,
-  IDeployParams,
+  type IDeployParams,
 } from "../../helpers/types";
 
 const deployment = Deployment.getInstance();

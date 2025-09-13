@@ -23,6 +23,7 @@
     "test:integration": "lerna run test:integration --scope \"@maci-protocol/testing\"",
     "test:e2e": "lerna run test:e2e --scope \"@maci-protocol/testing\"",
     "test:unit": "lerna run test:unit --scope \"@maci-protocol/testing\"",
+    "test:stress": "lerna run test:stress --scope \"@maci-protocol/testing\"",
     "test:hardhat": "lerna run test:hardhat --scope \"@maci-protocol/contracts\"",
     "test": "lerna run test --ignore \"@maci-protocol/testing\"",
     "test:relayer": "lerna run test --scope \"@maci-protocol/relayer\"",
@@ -60,7 +61,7 @@
     "solhint": "^6.0.0",
     "tar": "^7.4.3",
     "ts-node": "^10.9.1",
-    "typedoc": "^0.28.9",
+    "typedoc": "^0.28.12",
     "typedoc-plugin-markdown": "^4.8.0",
     "typescript": "^5.9.2"
   },

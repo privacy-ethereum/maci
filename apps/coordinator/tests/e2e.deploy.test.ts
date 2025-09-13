@@ -52,6 +52,8 @@ const VOTE_OPTIONS: Record<string, number> = {
   "1": 0,
 };
 
+const useWasm = isArm();
+
 describe("E2E Deployment Tests", () => {
   let signer: Signer;
   let encryptedHeader: string;
@@ -239,7 +241,7 @@ describe("E2E Deployment Tests", () => {
         startBlock: Number(maciCreatedAt),
         network: ESupportedChains.OptimismSepolia,
         name: process.env.SUBGRAPH_NAME,
-        tag: `v0.0.${maciCreatedAt}`, // different versions per test using block number
+        tag: `v0.0.${+new Date()}`, // different versions per test using timestamp
       }),
     });
 
@@ -282,8 +284,6 @@ describe("E2E Deployment Tests", () => {
   });
 
   test("should generate proofs correctly", async () => {
-    const useWasm = isArm(); // Use WASM on ARM devices, otherwise use rapidsnark
-
     const response = await fetch(`${TEST_URL}/proof/generate`, {
       method: "POST",
       headers: {

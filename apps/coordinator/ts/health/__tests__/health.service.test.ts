@@ -5,7 +5,7 @@ import { zeroAddress } from "viem";
 import fs, { type Stats } from "fs";
 
 import { FileService } from "../../file/file.service";
-import { RedisService } from "../../redis/redis.service";
+import { type RedisService } from "../../redis/redis.service";
 import { HealthService } from "../health.service";
 
 dotenv.config();

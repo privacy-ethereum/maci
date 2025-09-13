@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { IVerifyingKeyContractParams, VerifyingKey } from "@maci-protocol/domainobjs";
+import { type IVerifyingKeyContractParams, type VerifyingKey } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
 
 import type { IDeployedTestContracts, IDeployedTestContractsArgs } from "../ts/types";

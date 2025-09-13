@@ -31,12 +31,12 @@
     "@nestjs/common": "^11.1.5",
     "@nestjs/core": "^11.1.5",
     "@nestjs/mongoose": "^11.0.3",
-    "@nestjs/platform-express": "^11.1.5",
+    "@nestjs/platform-express": "^11.1.6",
     "@nestjs/platform-socket.io": "^11.1.6",
     "@nestjs/schedule": "^6.0.0",
     "@nestjs/swagger": "^11.2.0",
     "@nestjs/throttler": "^6.4.0",
-    "@nestjs/websockets": "^11.1.5",
+    "@nestjs/websockets": "^11.1.6",
     "@nomicfoundation/hardhat-ethers": "^3.1.0",
     "@nomicfoundation/hardhat-toolbox": "^6.1.0",
     "class-transformer": "^0.5.1",
@@ -51,7 +51,7 @@
     "@maci-protocol/domainobjs": "^3.0.0",
     "@maci-protocol/sdk": "^1.0.0",
     "@maci-protocol/testing": "^1.0.0",
-    "mongoose": "^8.17.0",
+    "mongoose": "^8.18.1",
     "multiformats": "^13.3.2",
     "mustache": "^4.2.0",
     "reflect-metadata": "^0.2.0",
@@ -72,7 +72,7 @@
     "jest": "^30.0.4",
     "mongodb-memory-server": "^10.1.4",
     "supertest": "^7.1.4",
-    "ts-jest": "^29.4.0",
+    "ts-jest": "^29.4.1",
     "typescript": "^5.9.2"
   }
 }

@@ -1,8 +1,9 @@
 import { stringifyBigInts } from "@maci-protocol/crypto";
-import { IVerifyingKeyObjectParams } from "@maci-protocol/domainobjs";
+import { type IVerifyingKeyObjectParams } from "@maci-protocol/domainobjs";
 import { groth16, type PublicSignals, type Groth16Proof, zKey } from "snarkjs";
 
 import childProcess from "child_process";
+import { createHash } from "crypto";
 import fs from "fs";
 import { tmpdir } from "os";
 import path from "path";
@@ -47,7 +48,8 @@ export const generateProofRapidSnark = async ({
 }: IGenerateProofOptions): Promise<FullProveResult> => {
   // intel chip flow (use rapidnsark)
   // Create tmp directory
-  const tmpPath = path.resolve(tmpdir(), `tmp-${Date.now()}`);
+  const hash = createHash("sha256").update(JSON.stringify(inputs)).digest("hex");
+  const tmpPath = path.resolve(tmpdir(), `tmp-${zkeyPath}-${hash}-${Date.now() + (Math.random() % 1000)}`);
   await fs.promises.mkdir(tmpPath, { recursive: true });
 
   const inputJsonPath = path.resolve(tmpPath, "input.json");

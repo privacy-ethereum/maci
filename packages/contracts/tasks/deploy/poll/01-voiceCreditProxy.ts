@@ -11,7 +11,7 @@ import {
   EContracts,
   EInitialVoiceCreditProxies,
   EInitialVoiceCreditProxiesFactories,
-  IDeployParams,
+  type IDeployParams,
 } from "../../helpers/types";
 
 const DEFAULT_INITIAL_VOICE_CREDITS = 99;

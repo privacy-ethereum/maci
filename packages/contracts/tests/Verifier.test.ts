@@ -7,7 +7,7 @@ import type { BigNumberish } from "ethers";
 
 import { deployVerifier } from "../ts/deploy";
 import { getDefaultSigner } from "../ts/utils";
-import { Verifier } from "../typechain-types";
+import { type Verifier } from "../typechain-types";
 
 describe("DomainObjs", () => {
   const verifyingKey = new VerifyingKey(

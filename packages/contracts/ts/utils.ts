@@ -1,5 +1,5 @@
 import { StandardMerkleTree } from "@openzeppelin/merkle-tree";
-import { Interface, TransactionReceipt, type BigNumberish, type FeeData, type Network, type Signer } from "ethers";
+import { Interface, type TransactionReceipt, type BigNumberish, type FeeData, type Network, type Signer } from "ethers";
 
 import fs from "fs";
 import os from "os";

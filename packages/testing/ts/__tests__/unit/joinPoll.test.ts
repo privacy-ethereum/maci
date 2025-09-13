@@ -18,7 +18,7 @@ import {
 } from "@maci-protocol/sdk";
 import { joinPoll as joinPollBrowser } from "@maci-protocol/sdk/browser";
 import { expect } from "chai";
-import { Signer } from "ethers";
+import { type Signer } from "ethers";
 
 import {
   DEFAULT_INITIAL_VOICE_CREDITS,
@@ -33,6 +33,9 @@ import {
   pollDuration,
   verifyingKeysArgs,
 } from "../../constants";
+import { isArm } from "../../utils";
+
+const useWasm = isArm();
 
 describe("joinPoll", function test() {
   let signer: Signer;

@@ -2,7 +2,7 @@
 import { MACI__factory as MACIFactory } from "@maci-protocol/contracts/typechain-types";
 import { hashLeanIMT, hashLeftRight, PAD_KEY_HASH } from "@maci-protocol/crypto";
 import { PublicKey } from "@maci-protocol/domainobjs";
-import { LeanIMT, LeanIMTHashFunction } from "@zk-kit/lean-imt";
+import { LeanIMT, type LeanIMTHashFunction } from "@zk-kit/lean-imt";
 
 import type { IGenerateSignUpTreeArgs, IGenerateSignUpTree, IGenerateSignUpTreeWithEndKeyArgs } from "./types";
 

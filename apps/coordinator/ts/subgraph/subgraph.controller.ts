@@ -5,6 +5,7 @@ import { ApiBearerAuth, ApiBody, ApiResponse, ApiTags } from "@nestjs/swagger";
 import type { IDeploySubgraphReturn } from "./types";
 
 import { AccountSignatureGuard } from "../auth/AccountSignatureGuard.service";
+import { mapErrorToHttpStatus } from "../common/http";
 
 import { DeploySubgraphDto } from "./dto";
 import { SubgraphService } from "./subgraph.service";
@@ -34,13 +35,17 @@ export class SubgraphController {
    */
   @ApiBody({ type: DeploySubgraphDto })
   @ApiResponse({ status: HttpStatus.CREATED, description: "The subgraph was successfully deployed" })
-  @ApiResponse({ status: HttpStatus.FORBIDDEN, description: "Forbidden" })
-  @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: "BadRequest" })
+  @ApiResponse({ status: HttpStatus.FORBIDDEN, description: "Invalid approval signature" })
+  @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: "Invalid input" })
+  @ApiResponse({
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
+    description: "Subgraph deployment failed or deploy key missing",
+  })
   @Post("deploy")
   async deploy(@Body() args: DeploySubgraphDto): Promise<IDeploySubgraphReturn> {
     return this.subgraphService.deploy(args).catch((error: Error) => {
       this.logger.error(`Error:`, error);
-      throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+      throw new HttpException(error.message, mapErrorToHttpStatus(error));
     });
   }
 }

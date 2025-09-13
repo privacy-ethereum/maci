@@ -1,6 +1,6 @@
 import { generateProofSnarkjs } from "@maci-protocol/contracts";
 
-import { TCircuitInputs } from "../../utils/types";
+import { type TCircuitInputs } from "../../utils/types";
 import { downloadPollJoiningArtifactsBrowser } from "../download";
 
 /**

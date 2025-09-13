@@ -368,9 +368,7 @@ describe("Integration tests", function test() {
       await timeTravel({ seconds: pollDuration, signer });
 
       // merge signups
-      await expect(
-        mergeSignups({ pollId, maciAddress: contracts.maciContractAddress, signer }),
-      ).to.eventually.not.be.rejectedWith();
+      await expect(mergeSignups({ pollId, maciAddress: contracts.maciContractAddress, signer })).to.not.be.rejected;
 
       const ipfsMessageBackupFiles = await fs.promises
         .readdir(backupFolder)

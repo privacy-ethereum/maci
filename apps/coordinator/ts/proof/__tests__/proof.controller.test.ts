@@ -88,7 +88,7 @@ describe("ProofController", () => {
       mockGeneratorService.generate.mockRejectedValue(error);
 
       await expect(proofController.generate(defaultProofGeneratorArgs)).rejects.toThrow(
-        new HttpException(error.message, HttpStatus.BAD_REQUEST),
+        new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR),
       );
     });
   });
@@ -111,7 +111,7 @@ describe("ProofController", () => {
       mockFileService.getPublicKey.mockRejectedValue(error);
 
       await expect(proofController.getPublicKey()).rejects.toThrow(
-        new HttpException(error.message, HttpStatus.BAD_REQUEST),
+        new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR),
       );
     });
   });

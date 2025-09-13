@@ -1,16 +1,16 @@
 import { Keypair } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
-import { BaseContract, Signer, ZeroAddress } from "ethers";
+import { type BaseContract, type Signer, ZeroAddress } from "ethers";
 
 import { deployPollFactory, generateEmptyBallotRoots, getDefaultSigner } from "../ts";
-import { MACI, PollFactory, Verifier, VerifyingKeysRegistry } from "../typechain-types";
+import { type MACI, type PollFactory, type Verifier, type VerifyingKeysRegistry } from "../typechain-types";
 
 import {
   messageBatchSize,
   initialVoiceCreditBalance,
   STATE_TREE_DEPTH,
   treeDepths,
-  ExtContractsStruct,
+  type ExtContractsStruct,
   maxVoteOptions,
 } from "./constants";
 import { deployTestContracts } from "./utils";

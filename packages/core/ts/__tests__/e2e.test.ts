@@ -1,10 +1,10 @@
 import { hash5, IncrementalQuinTree, poseidon, PAD_KEY_HASH, hashLeanIMT } from "@maci-protocol/crypto";
 import { VoteCommand, Keypair, blankStateLeafHash } from "@maci-protocol/domainobjs";
-import { LeanIMT, LeanIMTHashFunction } from "@zk-kit/lean-imt";
+import { LeanIMT, type LeanIMTHashFunction } from "@zk-kit/lean-imt";
 import { expect } from "chai";
 
 import { MaciState } from "../MaciState";
-import { Poll } from "../Poll";
+import { type Poll } from "../Poll";
 import { STATE_TREE_DEPTH, STATE_TREE_ARITY, EMode } from "../utils/constants";
 
 import {

@@ -1,5 +1,5 @@
-import { CreateKernelAccountReturnType, KernelAccountClient } from "@zerodev/sdk";
-import { BundlerClient } from "viem/account-abstraction";
+import { type CreateKernelAccountReturnType, type KernelAccountClient } from "@zerodev/sdk";
+import { type BundlerClient } from "viem/account-abstraction";
 
 import type { Chain, HttpTransport, PublicClient, Transport } from "viem";
 

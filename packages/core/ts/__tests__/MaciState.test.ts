@@ -1,11 +1,11 @@
-import { VoteCommand, Message, Keypair } from "@maci-protocol/domainobjs";
+import { VoteCommand, type Message, Keypair } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
 
 import fs from "fs";
 
 import { MaciState } from "../MaciState";
 import { EMode, STATE_TREE_DEPTH } from "../utils/constants";
-import { IJsonMaciState } from "../utils/types";
+import { type IJsonMaciState } from "../utils/types";
 
 import { coordinatorKeypair, duration, maxVoteOptions, messageBatchSize, treeDepths } from "./utils/constants";
 

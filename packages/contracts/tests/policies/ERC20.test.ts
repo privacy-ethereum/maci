@@ -1,10 +1,10 @@
 import { Keypair } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
-import { AbiCoder, Signer, ZeroAddress } from "ethers";
+import { AbiCoder, type Signer, ZeroAddress } from "ethers";
 
 import { getSigners } from "../../ts";
 import { deployERC20Policy, deployMockERC20Votes } from "../../ts/deploy";
-import { ERC20Policy, MockERC20, ERC20Checker, MACI } from "../../typechain-types";
+import { type ERC20Policy, type MockERC20, type ERC20Checker, type MACI } from "../../typechain-types";
 import { STATE_TREE_DEPTH, initialVoiceCreditBalance } from "../constants";
 import { deployTestContracts } from "../utils";
 

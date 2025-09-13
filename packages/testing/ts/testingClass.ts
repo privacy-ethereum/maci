@@ -32,6 +32,7 @@ import {
   POLL_STATE_TREE_DEPTH,
 } from "./constants";
 import { User } from "./user";
+import { isArm } from "./utils";
 
 /**
  * A class that represents the testing class used in MACI tests
@@ -215,6 +216,8 @@ export class TestingClass {
       signer,
     });
 
+    const useWasm = isArm();
+
     const { pollStateIndex, voiceCredits } = await joinPoll({
       maciAddress: maciAddresses.maciContractAddress,
       pollId: 0n,
@@ -224,7 +227,7 @@ export class TestingClass {
       pollWitnessGenerator: this.pollWitnessGenerator,
       rapidsnark: this.rapidsnark,
       signer,
-      useWasm: true,
+      useWasm,
       sgDataArg: DEFAULT_SG_DATA,
       ivcpDataArg: DEFAULT_IVCP_DATA,
     });

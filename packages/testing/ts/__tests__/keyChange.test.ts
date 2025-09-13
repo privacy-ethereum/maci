@@ -20,7 +20,7 @@ import {
   type ITallyData,
   isArm,
   deployMaci,
-  IMaciContracts,
+  type IMaciContracts,
   deployFreeForAllSignUpPolicy,
   deployConstantInitialVoiceCreditProxy,
   deployVerifier,

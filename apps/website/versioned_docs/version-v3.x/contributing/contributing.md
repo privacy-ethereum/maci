@@ -60,12 +60,18 @@ Pull requests are great if you want to add a feature or fix a bug. Here's a quic
 8. Commit your changes. Please make sure your forked `main` branch is synced as well feature/fix branch and there are no "temp" commits (like wip, fix typo/lint/types and etc). We recommend to squash the feature/fix branch commits before creating PR. You can use this command for it:
 
 ```bash
+git checkout main
+git pull
+git checkout your-branch
+git rebase main
 git reset $(git merge-base main $(git rev-parse --abbrev-ref HEAD))
 ```
 
-9. Push to your fork and submit a pull request on our `main` branch. Please provide us with some explanation of why you made the changes you made. For new features make sure to explain a standard use case to us.
+9. Before creating a pull request make sure your work is ready. Do not create WIP pull requests and do not skip pre-commit hooks.
 
-10. Link any issues that the PR is addressing as described in our processes documentation.
+10. Push to your fork and submit a pull request on our `main` branch. Please provide us with some explanation of why you made the changes you made. For new features make sure to explain a standard use case to us. Do not remove our PR template and follow all the steps defined in it.
+
+11. Link any issues that the PR is addressing as described in our processes documentation.
 
 ## CI (Github Actions) Tests
 

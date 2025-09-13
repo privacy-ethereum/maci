@@ -1,23 +1,23 @@
 /* eslint-disable no-underscore-dangle */
-import { EMode, MaciState, Poll, IProcessMessagesCircuitInputs } from "@maci-protocol/core";
+import { EMode, MaciState, type Poll, type IProcessMessagesCircuitInputs } from "@maci-protocol/core";
 import { NOTHING_UP_MY_SLEEVE } from "@maci-protocol/crypto";
 import { Keypair, Message, PublicKey } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
-import { Signer, ZeroAddress } from "ethers";
-import { EthereumProvider } from "hardhat/types";
+import { type Signer, ZeroAddress } from "ethers";
+import { type EthereumProvider } from "hardhat/types";
 
-import { IVerifyingKeyStruct } from "../ts/types";
+import { type IVerifyingKeyStruct } from "../ts/types";
 import { getDefaultSigner, getBlockTimestamp } from "../ts/utils";
 import {
-  MACI,
-  MessageProcessor,
-  Poll as PollContract,
+  type MACI,
+  type MessageProcessor,
+  type Poll as PollContract,
   MessageProcessor__factory as MessageProcessorFactory,
   Poll__factory as PollFactory,
-  Verifier,
-  VerifyingKeysRegistry,
-  IBasePolicy,
-  ConstantInitialVoiceCreditProxy,
+  type Verifier,
+  type VerifyingKeysRegistry,
+  type IBasePolicy,
+  type ConstantInitialVoiceCreditProxy,
 } from "../typechain-types";
 
 import {

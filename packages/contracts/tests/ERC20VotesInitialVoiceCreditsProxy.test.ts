@@ -1,6 +1,6 @@
 import { expect } from "chai";
 
-import { ERC20VotesInitialVoiceCreditProxy, getDefaultSigner, MockERC20Votes } from "../ts";
+import { type ERC20VotesInitialVoiceCreditProxy, getDefaultSigner, type MockERC20Votes } from "../ts";
 import {
   deployERC20VotesInitialVoiceCreditProxy,
   deployERC20VotesInitialVoiceCreditProxyFactory,

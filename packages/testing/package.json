@@ -23,17 +23,18 @@
     "test:e2e-non-qv": "NODE_ENV=test ts-mocha --exit ./ts/__tests__/e2e.nonQv.test.ts",
     "test:e2e-full": "NODE_ENV=test ts-mocha --exit ./ts/__tests__/e2e.full.test.ts",
     "test:keyChange": "NODE_ENV=test ts-mocha --exit ./ts/__tests__/keyChange.test.ts",
-    "test:unit": "NODE_ENV=test ts-mocha --exit ./ts/__tests__/unit/*.test.ts"
+    "test:unit": "NODE_ENV=test ts-mocha --exit ./ts/__tests__/unit/*.test.ts",
+    "test:stress": "NODE_OPTIONS=--max-old-space-size=4096 NODE_ENV=test ts-mocha --exit ./ts/__tests__/stress/*.test.ts"
   },
   "devDependencies": {
-    "@types/chai-as-promised": "^7.1.8",
+    "@types/chai-as-promised": "^8.0.2",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.2.0",
     "chai": "^4.3.10",
-    "chai-as-promised": "^7.1.2",
+    "chai-as-promised": "^8.0.1",
     "hardhat-artifactor": "^0.2.0",
     "hardhat-contract-sizer": "^2.0.3",
-    "mocha": "^11.7.1",
+    "mocha": "^11.7.2",
     "ts-mocha": "^11.1.0",
     "typescript": "^5.9.2"
   },

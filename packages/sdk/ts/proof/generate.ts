@@ -162,12 +162,12 @@ export const generateProofs = async ({
     tally: {
       zkey: voteTallyZkey,
       witnessGenerator: voteTallyWitnessGenerator,
-      wasm: voteTallyWasm,
+      wasm: useWasm ? voteTallyWasm : undefined,
     },
     messageProcessor: {
       zkey: messageProcessorZkey,
       witnessGenerator: messageProcessorWitnessGenerator,
-      wasm: messageProcessorWasm,
+      wasm: useWasm ? messageProcessorWasm : undefined,
     },
     outputDir,
     tallyOutputFile: tallyFile,

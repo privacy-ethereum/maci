@@ -9,7 +9,7 @@ import {
 import { randomBytes } from "crypto";
 
 import { generateRandomBabyJubValue } from "./babyjub";
-import { EcdhSharedKey, Keypair, Point, PrivateKey, PublicKey } from "./types";
+import { type EcdhSharedKey, type Keypair, type Point, type PrivateKey, type PublicKey } from "./types";
 
 /**
  * Generate a private key

@@ -12,7 +12,7 @@ import { readProofs } from "../../ts/proofs";
 import { ContractStorage } from "../helpers/ContractStorage";
 import { Deployment } from "../helpers/Deployment";
 import { Prover } from "../helpers/Prover";
-import { EContracts, TallyData, type ISubmitOnChainParams } from "../helpers/types";
+import { EContracts, type TallyData, type ISubmitOnChainParams } from "../helpers/types";
 
 /**
  * Prove hardhat task for submitting proofs on-chain as well as uploading tally results

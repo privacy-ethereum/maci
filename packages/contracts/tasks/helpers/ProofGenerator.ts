@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { TCircuitInputs, IJsonMaciState, MaciState, Poll, EMode } from "@maci-protocol/core";
+import { type TCircuitInputs, type IJsonMaciState, MaciState, type Poll, EMode } from "@maci-protocol/core";
 import { generateTreeCommitment, hash3, hashLeftRight } from "@maci-protocol/crypto";
 
 import fs from "fs";
@@ -261,6 +261,7 @@ export class ProofGenerator {
     const { tallyBatchSize } = this.poll.batchSizes;
     const numStateLeaves = this.poll.pollStateLeaves.length;
     let totalTallyBatches = numStateLeaves <= tallyBatchSize ? 1 : Math.floor(numStateLeaves / tallyBatchSize);
+
     if (numStateLeaves > tallyBatchSize && numStateLeaves % tallyBatchSize > 0) {
       totalTallyBatches += 1;
     }
@@ -309,7 +310,6 @@ export class ProofGenerator {
         BigInt(asHex(tallyCircuitInputs!.newSpentVoiceCreditSubtotalSalt as BigNumberish)),
       );
 
-      let newPerVoteOptionSpentVoiceCreditsCommitment: bigint | undefined;
       let newTallyCommitment: bigint;
 
       // create the tally file data to store for verification later
@@ -335,18 +335,11 @@ export class ProofGenerator {
 
       if (this.mode === EMode.QV) {
         // Compute newPerVoteOptionSpentVoiceCreditsCommitment
-        newPerVoteOptionSpentVoiceCreditsCommitment = generateTreeCommitment(
+        const newPerVoteOptionSpentVoiceCreditsCommitment = generateTreeCommitment(
           this.poll.perVoteOptionSpentVoiceCredits,
           BigInt(asHex(tallyCircuitInputs!.newPerVoteOptionSpentVoiceCreditsRootSalt as BigNumberish)),
           this.poll.treeDepths.voteOptionTreeDepth,
         );
-
-        // Compute newTallyCommitment
-        newTallyCommitment = hash3([
-          newResultsCommitment,
-          newSpentVoiceCreditsCommitment,
-          newPerVoteOptionSpentVoiceCreditsCommitment,
-        ]);
 
         // update perVoteOptionSpentVoiceCredits in the tally file data
         tallyFileData.perVoteOptionSpentVoiceCredits = {
@@ -354,6 +347,13 @@ export class ProofGenerator {
           salt: asHex(tallyCircuitInputs!.newPerVoteOptionSpentVoiceCreditsRootSalt as BigNumberish),
           commitment: asHex(newPerVoteOptionSpentVoiceCreditsCommitment),
         };
+
+        // Compute newTallyCommitment
+        newTallyCommitment = hash3([
+          newResultsCommitment,
+          newSpentVoiceCreditsCommitment,
+          newPerVoteOptionSpentVoiceCreditsCommitment,
+        ]);
       } else {
         newTallyCommitment = hashLeftRight(newResultsCommitment, newSpentVoiceCreditsCommitment);
       }

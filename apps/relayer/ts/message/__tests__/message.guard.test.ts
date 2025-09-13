@@ -2,7 +2,7 @@ import { jest } from "@jest/globals";
 import { Keypair } from "@maci-protocol/domainobjs";
 import { MACI__factory as MACIFactory, Poll__factory as PollFactory } from "@maci-protocol/sdk";
 import { HttpException, type ExecutionContext } from "@nestjs/common";
-import { Reflector } from "@nestjs/core";
+import { type Reflector } from "@nestjs/core";
 import dotenv from "dotenv";
 import { ZeroAddress } from "ethers";
 

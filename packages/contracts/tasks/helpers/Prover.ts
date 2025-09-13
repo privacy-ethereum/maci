@@ -10,7 +10,7 @@ import type { BigNumberish } from "ethers";
 import { info, logGreen, logMagenta, success } from "../../ts/logger";
 import { asHex, formatProofForVerifierContract } from "../../ts/utils";
 
-import { IProverParams, TallyData } from "./types";
+import { type IProverParams, type TallyData } from "./types";
 
 /**
  * Prover class is designed to prove message processing and tally proofs on-chain.

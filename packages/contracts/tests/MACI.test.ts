@@ -3,15 +3,15 @@ import { EMode, MaciState } from "@maci-protocol/core";
 import { NOTHING_UP_MY_SLEEVE } from "@maci-protocol/crypto";
 import { Keypair, PublicKey, Message } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
-import { AbiCoder, BigNumberish, Signer, ZeroAddress } from "ethers";
+import { AbiCoder, type BigNumberish, type Signer, ZeroAddress } from "ethers";
 
 import { getDefaultSigner, getSigners, getBlockTimestamp } from "../ts/utils";
 import {
-  MACI,
-  Verifier,
-  VerifyingKeysRegistry,
-  IBasePolicy,
-  ConstantInitialVoiceCreditProxy,
+  type MACI,
+  type Verifier,
+  type VerifyingKeysRegistry,
+  type IBasePolicy,
+  type ConstantInitialVoiceCreditProxy,
 } from "../typechain-types";
 
 import {

@@ -14,18 +14,20 @@ module.exports = {
   networks: {
     localhost: {
       url: process.env.COORDINATOR_RPC_URL || "http://localhost:8545",
-      accounts: {
-        mnemonic: TEST_MNEMONIC,
-        path: "m/44'/60'/0'/0",
-        initialIndex: 0,
-        count: 20,
-      },
+      accounts: process.env.PRIVATE_KEY
+        ? [process.env.PRIVATE_KEY]
+        : {
+            mnemonic: process.env.MNEMONIC || TEST_MNEMONIC,
+            path: "m/44'/60'/0'/0",
+            initialIndex: process.env.INITIAL_INDEX ? Number(process.env.INITIAL_INDEX) : 0,
+            count: 20,
+          },
     },
     hardhat: {
       loggingEnabled: false,
       mining: {
-        auto: true,
-        interval: 200,
+        auto: false,
+        interval: 5000,
       },
     },
   },

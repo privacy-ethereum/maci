@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04 # ubuntu-24.04 is not supported yet
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v5
@@ -20,7 +20,7 @@ jobs:
           version: 9
 
       - name: Use Node.js 20
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: "pnpm"

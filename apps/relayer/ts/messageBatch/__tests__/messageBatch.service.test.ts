@@ -1,8 +1,8 @@
 import { jest } from "@jest/globals";
 
-import { IpfsService } from "../../ipfs/ipfs.service.js";
+import { type IpfsService } from "../../ipfs/ipfs.service.js";
 import { MessageBatchDto } from "../messageBatch.dto.js";
-import { MessageBatchRepository } from "../messageBatch.repository.js";
+import { type MessageBatchRepository } from "../messageBatch.repository.js";
 import { MessageBatchService } from "../messageBatch.service.js";
 
 import { defaultIpfsHash, defaultMessageBatches } from "./utils.js";

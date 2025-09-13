@@ -1,6 +1,6 @@
 import { MACI__factory as MACIFactory } from "@maci-protocol/contracts/typechain-types";
 import { PublicKey } from "@maci-protocol/domainobjs";
-import { ContractTransactionReceipt, isBytesLike } from "ethers";
+import { type ContractTransactionReceipt, isBytesLike } from "ethers";
 
 import type { IIsRegisteredUser, ISignupArgs, ISignupData, IRegisteredUserArgs, IHasUserSignedUpArgs } from "./types";
 

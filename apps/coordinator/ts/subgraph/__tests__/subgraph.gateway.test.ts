@@ -1,6 +1,6 @@
 import { ESupportedChains } from "@maci-protocol/sdk";
 import { Test } from "@nestjs/testing";
-import { Server } from "socket.io";
+import { type Server } from "socket.io";
 
 import { SubgraphGateway } from "../subgraph.gateway";
 import { SubgraphService } from "../subgraph.service";

@@ -1,10 +1,10 @@
-import { G1Point } from "@maci-protocol/crypto";
+import { type G1Point } from "@maci-protocol/crypto";
 import { expect } from "chai";
 
 import fs from "fs";
 import path from "path";
 
-import { IVerifyingKeyObjectParams, VerifyingKey } from "..";
+import { type IVerifyingKeyObjectParams, VerifyingKey } from "..";
 
 describe("verifyingKey", () => {
   describe("fromJSON", () => {

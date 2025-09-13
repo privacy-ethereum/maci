@@ -46,7 +46,7 @@ describe("SchedulerController", () => {
       service.registerPoll.mockRejectedValueOnce(new Error(errorMessage));
 
       await expect(controller.register(scheduledPoll)).rejects.toThrow(
-        new HttpException(errorMessage, HttpStatus.BAD_REQUEST),
+        new HttpException(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR),
       );
     });
   });
@@ -63,7 +63,7 @@ describe("SchedulerController", () => {
       service.isPollScheduled.mockRejectedValueOnce(new Error(errorMessage));
 
       await expect(controller.status(scheduledPoll)).rejects.toThrow(
-        new HttpException(errorMessage, HttpStatus.BAD_REQUEST),
+        new HttpException(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR),
       );
     });
   });
@@ -82,7 +82,7 @@ describe("SchedulerController", () => {
       service.deleteScheduledPoll.mockRejectedValueOnce(new Error(errorMessage));
 
       await expect(controller.delete(scheduledPoll)).rejects.toThrow(
-        new HttpException(errorMessage, HttpStatus.BAD_REQUEST),
+        new HttpException(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR),
       );
     });
   });

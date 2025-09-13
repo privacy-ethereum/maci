@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from "@commander-js/extra-typings";
-import { PublicKey, VerifyingKey } from "@maci-protocol/domainobjs";
+import { PublicKey, type VerifyingKey } from "@maci-protocol/domainobjs";
 import {
   generateTallyCommitments,
   getPollParams,

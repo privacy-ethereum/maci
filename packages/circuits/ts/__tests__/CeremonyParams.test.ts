@@ -1,10 +1,10 @@
-import { MaciState, Poll, STATE_TREE_ARITY, MESSAGE_BATCH_SIZE, EMode } from "@maci-protocol/core";
+import { MaciState, type Poll, STATE_TREE_ARITY, MESSAGE_BATCH_SIZE, EMode } from "@maci-protocol/core";
 import { hash5, IncrementalQuinTree, poseidon } from "@maci-protocol/crypto";
-import { PrivateKey, Keypair, VoteCommand, Message, Ballot } from "@maci-protocol/domainobjs";
+import { PrivateKey, Keypair, VoteCommand, type Message, Ballot } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
 import { type WitnessTester } from "circomkit";
 
-import { IProcessMessagesInputs, IVoteTallyInputs } from "../types";
+import { type IProcessMessagesInputs, type IVoteTallyInputs } from "../types";
 
 import { maxVoteOptions } from "./utils/constants";
 import { generateRandomIndex, circomkitInstance } from "./utils/utils";

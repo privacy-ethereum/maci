@@ -10,7 +10,7 @@ import {
   deployVerifyingKeysRegistryContract,
 } from "@maci-protocol/sdk";
 import { expect } from "chai";
-import { Signer } from "ethers";
+import { type Signer } from "ethers";
 
 import { deployArgs, verifyingKeysArgs, DEFAULT_SG_DATA } from "../../constants";
 

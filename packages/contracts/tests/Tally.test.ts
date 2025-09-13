@@ -1,5 +1,11 @@
 /* eslint-disable no-underscore-dangle */
-import { EMode, MaciState, Poll, IProcessMessagesCircuitInputs, IVoteTallyCircuitInputs } from "@maci-protocol/core";
+import {
+  EMode,
+  MaciState,
+  type Poll,
+  type IProcessMessagesCircuitInputs,
+  type IVoteTallyCircuitInputs,
+} from "@maci-protocol/core";
 import {
   generateTreeCommitment,
   generateTreeProof,
@@ -9,24 +15,24 @@ import {
 } from "@maci-protocol/crypto";
 import { Keypair, Message, PublicKey } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
-import { AbiCoder, BigNumberish, Signer, ZeroAddress } from "ethers";
-import { EthereumProvider } from "hardhat/types";
+import { AbiCoder, type BigNumberish, type Signer, ZeroAddress } from "ethers";
+import { type EthereumProvider } from "hardhat/types";
 
 import { deployFreeForAllSignUpPolicy } from "../ts/deploy";
-import { IVerifyingKeyStruct } from "../ts/types";
+import { type IVerifyingKeyStruct } from "../ts/types";
 import { asHex, getDefaultSigner, getBlockTimestamp } from "../ts/utils";
 import {
-  Tally,
-  MACI,
-  Poll as PollContract,
-  MessageProcessor,
-  Verifier,
-  VerifyingKeysRegistry,
+  type Tally,
+  type MACI,
+  type Poll as PollContract,
+  type MessageProcessor,
+  type Verifier,
+  type VerifyingKeysRegistry,
   MessageProcessor__factory as MessageProcessorFactory,
   Poll__factory as PollFactory,
   Tally__factory as TallyFactory,
-  IBasePolicy,
-  ConstantInitialVoiceCreditProxy,
+  type IBasePolicy,
+  type ConstantInitialVoiceCreditProxy,
 } from "../typechain-types";
 
 import {

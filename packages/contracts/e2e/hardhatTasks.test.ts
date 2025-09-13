@@ -1,7 +1,7 @@
 import { poseidon } from "@maci-protocol/crypto";
-import { Keypair, Message, PrivateKey, PublicKey, VoteCommand } from "@maci-protocol/domainobjs";
+import { Keypair, type Message, PrivateKey, type PublicKey, VoteCommand } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
-import { AbiCoder, Signer, TransactionReceipt } from "ethers";
+import { AbiCoder, type Signer, type TransactionReceipt } from "ethers";
 import hardhat from "hardhat";
 
 import type { EthereumProvider } from "hardhat/types";
@@ -13,7 +13,7 @@ import { EContracts } from "../tasks/helpers/types";
 import { timeTravel } from "../tests/utils";
 import { logMagenta, logRed } from "../ts/logger";
 import { sleep } from "../ts/utils";
-import { Poll, type MACI } from "../typechain-types";
+import { type Poll, type MACI } from "../typechain-types";
 
 describe("E2E hardhat tasks", function test() {
   this.timeout(900000);

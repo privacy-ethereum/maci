@@ -614,6 +614,7 @@ export class DeployerService {
       stateTreeDepth: config.MACI.stateTreeDepth,
       signer,
       signupPolicyAddress: policyAddress,
+      poseidonAddresses: config.Poseidon,
     });
 
     // store the contracts

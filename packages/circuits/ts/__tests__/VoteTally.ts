@@ -1,9 +1,9 @@
-import { EMode, MaciState, Poll } from "@maci-protocol/core";
+import { EMode, MaciState, type Poll } from "@maci-protocol/core";
 import { poseidon } from "@maci-protocol/crypto";
-import { Keypair, VoteCommand, Message } from "@maci-protocol/domainobjs";
+import { Keypair, VoteCommand, type Message } from "@maci-protocol/domainobjs";
 import { type WitnessTester } from "circomkit";
 
-import { IVoteTallyInputs } from "../types";
+import { type IVoteTallyInputs } from "../types";
 
 import { STATE_TREE_DEPTH, duration, maxVoteOptions, messageBatchSize, voiceCreditBalance } from "./utils/constants";
 import { generateRandomIndex, circomkitInstance } from "./utils/utils";

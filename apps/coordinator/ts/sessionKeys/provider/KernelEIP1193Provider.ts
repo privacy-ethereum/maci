@@ -1,4 +1,4 @@
-import { KernelAccountClient } from "@zerodev/sdk";
+import { type KernelAccountClient } from "@zerodev/sdk";
 import { safeCreateCallAddress } from "@zerodev/sdk/constants";
 import { encodeFunctionData, parseAbi } from "viem";
 

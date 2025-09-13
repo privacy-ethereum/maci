@@ -1,11 +1,11 @@
 import { StateLeaf, Keypair, Message, PublicKey } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
-import { BigNumberish, ZeroAddress } from "ethers";
+import { type BigNumberish, ZeroAddress } from "ethers";
 
 import { linkPoseidonLibraries } from "../tasks/helpers/abi";
 import { deployPoseidonContracts, createContractFactory } from "../ts/deploy";
 import { getDefaultSigner } from "../ts/utils";
-import { Utilities, Utilities__factory as UtilitiesFactory } from "../typechain-types";
+import { type Utilities, Utilities__factory as UtilitiesFactory } from "../typechain-types";
 
 describe("Utilities", () => {
   let utilitiesContract: Utilities;

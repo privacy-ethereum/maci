@@ -19,7 +19,7 @@ import {
   type IGenerateProofsArgs,
   isArm,
   deployMaci,
-  IMaciContracts,
+  type IMaciContracts,
   deployFreeForAllSignUpPolicy,
   deployConstantInitialVoiceCreditProxy,
   deployVerifier,
