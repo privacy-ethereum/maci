@@ -61,7 +61,7 @@
     "@types/node": "^24.2.0",
     "@types/snarkjs": "^0.7.9",
     "@zk-kit/baby-jubjub": "^1.0.3",
-    "chai": "^4.3.10",
+    "chai": "^6.0.1",
     "chai-as-promised": "^8.0.1",
     "fast-check": "^4.2.0",
     "glob": "^11.0.3",
