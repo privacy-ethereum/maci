@@ -168,7 +168,7 @@ _Source: Workflow → “Closed.”_
 **Verifier Contract**  
 6. Verifies proof validity.  
    - If returns `true`, the processed batch is confirmed correct.  
-   - Repeat until all messages processed.  
+   - Repeat until all messages are processed.  
    _Source: Workflow → “Process Messages.”_
 
 **Data artifacts:**  
