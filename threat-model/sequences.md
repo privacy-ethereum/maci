@@ -1,3 +1,4 @@
+```mermaid
 sequenceDiagram
     autonumber
     %% MACI — End-to-End Data Flow (with Relayer path + Key Change)
