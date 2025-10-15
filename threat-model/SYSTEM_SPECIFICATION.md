@@ -201,7 +201,7 @@ _Source: Workflow → “Closed.”_
 
 ---
 
-### I. Finalization and Verification
+### J. Finalization and Verification
 
 **Blockchain (public)**
 
