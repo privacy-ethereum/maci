@@ -178,7 +178,7 @@ _Source: Workflow → “Closed.”_
 
 ---
 
-### H. Tally Results
+### I. Tally Results
 
 **Coordinator (local)**
 
