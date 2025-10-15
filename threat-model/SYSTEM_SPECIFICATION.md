@@ -101,7 +101,7 @@ MACI’s workflow is a data-driven state machine where messages flow between **u
 
 2. **Sign** the command with the MACI private key.  
 3. **Encrypt** the command and signature with a shared key between user and coordinator.  
-   - Each user–coordinator pair uses a distinct encryption key.  
+   - Each user–coordinator pair uses a distinct encryption key (Elliptic-Curve Diffie–Hellman (ECDH) shared key created by using user MACI private key and coordinator MACI public key).
    - This ensures only the coordinator can decrypt the message.  
    _Source: Workflow → “Before sending their vote on-chain…”_
 
