@@ -42,18 +42,20 @@ MACI’s workflow is a data-driven state machine where messages flow between **u
 
 **Coordinator → Blockchain**
 
-1. Deploy `MACI.sol` and dependent contracts (`PollFactory`, `Gatekeeper`, `Verifier`, etc.).  
+1. Download **trusted setup parameters** for proof verification (Groth16 keys).  
+   _Source: Trusted Setup docs._
+
+2. Deploy `MACI.sol` and dependent contracts (`PollFactory`, `Gatekeeper`, `Verifier`, etc.).  
    - Sets gatekeeper policy (who can sign up).  
    - Defines state tree depth (max voters).  
    - Specifies voting mode (e.g., quadratic funding).  
    _Source: Coordinator Service._
 
-2. Deploy a **Poll** via `MACI.deployPoll()`.  
+3. Deploy a **Poll** via `MACI.deployPoll()`.  
    - Poll parameters include: gatekeeper, start/end dates, vote options, and voting mode.  
    _Source: Workflow → Poll Lifecycle._
 
-3. Initialize **trusted setup parameters** for proof verification (Groth16 keys).  
-   _Source: Trusted Setup docs._
+
 
 ---
 
