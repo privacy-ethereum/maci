@@ -1,7 +1,6 @@
-```mermaid
 sequenceDiagram
     autonumber
-    %% MACI — End-to-End Data Flow (with Relayer path)
+    %% MACI — End-to-End Data Flow (with Relayer path + Key Change)
 
     participant U as User / Wallet
     participant M as MACI.sol
@@ -27,21 +26,34 @@ sequenceDiagram
     %% ────────────── Vote Submission (two paths) ─────
     Note over U,P: Vote submission paths
     par Direct on-chain
-        U->>P: publishMessage(encrypted_message)
+        U->>P: publishMessage(encrypted_vote_message)
     and Via Off-chain Relayer
-        U->>R: submit encrypted_message off-chain
+        U->>R: submit encrypted_vote_message off-chain
         R-->>R: verify user authorization via ZK
         R->>I: batch messages and upload to IPFS (CID)
-        R->>P: publishBatch(batch_hash and IPFS_CID)
-        Note over R,P: If CID is missing or invalid finalization is impossible
+        R->>P: publishBatch(batch_hash, IPFS_CID)
+        Note over R,P: If CID is missing/invalid, finalization is impossible
     end
+
+    %% ────────────── Key Change (optional, during Open) ─────────────
+    Note over U,P: Key change (rotate MACI key)
+    U->>U: generate new MACI keypair (new MACI pubkey)
+    par Direct on-chain
+        U->>P: publishMessage(encrypted_key_change)
+    and Via Off-chain Relayer
+        U->>R: submit encrypted_key_change off-chain
+        R-->>R: verify authorization via ZK
+        R->>I: batch key-change msgs to IPFS (CID)
+        R->>P: publishBatch(batch_hash, IPFS_CID)
+    end
+    Note over C: During processing, latest valid key per user wins (state tree updated)
 
     %% ────────────── Poll Closed → Processing ────────
     Note over P,C: Poll closed then processing
-    P-->>C: on-chain references visible including CIDs
+    P-->>C: on-chain references visible (including CIDs)
     C->>I: fetch batches by CID
-    C->>C: decrypt and validate messages
-    C->>C: apply latest wins per voter
+    C->>C: decrypt and validate messages (votes & key-changes)
+    C->>C: apply latest-wins per voter (key & vote)
     C->>C: update state tree
     C->>MP: processMessages(stateTreeHash, zkProof)
     MP->>V: verify zkProof
@@ -57,5 +69,5 @@ sequenceDiagram
     T-->>P: mark Finalized and emit result commitments
 
     %% ────────────── Notes / Guarantees ──────────────
-    Note over C,P: Coordinator trusted for liveness not for correctness
+    Note over C,P: Coordinator trusted for liveness, not for correctness
     Note over U,P: Individual vote contents remain private
