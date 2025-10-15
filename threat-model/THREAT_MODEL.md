@@ -17,7 +17,7 @@ Any change to circuits, contracts, coordinator logic, or data flow that affects 
 
 ### System Overview
 
-The MACI protocol enables **collusion-resistant voting and funding** through zero-knowledge proofs and controlled decryption by a coordinator.  
+The MACI protocol enables **collusion-resistant and private voting** through zero-knowledge proofs and controlled decryption by a coordinator.  This voting protocol can be use for governance (e.g. DAOs) or funding (e.g. Gitcoin rounds)
 
 For a detailed end-to-end description of message flow, proof generation, and poll lifecycle, see  
 [`threat-model/SYSTEM_SPECIFICATION.md`](../threat-model/SYSTEM_SPECIFICATION.md) and [`threat-model/sequences.md`](../threat-model/sequences.md).
