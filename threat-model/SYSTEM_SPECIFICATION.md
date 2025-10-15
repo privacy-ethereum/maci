@@ -136,7 +136,7 @@ _Source: Off-chain Relayer/Core Concepts:Offchain Voting._
 
 ---
 
-### F. Poll Closing
+### G. Poll Closing
 
 **Blockchain → Coordinator**
 
