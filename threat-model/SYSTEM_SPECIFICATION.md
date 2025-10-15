@@ -135,6 +135,19 @@ _Source: Off-chain Relayer/Core Concepts:Offchain Voting._
 - On-chain reference (CID + hash)
 
 ---
+### F. Key change (optional, per user)
+
+1. User can change their MACI public key at any time (e.g. a briber buys his vote)
+2. User creates a new encrypted message with a new vote and a reference to the new MACI public key
+3. User signs this message with his current public key
+4. User publishes the message using any path
+
+**Data artifacts created:**
+
+- Encrypted message with a reference to the user's new MACI public key
+- New private key (off-chain only, user-held).
+
+---
 
 ### G. Poll Closing
 
