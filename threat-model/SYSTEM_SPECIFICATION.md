@@ -220,7 +220,7 @@ _Source: Workflow → “Finalized.”_
 | Wallet ↔ Relayer | Off-chain submission | Relayer may log metadata or fail to upload IPFS batches |
 | Wallet ↔ Poll contract | Message publishing | Using same wallet to join poll (gatekeeping) and publish vote may link address to encrypted vote | 
 | Relayer ↔ IPFS | Data persistence | Missing batches block finalization |
-| Coordinator ↔ Blockchain | Proof publication | Coordinator may halt, delaying results |
+| Coordinator ↔ Blockchain | Proof publication | Coordinator may halt, preventing results from being published |
 | Coordinator ↔ Verifier | Proof correctness | Circuit mismatch or setup corruption may invalidate verification |
 
 ---
