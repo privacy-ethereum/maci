@@ -234,5 +234,6 @@ _Source: Workflow → “Finalized.”_
 | Relayer pushes invalid IPFS hash | Poll cannot be finalized. | Off-chain Relayer |
 | zk-SNARK setup compromised | Fake proofs accepted. | Trusted Setup |
 | L1/L2 censorship | Delays proof publication; no permanent forgery. | General assumption |
+| User sells his MACI keypair      | Briber will always be able to vote as the user. | Key change data flow → “Trust assumptions” |
 
 ---
