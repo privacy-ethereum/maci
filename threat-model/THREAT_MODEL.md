@@ -137,6 +137,11 @@ Derived from data flow trust boundaries:
   We assume RPC responses and transaction propagation are correct.  
   Privacy at RPC layer is not assumed.
 
+  - **Circuits security**
+  We assume zk-SNARK circuits are sound and zero-knowledge theoretically and in the current implementation.
+  
+- **Trusted setup integrity**
+  We assume that the trusted setup is uncompromised and at least one participant discarded his toxic waste.
 ---
 
 ## 6. Known Weaknesses
