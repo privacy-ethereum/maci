@@ -87,7 +87,7 @@ MACI’s workflow is a data-driven state machine where messages flow between **u
 
 **Data artifacts created:**
 - On-chain proof of poll eligibility.  
-- Internal state tree update linking user to poll.
+- Internal state tree update linking user MACI public key to poll.
 
 ---
 
