@@ -83,7 +83,7 @@ MACI’s workflow is a data-driven state machine where messages flow between **u
 1. Call poll’s **join** function, providing:  
    - ZK proof of knowledge of a MACI public key in the state tree, a new key to vote on the poll and a nullifier without revealing which keys they are  
    - Any poll-specific gatekeeper credentials.  
-   _Source: Workflow → “Poll Joining.”_
+   _Source: Workflow → “Poll Joining.” & https://maci.pse.dev/blog/anonymous-poll-joining#why-poll-joining_
 
 2. On success, user is registered to vote in that poll instance.
 
