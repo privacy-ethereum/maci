@@ -147,7 +147,7 @@ _Source: Workflow → “Closed.”_
 
 ---
 
-### G. Message Processing
+### H. Message Processing
 
 **Coordinator (local)**
 
