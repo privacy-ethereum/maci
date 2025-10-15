@@ -154,7 +154,7 @@ This section must remain non-empty.
 - On-chain metadata (gas price, sender, timestamp) can reveal voting activity.  
 - Trusted setup compromise (if Groth16) could allow proof forgery.  
 - PQ risk — “harvest now, decrypt later” applies to encrypted votes.
-- Uncensorability is **not absolute**; a malicious or halted coordinator can prevent inclusion until replaced.  
+- Malicious coordinator could collude with a briber to show decrypted votes linking to specific MACI public addresses
 - Collusion resistance assumes that encryption keys and coordinator private key remain secret; full compromise breaks privacy.  
 ---
 
