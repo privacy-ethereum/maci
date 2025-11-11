@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # Coordinator Service
 
-Welcome to the Offchain Relayer technical reference. Here you will find the technical details of the Offchain Relayer: how to set it up and and how to use it.
+Welcome to the Offchain Relayer technical reference. Here you will find the technical details of the Offchain Relayer: how to set it up and how to use it.
 
 ## Flow Diagram
 

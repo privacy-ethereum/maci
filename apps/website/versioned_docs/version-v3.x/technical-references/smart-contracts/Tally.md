@@ -11,7 +11,7 @@ Code location: [Tally.sol](https://github.com/privacy-scaling-explorations/maci/
 
 The `Tally` contract is used by the coordinator to submit commitments to the tally results via the `tallyVotes` function. This is done in batches and the final commitment can be used by the users to verify the validity of the results.
 
-This contract should be deployed alongside a `Poll`, with the the constructor accepting the following parameters:
+This contract should be deployed alongside a `Poll`, with the constructor accepting the following parameters:
 
 ```ts
   constructor(
