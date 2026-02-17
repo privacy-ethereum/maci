@@ -108,6 +108,7 @@ contract MACI is IMACI, DomainObjs, Params, Hasher {
   error PoseidonHashLibrariesNotLinked();
   error TooManySignups();
   error InvalidPublicKey();
+  error InvalidVoteOptionTreeDepth();
   error PollDoesNotExist(uint256 pollId);
   error UserNotSignedUp();
 
@@ -171,6 +172,9 @@ contract MACI is IMACI, DomainObjs, Params, Hasher {
     if (!CurveBabyJubJub.isOnCurve(args.coordinatorPublicKey.x, args.coordinatorPublicKey.y)) {
       revert InvalidPublicKey();
     }
+
+    uint8 depth = args.treeDepths.voteOptionTreeDepth;
+    if (depth == 0 || depth > emptyBallotRoots.length) revert InvalidVoteOptionTreeDepth();
 
     ExtContracts memory extContracts = ExtContracts({
       maci: IMACI(address(this)),
