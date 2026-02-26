@@ -1,6 +1,7 @@
 pragma circom 2.0.0;
 
 // circomlib imports
+include "./babyjub.circom";
 include "./compconstant.circom";
 include "./comparators.circom";
 include "./pointbits.circom";
@@ -36,6 +37,10 @@ template EdDSAPoseidonVerifier() {
     signal input messageHash;
     // Output signal for the validity of the signature.
     signal output isValid;
+
+    // Ensure public key and signature points are on the curve.
+    BabyCheck()(publicKeyX, publicKeyY);
+    BabyCheck()(signaturePointX, signaturePointY);
 
     // Ensure signatureScalar<Subgroup Order.
     // convert the signature scalar signatureScalar into its binary representation.
