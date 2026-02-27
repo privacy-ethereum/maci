@@ -44,7 +44,7 @@ template EdDSAPoseidonVerifier() {
 
     // Ensure signatureScalar<Subgroup Order.
     // convert the signature scalar signatureScalar into its binary representation.
-    var computedNum2Bits[254] = Num2Bits(254)(signatureScalar);
+    var computedNum2Bits[254] = Num2Bits_strict(254)(signatureScalar);
 
     var computedCompConstantIn[254] = computedNum2Bits;
     computedCompConstantIn[253] = 0;
