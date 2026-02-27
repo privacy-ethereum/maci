@@ -366,6 +366,11 @@ contract Poll is Clone, Params, Utilities, SnarkCommon, IPoll {
     bytes memory _signUpPolicyData,
     bytes memory _initialVoiceCreditProxyData
   ) external virtual isWithinVotingDeadline {
+    // Check if the public key is on the curve.
+    if (!CurveBabyJubJub.isOnCurve(_publicKey.x, _publicKey.y)) {
+      revert InvalidPublicKey();
+    }
+
     // ensure we do not have more signups than what the circuits support
     if (pollStateTree.numberOfLeaves >= maxSignups) {
       revert TooManySignups();

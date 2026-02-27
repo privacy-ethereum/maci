@@ -2,7 +2,7 @@
 /* eslint-disable no-underscore-dangle */
 import { EMode, MaciState } from "@maci-protocol/core";
 import { NOTHING_UP_MY_SLEEVE } from "@maci-protocol/crypto";
-import { Keypair, Message, VoteCommand, PublicKey, StateLeaf } from "@maci-protocol/domainobjs";
+import { Keypair, Message, VoteCommand, PublicKey, StateLeaf, type IG1ContractParams } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
 import { AbiCoder, decodeBase58, encodeBase58, getBytes, hexlify, type Signer, ZeroAddress } from "ethers";
 import { type EthereumProvider } from "hardhat/types";
@@ -261,6 +261,23 @@ describe("Poll", function test() {
       const pollStateTree = await pollContract.pollStateTree();
       const size = Number(pollStateTree.numberOfLeaves);
       expect(size).to.eq(maciState.polls.get(pollId)?.pollStateLeaves.length);
+    });
+
+    it("should not allow a user to join with an invalid public key", async () => {
+      const mockNullifier = AbiCoder.defaultAbiCoder().encode(["uint256"], [0]);
+      const invalidPublicKey: IG1ContractParams = { x: "1", y: "1" };
+      const mockProof = [0, 0, 0, 0, 0, 0, 0, 0];
+
+      await expect(
+        pollContract.joinPoll(
+          mockNullifier,
+          invalidPublicKey,
+          0,
+          mockProof,
+          AbiCoder.defaultAbiCoder().encode(["uint256"], [1]),
+          AbiCoder.defaultAbiCoder().encode(["uint256"], [1]),
+        ),
+      ).to.be.revertedWithCustomError(pollContract, "InvalidPublicKey");
     });
 
     it("should not allow a user to join twice", async () => {
