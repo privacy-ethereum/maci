@@ -108,12 +108,9 @@ contract Poll is Clone, Params, Utilities, SnarkCommon, IPoll {
   error VotingPeriodOver();
   error VotingPeriodNotOver();
   error VotingPeriodNotStarted();
-  error PollAlreadyInit();
-  error TooManyMessages();
   error InvalidPublicKey();
   error StateAlreadyMerged();
   error InvalidBatchLength();
-  error BatchHashesAlreadyPadded();
   error UserAlreadyJoined();
   error InvalidPollProof();
   error NotRelayer();
