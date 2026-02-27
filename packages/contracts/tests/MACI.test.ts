@@ -278,6 +278,44 @@ describe("MACI", function test() {
       expect(receipt?.status).to.eq(1);
       expect(await maciContract.nextPollId()).to.eq(3);
     });
+
+    it("should fail when vote option tree depth is 0", async () => {
+      await expect(
+        maciContract.deployPoll({
+          startDate: Math.floor(Date.now() / 1000),
+          endDate: Math.floor(Date.now() / 1000) + duration,
+          treeDepths: { ...treeDepths, voteOptionTreeDepth: 0 },
+          messageBatchSize,
+          coordinatorPublicKey: users[0].publicKey.asContractParam() as { x: BigNumberish; y: BigNumberish },
+          mode: EMode.QV,
+          policy: signuPolicyContract,
+          initialVoiceCreditProxy,
+          relayers: [ZeroAddress],
+          voteOptions: maxVoteOptions,
+        }),
+      )
+        .to.be.revertedWithCustomError(maciContract, "InvalidVoteOptionTreeDepth")
+        .withArgs(0);
+    });
+
+    it("should fail when vote option tree depth is larger than empty ballots roots length", async () => {
+      await expect(
+        maciContract.deployPoll({
+          startDate: Math.floor(Date.now() / 1000),
+          endDate: Math.floor(Date.now() / 1000) + duration,
+          treeDepths: { ...treeDepths, voteOptionTreeDepth: 16 }, // in these tests emptyBallotRoots.length = 5
+          messageBatchSize,
+          coordinatorPublicKey: users[0].publicKey.asContractParam() as { x: BigNumberish; y: BigNumberish },
+          mode: EMode.QV,
+          policy: signuPolicyContract,
+          initialVoiceCreditProxy,
+          relayers: [ZeroAddress],
+          voteOptions: maxVoteOptions,
+        }),
+      )
+        .to.be.revertedWithCustomError(maciContract, "InvalidVoteOptionTreeDepth")
+        .withArgs(16);
+    });
   });
 
   describe("getPoll", () => {
