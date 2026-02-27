@@ -129,7 +129,8 @@ contract MACI is IMACI, DomainObjs, Params, Hasher {
     emptyBallotRoots = initParams.emptyBallotRoots;
 
     // Verify linked poseidon libraries
-    if (hash2([uint256(1), uint256(1)]) == 0) revert PoseidonHashLibrariesNotLinked();
+    if (hash2([uint256(1), uint256(1)]) != 217234377348884654691879377518794323857294947151490278790710809376325639809)
+      revert PoseidonHashLibrariesNotLinked();
   }
 
   /// @inheritdoc IMACI
