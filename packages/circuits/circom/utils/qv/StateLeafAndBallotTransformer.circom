@@ -102,4 +102,9 @@ template StateLeafAndBallotTransformer() {
     isValid <== computedIsValid;
     isStateLeafIndexValid <== computedIsStateLeafIndexValid;
     isVoteOptionIndexValid <== computedIsVoteOptionIndexValid;
+
+    // Constrain commandPollId and commandSalt using dummy squares.
+    // This binds the proof to a specific poll and salt.
+    signal commandPollIdSquare <== commandPollId * commandPollId;
+    signal commandSaltSquared <== commandSalt * commandSalt;
 }
