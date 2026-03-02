@@ -68,9 +68,6 @@ contract Tally is Clone, SnarkCommon, Hasher, DomainObjs, ITally {
   error ProcessingNotComplete();
   error InvalidTallyVotesProof();
   error AllBallotsTallied();
-  error totalSignupsTooLarge();
-  error BatchStartIndexTooLarge();
-  error TallyBatchSizeTooLarge();
   error NotSupported();
   error VotesNotTallied();
   error IncorrectSpentVoiceCredits();

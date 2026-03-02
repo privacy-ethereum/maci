@@ -13,9 +13,7 @@ struct LazyIMTData {
 /// @notice Custom errors
 error DefaultZeroBadIndex();
 error DepthTooLarge();
-error DepthCannotBeZero();
 error NumberOfLeavesCannotBeZero();
-error AmbiguousDepth();
 
 /// @title InternalLazyIMT
 /// @dev A LazyIMT with Zeroes value set to the hash of
