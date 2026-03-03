@@ -426,7 +426,7 @@ contract Poll is Clone, Params, Utilities, SnarkCommon, IPoll {
   }
 
   /// @notice Verify the proof for joined Poll
-  /// @param _index Index of the MACI's stateRootOnSignUp when the user signed up
+  /// @param _index Index of the Poll's pollStateRootsOnJoin when the user joined
   /// @param _proof The zk-SNARK proof
   /// @return isValid Whether the proof is valid
   function verifyJoinedPollProof(uint256 _index, uint256[8] memory _proof) public view returns (bool isValid) {
@@ -461,7 +461,7 @@ contract Poll is Clone, Params, Utilities, SnarkCommon, IPoll {
   }
 
   /// @notice Get public circuit inputs for poll joined circuit
-  /// @param _index Index of the MACI's stateRootOnSignUp when the user signed up
+  /// @param _index Index of the Poll's pollStateRootsOnJoin when the user joined
   /// @return publicInputs Public circuit inputs
   function getPublicJoinedCircuitInputs(uint256 _index) public view returns (uint256[] memory publicInputs) {
     publicInputs = new uint256[](1);
