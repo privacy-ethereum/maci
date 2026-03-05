@@ -31,7 +31,7 @@
     "get-auth-header": "pnpm run run:node ./scripts/getAuthHeader.ts"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "^0.97.1",
+    "@graphprotocol/graph-cli": "^0.98.1",
     "@maci-protocol/contracts": "^3.0.0",
     "@maci-protocol/crypto": "^3.0.0",
     "@maci-protocol/domainobjs": "^3.0.0",
