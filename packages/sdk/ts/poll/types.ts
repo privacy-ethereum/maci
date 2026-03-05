@@ -91,6 +91,11 @@ export interface IGetPollData {
   isMerged: boolean;
 
   /**
+   * Whether the poll is currently open for voting
+   */
+  isOpen: boolean;
+
+  /**
    * Mode of the poll
    */
   mode: BigNumberish;
