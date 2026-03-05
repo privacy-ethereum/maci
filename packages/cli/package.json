@@ -43,7 +43,7 @@
     "@types/chai": "^4.3.9",
     "@types/chai-as-promised": "^8.0.2",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^24.2.0",
+    "@types/node": "^24.11.0",
     "@types/prompt": "^1.1.9",
     "@types/snarkjs": "^0.7.9",
     "chai": "^4.3.10",
