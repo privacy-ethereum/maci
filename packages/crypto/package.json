@@ -32,7 +32,7 @@
   "devDependencies": {
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^24.2.0",
+    "@types/node": "^24.11.0",
     "benny": "^3.7.1",
     "chai": "^4.3.10",
     "mocha": "^11.7.2",

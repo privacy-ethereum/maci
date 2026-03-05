@@ -249,7 +249,7 @@
     "@types/circomlibjs": "^0.1.6",
     "@types/lowdb": "^1.0.15",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^24.2.0",
+    "@types/node": "^24.11.0",
     "@types/sinon": "^17.0.4",
     "@types/snarkjs": "^0.7.9",
     "@types/uuid": "^10.0.0",
