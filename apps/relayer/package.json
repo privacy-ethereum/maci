@@ -27,7 +27,7 @@
     "types": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@helia/json": "^4.0.6",
+    "@helia/json": "^5.0.7",
     "@nestjs/common": "^11.1.5",
     "@nestjs/core": "^11.1.5",
     "@nestjs/mongoose": "^11.0.3",
