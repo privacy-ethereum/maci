@@ -14,7 +14,7 @@ jobs:
         with:
           ref: main
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v5
         with:
           version: 9
 
