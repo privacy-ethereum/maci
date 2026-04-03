@@ -912,7 +912,7 @@ export interface ProofGenerationSalts {
   newResultsRootSalt: string;
   newSpentVoiceCreditSubtotalSalt: string;
   newPerVoteOptionSpentVoiceCreditsRootSalt: string;
-  tallyBatchNum?: number;
+  tallyBatchNumber?: number;
   timestamp?: number;
 }
 

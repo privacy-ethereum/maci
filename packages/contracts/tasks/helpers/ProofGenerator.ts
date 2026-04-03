@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { type TCircuitInputs, type IJsonMaciState, MaciState, type Poll, EMode } from "@maci-protocol/core";
 import { generateTreeCommitment, hash3, hashLeftRight } from "@maci-protocol/crypto";
 import { saveSalts,loadSalts, saltsExist} from "./saltStorage";
@@ -71,8 +70,14 @@ export class ProofGenerator {
    */
   private rapidsnark?: string;
 
+  /**
+   * to use incremental proof generation, resuming from existing salts
+   */
   private incremental: boolean;
 
+  /**
+   * poll ID used to load and save salts for incremental generation
+   */
   private pollId: string;
 
   /**
@@ -290,15 +295,12 @@ export class ProofGenerator {
 	existingSalts = loadSalts(this.pollId);
 
 	if (existingSalts) {
-	  console.log(`📝 Found existing salts with ${existingSalts.tallyProofSalts.length} batches`);
-	  console.log("🔄 Resuming proof generation...");
+	  logGreen({text: info(`Resuming incremental proof generation (${existingSalts.tallyProofSalts.length} batches found)`) });
 	} else {
-	  console.log("🆕 No existing salts found, starting fresh...");
+	  logMagenta({text: info("No existing salts found, starting fresh") });
 	}
       } else if (saltsExist(this.pollId)) {
-	console.warn("⚠️  WARNING: Existing salts found but --incremental flag not set.");
-	console.warn("⚠️  This will regenerate salts and create incompatible proofs!");
-	console.warn("⚠️  Use --incremental flag to resume with existing salts.");
+	logMagenta({text: info(`Existing salts detected for poll ${this.pollId}, Use --incremental to resume or delete .maci-salts to start fresh.`)});
 	throw new Error(
 	  `Existing salts detected for poll ${this.pollId}. Use --incremental to resume or delete .maci-salts directory to start fresh.`
 	);
@@ -315,14 +317,12 @@ export class ProofGenerator {
 
       let batchIndex = 0;
       while (this.poll.hasUntalliedBallots()) {
-	console.log(`\n🔨 Generating tally proof for batch ${batchIndex + 1}/${totalTallyBatches}`);
 
 	let batchSalts: ProofGenerationSalts | undefined;
 
 	// Use existing salts if available for this batch
 	if (existingSalts && existingSalts.tallyProofSalts[batchIndex]) {
 	  batchSalts = existingSalts.tallyProofSalts[batchIndex];
-	  console.log(`♻️  Using existing salts for batch ${batchIndex}`);
 	}
 
 	// Generate or retrieve tally for this batch
@@ -334,7 +334,7 @@ export class ProofGenerator {
 		batchSalts.newSpentVoiceCreditSubtotalSalt
               ),
               newPerVoteOptionSpentVoiceCreditsRootSalt: BigInt(
-		batchSalts.newPerVoteOptionSpentVoiceCreditsRootSalt 
+		batchSalts.newPerVoteOptionSpentVoiceCreditsRootSalt
               ),
           }
 	    : undefined
@@ -355,8 +355,8 @@ export class ProofGenerator {
 	    batchSalts = {
               newResultsRootSalt: circuitInputsWithSalts.salts.newResultsRootSalt.toString(),
               newSpentVoiceCreditSubtotalSalt: circuitInputsWithSalts.salts.newSpentVoiceCreditSubtotalSalt.toString(),
-              newPerVoteOptionSpentVoiceCreditsRootSalt: circuitInputsWithSalts.salts.newPerVoteOptionSpentVoiceCreditsRootSalt.toString(), 
-              tallyBatchNum: batchIndex,
+              newPerVoteOptionSpentVoiceCreditsRootSalt: circuitInputsWithSalts.salts.newPerVoteOptionSpentVoiceCreditsRootSalt.toString(),
+              tallyBatchNumber: batchIndex,
               timestamp: Date.now(),
 	    };
 
@@ -364,7 +364,6 @@ export class ProofGenerator {
 
 	    // Save after each batch to ensure persistence
 	    saveSalts(this.pollId, pollSaltsData);
-	    console.log(`💾 Salts saved for batch ${batchIndex}`);
 	  }
 	}
 
@@ -475,9 +474,6 @@ export class ProofGenerator {
       performance.measure("Generate tally proofs", "tally-proofs-start", "tally-proofs-end");
 
       options?.onComplete?.(proofs, tallyFileData);
-
-      console.log("\n✅ All tally proofs generated successfully");
-      console.log(`📁 Salts stored in: .maci-salts/poll-salts-${this.pollId}.json`);
 
       return { proofs, tallyData: tallyFileData };
     } catch (error) {
