@@ -1,7 +1,5 @@
 import { type TCircuitInputs, type IJsonMaciState, MaciState, type Poll, EMode } from "@maci-protocol/core";
 import { generateTreeCommitment, hash3, hashLeftRight } from "@maci-protocol/crypto";
-import { saveSalts,loadSalts, saltsExist} from "./saltStorage";
-import {ProofGenerationSalts, PollSaltsData } from "./types";
 
 import fs from "fs";
 import path from "path";
@@ -12,6 +10,8 @@ import type {
   IPrepareStateParams,
   IProofGeneratorParams,
   TallyData,
+  type ProofGenerationSalts,
+  type PollSaltsData,
 } from "./types";
 import type { Proof } from "../../ts/types";
 import type { IVerifyingKeyObjectParams } from "@maci-protocol/domainobjs";
@@ -20,6 +20,8 @@ import type { BigNumberish } from "ethers";
 import { logMagenta, info, logGreen, success } from "../../ts/logger";
 import { extractVerifyingKey, generateProofSnarkjs, generateProofRapidSnark, verifyProof } from "../../ts/proofs";
 import { asHex, cleanThreads } from "../../ts/utils";
+
+import { saveSalts, loadSalts, saltsExist } from "./saltStorage";
 
 /**
  * Proof generator class for message processing and tally.
@@ -287,28 +289,33 @@ export class ProofGenerator {
     }
 
     try {
-
       let existingSalts: PollSaltsData | null = null;
 
       // Check for existing salts in incremental mode
       if (this.incremental) {
-	existingSalts = loadSalts(this.pollId);
+        existingSalts = loadSalts(this.pollId);
 
-	if (existingSalts) {
-	  logGreen({text: info(`Resuming incremental proof generation (${existingSalts.tallyProofSalts.length} batches found)`) });
-	} else {
-	  logMagenta({text: info("No existing salts found, starting fresh") });
-	}
+        if (existingSalts) {
+          logGreen({
+            text: info(`Resuming incremental proof generation (${existingSalts.tallyProofSalts.length} batches found)`),
+          });
+        } else {
+          logMagenta({ text: info("No existing salts found, starting fresh") });
+        }
       } else if (saltsExist(this.pollId)) {
-	logMagenta({text: info(`Existing salts detected for poll ${this.pollId}, Use --incremental to resume or delete .maci-salts to start fresh.`)});
-	throw new Error(
-	  `Existing salts detected for poll ${this.pollId}. Use --incremental to resume or delete .maci-salts directory to start fresh.`
-	);
+        logMagenta({
+          text: info(
+            `Existing salts detected for poll ${this.pollId}, Use --incremental to resume or delete .maci-salts to start fresh.`,
+          ),
+        });
+        throw new Error(
+          `Existing salts detected for poll ${this.pollId}. Use --incremental to resume or delete .maci-salts directory to start fresh.`,
+        );
       }
 
       const pollSaltsData: PollSaltsData = {
-	pollId: this.pollId,
-	tallyProofSalts: existingSalts?.tallyProofSalts || [],
+        pollId: this.pollId,
+        tallyProofSalts: existingSalts?.tallyProofSalts || [],
       };
 
       let tallyCircuitInputs: TCircuitInputs;
@@ -317,60 +324,56 @@ export class ProofGenerator {
 
       let batchIndex = 0;
       while (this.poll.hasUntalliedBallots()) {
+        let batchSalts: ProofGenerationSalts | undefined;
 
-	let batchSalts: ProofGenerationSalts | undefined;
+        // Use existing salts if available for this batch
+        if (existingSalts && existingSalts.tallyProofSalts[batchIndex]) {
+          batchSalts = existingSalts.tallyProofSalts[batchIndex];
+        }
 
-	// Use existing salts if available for this batch
-	if (existingSalts && existingSalts.tallyProofSalts[batchIndex]) {
-	  batchSalts = existingSalts.tallyProofSalts[batchIndex];
-	}
+        // Generate or retrieve tally for this batch
+        tallyCircuitInputs = this.poll.tallyVotes(
+          batchSalts
+            ? {
+                newResultsRootSalt: BigInt(batchSalts.newResultsRootSalt),
+                newSpentVoiceCreditSubtotalSalt: BigInt(batchSalts.newSpentVoiceCreditSubtotalSalt),
+                newPerVoteOptionSpentVoiceCreditsRootSalt: BigInt(batchSalts.newPerVoteOptionSpentVoiceCreditsRootSalt),
+              }
+            : undefined,
+        ) as unknown as TCircuitInputs;
 
-	// Generate or retrieve tally for this batch
-	tallyCircuitInputs = this.poll.tallyVotes(
-	  batchSalts
-	    ? {
-              newResultsRootSalt: BigInt(batchSalts.newResultsRootSalt),
-              newSpentVoiceCreditSubtotalSalt: BigInt(
-		batchSalts.newSpentVoiceCreditSubtotalSalt
-              ),
-              newPerVoteOptionSpentVoiceCreditsRootSalt: BigInt(
-		batchSalts.newPerVoteOptionSpentVoiceCreditsRootSalt
-              ),
-          }
-	    : undefined
-	) as unknown as TCircuitInputs;
-
-	// Save the salts immediately after generation (if new)
-	if (!batchSalts) {
-	  // Cast to access the salts property we added
-	  const circuitInputsWithSalts = tallyCircuitInputs as TCircuitInputs & {
-	    salts?: {
+        // Save the salts immediately after generation (if new)
+        if (!batchSalts) {
+          // Cast to access the salts property we added
+          const circuitInputsWithSalts = tallyCircuitInputs as TCircuitInputs & {
+            salts?: {
               newResultsRootSalt: bigint;
               newPerVoteOptionSpentVoiceCreditsRootSalt: bigint;
               newSpentVoiceCreditSubtotalSalt: bigint;
-	    };
-	  };
+            };
+          };
 
-	  if (circuitInputsWithSalts.salts) {
-	    batchSalts = {
+          if (circuitInputsWithSalts.salts) {
+            batchSalts = {
               newResultsRootSalt: circuitInputsWithSalts.salts.newResultsRootSalt.toString(),
               newSpentVoiceCreditSubtotalSalt: circuitInputsWithSalts.salts.newSpentVoiceCreditSubtotalSalt.toString(),
-              newPerVoteOptionSpentVoiceCreditsRootSalt: circuitInputsWithSalts.salts.newPerVoteOptionSpentVoiceCreditsRootSalt.toString(),
+              newPerVoteOptionSpentVoiceCreditsRootSalt:
+                circuitInputsWithSalts.salts.newPerVoteOptionSpentVoiceCreditsRootSalt.toString(),
               tallyBatchNumber: batchIndex,
               timestamp: Date.now(),
-	    };
+            };
 
-	    pollSaltsData.tallyProofSalts[batchIndex] = batchSalts;
+            pollSaltsData.tallyProofSalts[batchIndex] = batchSalts;
 
-	    // Save after each batch to ensure persistence
-	    saveSalts(this.pollId, pollSaltsData);
-	  }
-	}
+            // Save after each batch to ensure persistence
+            saveSalts(this.pollId, pollSaltsData);
+          }
+        }
 
-	inputs.push(tallyCircuitInputs);
+        inputs.push(tallyCircuitInputs);
 
-	logMagenta({ text: info(`Progress: ${this.poll.numBatchesTallied} / ${totalTallyBatches}`) });
-	batchIndex++;
+        logMagenta({ text: info(`Progress: ${this.poll.numBatchesTallied} / ${totalTallyBatches}`) });
+        batchIndex += 1;
       }
 
       logMagenta({ text: info("Wait until proof generation is finished") });
