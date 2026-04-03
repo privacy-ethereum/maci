@@ -1,10 +1,10 @@
+import { getSigners } from "@maci-protocol/contracts";
 import { VOTE_OPTION_TREE_ARITY } from "@maci-protocol/core";
 import { generateRandomSalt } from "@maci-protocol/crypto";
 import { Keypair } from "@maci-protocol/domainobjs";
 import {
   generateVote,
   getBlockTimestamp,
-  getDefaultSigner,
   signup,
   mergeSignups,
   verify,
@@ -73,6 +73,7 @@ describe("e2e tests with non quadratic voting", function test() {
   let maciAddresses: IMaciContracts;
   let initialVoiceCreditProxyContractAddress: string;
   let signer: Signer;
+  let userSigners: Signer[];
 
   const generateProofsArgs: Omit<IGenerateProofsArgs, "maciAddress" | "signer"> = {
     outputDir: testProofsDirPath,
@@ -94,7 +95,8 @@ describe("e2e tests with non quadratic voting", function test() {
 
   // before all tests we deploy the verifying keys registry contract and set the verifying keys
   before(async () => {
-    signer = await getDefaultSigner();
+    const signers = await getSigners();
+    [signer, ...userSigners] = signers;
 
     const constantInitialVoiceCreditProxyFactory = await deployConstantInitialVoiceCreditProxyFactory(signer, true);
     const initialVoiceCreditProxy = await deployConstantInitialVoiceCreditProxy(
@@ -696,14 +698,14 @@ describe("e2e tests with non quadratic voting", function test() {
         maciAddress: maciAddresses.maciContractAddress,
         maciPublicKey: users[0].publicKey.serialize(),
         sgData: DEFAULT_SG_DATA,
-        signer,
+        signer: userSigners[0],
       });
 
       await signup({
         maciAddress: maciAddresses.maciContractAddress,
         maciPublicKey: users[1].publicKey.serialize(),
         sgData: DEFAULT_SG_DATA,
-        signer,
+        signer: userSigners[1],
       });
     });
 
@@ -722,7 +724,7 @@ describe("e2e tests with non quadratic voting", function test() {
           rapidsnark: testRapidsnarkPath,
           sgDataArg: DEFAULT_SG_DATA,
           ivcpDataArg: DEFAULT_IVCP_DATA,
-          signer,
+          signer: userSigners[index],
         });
       }
     });

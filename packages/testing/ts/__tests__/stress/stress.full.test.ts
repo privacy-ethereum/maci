@@ -1,8 +1,8 @@
+import { getSigners } from "@maci-protocol/contracts";
 import { generateRandomSalt } from "@maci-protocol/crypto";
 import { Keypair } from "@maci-protocol/domainobjs";
 import {
   getBlockTimestamp,
-  getDefaultSigner,
   signup,
   mergeSignups,
   verify,
@@ -119,6 +119,7 @@ Object.entries(filePerMode).forEach((data) => {
     let maciAddresses: IMaciContracts;
     let initialVoiceCreditProxyContractAddress: string;
     let signer: Signer;
+    let userSigners: Signer[];
 
     const generateProofsArgs: Omit<IGenerateProofsArgs, "maciAddress" | "signer"> = {
       outputDir: testProofsDirPath,
@@ -187,7 +188,8 @@ Object.entries(filePerMode).forEach((data) => {
 
     // before all tests we deploy the verifying keys registry contract and set the verifying keys
     before(async () => {
-      signer = await getDefaultSigner();
+      const signers = await getSigners();
+      [signer, ...userSigners] = signers;
 
       const constantInitialVoiceCreditProxyFactory = await deployConstantInitialVoiceCreditProxyFactory(signer, true);
       const initialVoiceCreditProxy = await deployConstantInitialVoiceCreditProxy(
@@ -218,7 +220,7 @@ Object.entries(filePerMode).forEach((data) => {
             maciAddress: maciAddresses.maciContractAddress,
             maciPublicKey: users[index].publicKey.serialize(),
             sgData: DEFAULT_SG_DATA,
-            signer,
+            signer: userSigners[index],
           });
         }
       });
@@ -238,7 +240,7 @@ Object.entries(filePerMode).forEach((data) => {
             rapidsnark: testRapidsnarkPath,
             sgDataArg: DEFAULT_SG_DATA,
             ivcpDataArg: DEFAULT_IVCP_DATA,
-            signer,
+            signer: userSigners[index],
           });
         }
       });

@@ -643,7 +643,7 @@ program
       });
       const privateKey = args.privateKey || (await promptSensitiveValue("Insert your MACI private key"));
 
-      await publish({
+      const { hash } = await publish({
         publicKey: args.publicKey,
         stateIndex: args.stateIndex,
         voteOptionIndex: args.voteOptionIndex,
@@ -654,6 +654,11 @@ program
         salt: args.salt,
         privateKey,
         signer,
+      });
+
+      logGreen({
+        quiet: args.quiet,
+        text: success(`Message published successfully. Transaction hash: ${hash}`),
       });
     } catch (error) {
       program.error((error as Error).message, { exitCode: 1 });
@@ -877,6 +882,7 @@ program
   .description("Get deployed poll from MACI contract")
   .option("-p, --poll <poll>", "the poll id")
   .option("-x, --maci-address <maciAddress>", "the MACI contract address")
+  .option("-q, --quiet <quiet>", "whether to print values to the console", (value) => value === "true", false)
   .action(async (args) => {
     try {
       const signer = await getSigner();
@@ -900,13 +906,16 @@ program
         [EMode.FULL]: "Full Credits Voting",
       };
 
+      const status = details.isOpen ? "Open" : "Closed";
+
       logGreen({
-        quiet: true,
+        quiet: args.quiet,
         text: success(
           [
             `ID: ${details.id}`,
             `Start time: ${new Date(Number(details.startDate) * 1000).toString()}`,
             `End time: ${new Date(Number(details.endDate) * 1000).toString()}`,
+            `Status: ${status}`,
             `Number of signups ${details.totalSignups}`,
             `State tree merged: ${details.isMerged}`,
             `Mode: ${modeNames[details.mode as EMode]}`,
@@ -988,6 +997,8 @@ program
         totalVoteOptions: pollParams.totalVoteOptions,
         voteOptionTreeDepth: pollParams.voteOptionTreeDepth,
       });
+
+      logGreen({ quiet: args.quiet, text: success("The tally commitment is correct") });
     } catch (error) {
       program.error((error as Error).message, { exitCode: 1 });
     }

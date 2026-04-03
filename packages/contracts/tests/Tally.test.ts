@@ -20,7 +20,7 @@ import { type EthereumProvider } from "hardhat/types";
 
 import { deployFreeForAllSignUpPolicy } from "../ts/deploy";
 import { type IVerifyingKeyStruct } from "../ts/types";
-import { asHex, getDefaultSigner, getBlockTimestamp } from "../ts/utils";
+import { asHex, getBlockTimestamp, getSigners } from "../ts/utils";
 import {
   type Tally,
   type MACI,
@@ -52,6 +52,7 @@ describe("VoteTally", function test() {
   this.timeout(900000); // 15 minutes
 
   let signer: Signer;
+  let userSigners: Signer[];
   let maciContract: MACI;
   let pollContract: PollContract;
   let tallyContract: Tally;
@@ -75,7 +76,8 @@ describe("VoteTally", function test() {
 
     users = [new Keypair(), new Keypair()];
 
-    signer = await getDefaultSigner();
+    const signers = await getSigners();
+    [signer, ...userSigners] = signers;
 
     const startTime = await getBlockTimestamp(signer);
 
@@ -239,10 +241,9 @@ describe("VoteTally", function test() {
         // signup on chain
 
         // eslint-disable-next-line no-await-in-loop
-        await maciContract.signUp(
-          users[i].publicKey.asContractParam(),
-          AbiCoder.defaultAbiCoder().encode(["uint256"], [1]),
-        );
+        await maciContract
+          .connect(userSigners[i])
+          .signUp(users[i].publicKey.asContractParam(), AbiCoder.defaultAbiCoder().encode(["uint256"], [1]));
       }
 
       const [pollPolicyContract] = await deployFreeForAllSignUpPolicy({}, signer, true);
@@ -340,14 +341,16 @@ describe("VoteTally", function test() {
 
         // join on chain
         // eslint-disable-next-line no-await-in-loop
-        await pollContract.joinPoll(
-          nullifier,
-          pollKeys[i].publicKey.asContractParam(),
-          i,
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          AbiCoder.defaultAbiCoder().encode(["uint256"], [1]),
-          AbiCoder.defaultAbiCoder().encode(["uint256"], [0]),
-        );
+        await pollContract
+          .connect(userSigners[i])
+          .joinPoll(
+            nullifier,
+            pollKeys[i].publicKey.asContractParam(),
+            i,
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            AbiCoder.defaultAbiCoder().encode(["uint256"], [1]),
+            AbiCoder.defaultAbiCoder().encode(["uint256"], [0]),
+          );
       }
 
       await timeTravel(signer.provider! as unknown as EthereumProvider, updatedDuration);
@@ -473,7 +476,7 @@ describe("VoteTally", function test() {
       expect(initialTotalResults).to.equal(tallyData.results.tally.length);
       expect(initialResults.map((result) => result.value)).to.deep.equal(tallyData.results.tally);
 
-      await tallyContract
+      const receipt = await tallyContract
         .addTallyResults({
           voteOptionIndices: indices,
           tallyResults: tallyData.results.tally,
@@ -486,6 +489,15 @@ describe("VoteTally", function test() {
           perVOSpentVoiceCreditsHash: newPerVoteOptionSpentVoiceCreditsCommitment,
         })
         .then((tx) => tx.wait());
+
+      const [event] = await tallyContract.queryFilter(
+        tallyContract.filters.ResultAdded,
+        receipt?.blockNumber,
+        receipt?.blockNumber,
+      );
+
+      expect(event.args[0].toString()).to.eq(indices[0].toString());
+      expect(event.args[1].toString()).to.eq(tallyData.results.tally[0].toString());
 
       const results = await Promise.all(indices.map((index) => tallyContract.getTallyResults(index)));
       const totalResults = await tallyContract.totalTallyResults();
@@ -560,10 +572,9 @@ describe("VoteTally", function test() {
         // signup on chain
 
         // eslint-disable-next-line no-await-in-loop
-        await maciContract.signUp(
-          users[i].publicKey.asContractParam(),
-          AbiCoder.defaultAbiCoder().encode(["uint256"], [1]),
-        );
+        await maciContract
+          .connect(userSigners[i])
+          .signUp(users[i].publicKey.asContractParam(), AbiCoder.defaultAbiCoder().encode(["uint256"], [1]));
       }
 
       const [pollPolicyContract] = await deployFreeForAllSignUpPolicy({}, signer, true);
@@ -663,14 +674,16 @@ describe("VoteTally", function test() {
 
         // join on chain
         // eslint-disable-next-line no-await-in-loop
-        await pollContract.joinPoll(
-          nullifier,
-          pollKeys[i].publicKey.asContractParam(),
-          i,
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          AbiCoder.defaultAbiCoder().encode(["uint256"], [1]),
-          AbiCoder.defaultAbiCoder().encode(["uint256"], [0]),
-        );
+        await pollContract
+          .connect(userSigners[i])
+          .joinPoll(
+            nullifier,
+            pollKeys[i].publicKey.asContractParam(),
+            i,
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            AbiCoder.defaultAbiCoder().encode(["uint256"], [1]),
+            AbiCoder.defaultAbiCoder().encode(["uint256"], [0]),
+          );
       }
 
       await timeTravel(signer.provider! as unknown as EthereumProvider, duration);

@@ -221,7 +221,7 @@
     "benchmark:polygon-cardona-zkevm": "pnpm run benchmark --network polygon_cardona_zkevm"
   },
   "dependencies": {
-    "@excubiae/contracts": "^0.11.0",
+    "@excubiae/contracts": "^0.13.0",
     "@maci-protocol/core": "^3.0.0",
     "@maci-protocol/crypto": "^3.0.0",
     "@maci-protocol/domainobjs": "^3.0.0",
@@ -238,7 +238,7 @@
     "hardhat": "^2.25.0",
     "lowdb": "^1.0.0",
     "snarkjs": "^0.7.5",
-    "solady": "^0.1.24",
+    "solady": "^0.1.26",
     "solidity-docgen": "^0.6.0-beta.36",
     "uuid": "^11.1.0"
   },
@@ -249,7 +249,7 @@
     "@types/circomlibjs": "^0.1.6",
     "@types/lowdb": "^1.0.15",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^24.2.0",
+    "@types/node": "^24.11.0",
     "@types/sinon": "^17.0.4",
     "@types/snarkjs": "^0.7.9",
     "@types/uuid": "^10.0.0",

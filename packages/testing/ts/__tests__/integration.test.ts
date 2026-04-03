@@ -1,4 +1,5 @@
 /* eslint-disable no-await-in-loop */
+import { getSigners } from "@maci-protocol/contracts";
 import { MaciState, type ITreeDepths, VOTE_OPTION_TREE_ARITY } from "@maci-protocol/core";
 import { generatePublicKey, generateRandomSalt, poseidon } from "@maci-protocol/crypto";
 import { Keypair, VoteCommand, PrivateKey, PublicKey } from "@maci-protocol/domainobjs";
@@ -7,7 +8,6 @@ import {
   createCidFromObject,
   generateVote,
   getBlockTimestamp,
-  getDefaultSigner,
   relayMessages,
   signup,
   mergeSignups,
@@ -72,13 +72,15 @@ describe("Integration tests", function test() {
   let contracts: IMaciContracts;
   let pollId: bigint;
   let signer: Signer;
+  let userSigners: Signer[];
   const coordinatorKeypair = new Keypair();
 
   const root = path.resolve(__dirname, "../../../..");
 
   // the code that we run before all tests
   before(async () => {
-    signer = await getDefaultSigner();
+    const signers = await getSigners();
+    [signer, ...userSigners] = signers;
   });
 
   // the code that we run before each test
@@ -232,7 +234,7 @@ describe("Integration tests", function test() {
             maciPublicKey: user.keypair.publicKey.serialize(),
             maciAddress: contracts.maciContractAddress,
             sgData: DEFAULT_SG_DATA,
-            signer,
+            signer: userSigners[i],
           }).then((result) => result.stateIndex),
         );
 
@@ -253,7 +255,7 @@ describe("Integration tests", function test() {
           rapidsnark: `${homedir()}/rapidsnark/build/prover`,
           sgDataArg: DEFAULT_SG_DATA,
           ivcpDataArg: DEFAULT_IVCP_DATA,
-          signer,
+          signer: userSigners[i],
         });
 
         // signup on local maci state

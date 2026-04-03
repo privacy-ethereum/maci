@@ -108,12 +108,9 @@ contract Poll is Clone, Params, Utilities, SnarkCommon, IPoll {
   error VotingPeriodOver();
   error VotingPeriodNotOver();
   error VotingPeriodNotStarted();
-  error PollAlreadyInit();
-  error TooManyMessages();
   error InvalidPublicKey();
   error StateAlreadyMerged();
   error InvalidBatchLength();
-  error BatchHashesAlreadyPadded();
   error UserAlreadyJoined();
   error InvalidPollProof();
   error NotRelayer();
@@ -366,6 +363,11 @@ contract Poll is Clone, Params, Utilities, SnarkCommon, IPoll {
     bytes memory _signUpPolicyData,
     bytes memory _initialVoiceCreditProxyData
   ) external virtual isWithinVotingDeadline {
+    // Check if the public key is on the curve.
+    if (!CurveBabyJubJub.isOnCurve(_publicKey.x, _publicKey.y)) {
+      revert InvalidPublicKey();
+    }
+
     // ensure we do not have more signups than what the circuits support
     if (pollStateTree.numberOfLeaves >= maxSignups) {
       revert TooManySignups();
@@ -429,7 +431,7 @@ contract Poll is Clone, Params, Utilities, SnarkCommon, IPoll {
   }
 
   /// @notice Verify the proof for joined Poll
-  /// @param _index Index of the MACI's stateRootOnSignUp when the user signed up
+  /// @param _index Index of the Poll's pollStateRootsOnJoin when the user joined
   /// @param _proof The zk-SNARK proof
   /// @return isValid Whether the proof is valid
   function verifyJoinedPollProof(uint256 _index, uint256[8] memory _proof) public view returns (bool isValid) {
@@ -464,7 +466,7 @@ contract Poll is Clone, Params, Utilities, SnarkCommon, IPoll {
   }
 
   /// @notice Get public circuit inputs for poll joined circuit
-  /// @param _index Index of the MACI's stateRootOnSignUp when the user signed up
+  /// @param _index Index of the Poll's pollStateRootsOnJoin when the user joined
   /// @return publicInputs Public circuit inputs
   function getPublicJoinedCircuitInputs(uint256 _index) public view returns (uint256[] memory publicInputs) {
     publicInputs = new uint256[](1);

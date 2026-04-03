@@ -1,10 +1,10 @@
+import { getSigners } from "@maci-protocol/contracts";
 import { EMode, VOTE_OPTION_TREE_ARITY } from "@maci-protocol/core";
 import { generateRandomSalt } from "@maci-protocol/crypto";
 import { Keypair } from "@maci-protocol/domainobjs";
 import {
   generateVote,
   getBlockTimestamp,
-  getDefaultSigner,
   getSignedupUserData,
   signup,
   mergeSignups,
@@ -82,6 +82,7 @@ describe("e2e tests", function test() {
   let maciAddresses: IMaciContracts;
   let initialVoiceCreditProxyContractAddress: string;
   let signer: Signer;
+  let userSigners: Signer[];
 
   const generateProofsArgs: Omit<IGenerateProofsArgs, "maciAddress" | "signer"> = {
     outputDir: testProofsDirPath,
@@ -103,7 +104,8 @@ describe("e2e tests", function test() {
 
   // before all tests we deploy the verifying keys registry contract and set the verifying keys
   before(async () => {
-    signer = await getDefaultSigner();
+    const signers = await getSigners();
+    [signer, ...userSigners] = signers;
 
     const constantInitialVoiceCreditProxyFactory = await deployConstantInitialVoiceCreditProxyFactory(signer, true);
     const initialVoiceCreditProxy = await deployConstantInitialVoiceCreditProxy(
@@ -170,7 +172,7 @@ describe("e2e tests", function test() {
         maciAddress: maciAddresses.maciContractAddress,
         maciPublicKey: user.publicKey.serialize(),
         sgData: DEFAULT_SG_DATA,
-        signer,
+        signer: userSigners[0],
       });
     });
 
@@ -186,7 +188,7 @@ describe("e2e tests", function test() {
         rapidsnark: testRapidsnarkPath,
         sgDataArg: DEFAULT_SG_DATA,
         ivcpDataArg: DEFAULT_IVCP_DATA,
-        signer,
+        signer: userSigners[0],
       });
     });
 
@@ -217,7 +219,7 @@ describe("e2e tests", function test() {
         maciAddress: maciAddresses.maciContractAddress,
         maciPublicKey: new Keypair().publicKey.serialize(),
         sgData: DEFAULT_SG_DATA,
-        signer,
+        signer: userSigners[1],
       });
       await proveOnChain({ ...proveOnChainArgs, maciAddress: maciAddresses.maciContractAddress, signer });
       await verify({
@@ -287,7 +289,7 @@ describe("e2e tests", function test() {
           maciAddress: maciAddresses.maciContractAddress,
           maciPublicKey: users[i].publicKey.serialize(),
           sgData: DEFAULT_SG_DATA,
-          signer,
+          signer: userSigners[i],
         });
       }
     });
@@ -307,7 +309,7 @@ describe("e2e tests", function test() {
           rapidsnark: testRapidsnarkPath,
           sgDataArg: DEFAULT_SG_DATA,
           ivcpDataArg: DEFAULT_IVCP_DATA,
-          signer,
+          signer: userSigners[i],
         });
       }
     });
@@ -604,7 +606,7 @@ describe("e2e tests", function test() {
           maciAddress: maciAddresses.maciContractAddress,
           maciPublicKey: users[i].publicKey.serialize(),
           sgData: DEFAULT_SG_DATA,
-          signer,
+          signer: userSigners[i],
         });
       }
     });
@@ -622,7 +624,7 @@ describe("e2e tests", function test() {
         rapidsnark: testRapidsnarkPath,
         sgDataArg: DEFAULT_SG_DATA,
         ivcpDataArg: DEFAULT_IVCP_DATA,
-        signer,
+        signer: userSigners[0],
       });
     });
 
@@ -744,7 +746,7 @@ describe("e2e tests", function test() {
           maciAddress: maciAddresses.maciContractAddress,
           maciPublicKey: users[i].publicKey.serialize(),
           sgData: DEFAULT_SG_DATA,
-          signer,
+          signer: userSigners[i],
         });
       }
     });
@@ -764,7 +766,7 @@ describe("e2e tests", function test() {
           rapidsnark: testRapidsnarkPath,
           sgDataArg: DEFAULT_SG_DATA,
           ivcpDataArg: DEFAULT_IVCP_DATA,
-          signer,
+          signer: userSigners[i],
         });
       }
     });
@@ -860,7 +862,7 @@ describe("e2e tests", function test() {
           maciAddress: maciAddresses.maciContractAddress,
           maciPublicKey: users[i].publicKey.serialize(),
           sgData: DEFAULT_SG_DATA,
-          signer,
+          signer: userSigners[i],
         });
       }
     });
@@ -880,7 +882,7 @@ describe("e2e tests", function test() {
           rapidsnark: testRapidsnarkPath,
           sgDataArg: DEFAULT_SG_DATA,
           ivcpDataArg: DEFAULT_IVCP_DATA,
-          signer,
+          signer: userSigners[i],
         });
       }
     });
@@ -892,7 +894,7 @@ describe("e2e tests", function test() {
         await publish({
           maciAddress: maciAddresses.maciContractAddress,
           publicKey: users[i].publicKey.serialize(),
-          stateIndex: 1n,
+          stateIndex: BigInt(i + 1),
           voteOptionIndex: 0n,
           nonce: 1n,
           pollId: 0n,
@@ -1026,7 +1028,7 @@ describe("e2e tests", function test() {
         maciAddress: maciAddresses.maciContractAddress,
         maciPublicKey: users[0].publicKey.serialize(),
         sgData: DEFAULT_SG_DATA,
-        signer,
+        signer: userSigners[0],
       });
       // joinPoll
       await joinPoll({
@@ -1040,7 +1042,7 @@ describe("e2e tests", function test() {
         rapidsnark: testRapidsnarkPath,
         sgDataArg: DEFAULT_SG_DATA,
         ivcpDataArg: DEFAULT_IVCP_DATA,
-        signer,
+        signer: userSigners[0],
       });
 
       // publish
@@ -1061,14 +1063,14 @@ describe("e2e tests", function test() {
         maciAddress: maciAddresses.maciContractAddress,
         maciPublicKey: users[1].publicKey.serialize(),
         sgData: DEFAULT_SG_DATA,
-        signer,
+        signer: userSigners[1],
       });
 
       await signup({
         maciAddress: maciAddresses.maciContractAddress,
         maciPublicKey: users[2].publicKey.serialize(),
         sgData: DEFAULT_SG_DATA,
-        signer,
+        signer: userSigners[2],
       });
 
       // joinPoll
@@ -1083,7 +1085,7 @@ describe("e2e tests", function test() {
         rapidsnark: testRapidsnarkPath,
         sgDataArg: DEFAULT_SG_DATA,
         ivcpDataArg: DEFAULT_IVCP_DATA,
-        signer,
+        signer: userSigners[1],
       });
 
       const votes = [
@@ -1153,13 +1155,13 @@ describe("e2e tests", function test() {
         maciAddress: maciAddresses.maciContractAddress,
         maciPublicKey: users[3].publicKey.serialize(),
         sgData: DEFAULT_SG_DATA,
-        signer,
+        signer: userSigners[3],
       });
       await signup({
         maciAddress: maciAddresses.maciContractAddress,
         maciPublicKey: users[4].publicKey.serialize(),
         sgData: DEFAULT_SG_DATA,
-        signer,
+        signer: userSigners[4],
       });
     });
 
@@ -1176,7 +1178,7 @@ describe("e2e tests", function test() {
         rapidsnark: testRapidsnarkPath,
         sgDataArg: DEFAULT_SG_DATA,
         ivcpDataArg: DEFAULT_IVCP_DATA,
-        signer,
+        signer: userSigners[3],
       });
       // joinPoll
       await joinPoll({
@@ -1190,7 +1192,7 @@ describe("e2e tests", function test() {
         rapidsnark: testRapidsnarkPath,
         sgDataArg: DEFAULT_SG_DATA,
         ivcpDataArg: DEFAULT_IVCP_DATA,
-        signer,
+        signer: userSigners[4],
       });
     });
 
@@ -1341,7 +1343,7 @@ describe("e2e tests", function test() {
           maciAddress: maciAddresses.maciContractAddress,
           maciPublicKey: users[i].publicKey.serialize(),
           sgData: DEFAULT_SG_DATA,
-          signer,
+          signer: userSigners[i],
         });
 
         // eslint-disable-next-line no-await-in-loop
@@ -1370,7 +1372,7 @@ describe("e2e tests", function test() {
           rapidsnark: testRapidsnarkPath,
           sgDataArg: DEFAULT_SG_DATA,
           ivcpDataArg: DEFAULT_IVCP_DATA,
-          signer,
+          signer: userSigners[i],
         });
         // eslint-disable-next-line no-await-in-loop
         const { isJoined, pollStateIndex } = await getJoinedUserData({
@@ -1497,7 +1499,7 @@ describe("e2e tests", function test() {
             rapidsnark: testRapidsnarkPath,
             sgDataArg: DEFAULT_SG_DATA,
             ivcpDataArg: DEFAULT_IVCP_DATA,
-            signer,
+            signer: userSigners[i],
           });
           // eslint-disable-next-line no-await-in-loop
           const { isJoined, pollStateIndex } = await getJoinedUserData({

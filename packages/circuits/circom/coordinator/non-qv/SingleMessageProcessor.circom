@@ -12,10 +12,10 @@ include "../../utils/non-qv/StateLeafAndBallotTransformer.circom";
 
 
 /**
- * Processes one message and updates the state accordingly. 
- * This template involves complex interactions, including transformations based on message type, 
- * validations against current states like voice credit balances or vote weights, 
- * and updates to Merkle trees representing state and ballot information. 
+ * Processes one message and updates the state accordingly.
+ * This template involves complex interactions, including transformations based on message type,
+ * validations against current states like voice credit balances or vote weights,
+ * and updates to Merkle trees representing state and ballot information.
  * This is a critical building block for ensuring the integrity and correctness of MACI state.
  * This template does not support Quadratic Voting (QV).
  */
@@ -23,7 +23,6 @@ template SingleMessageProcessorNonQv(stateTreeDepth, voteOptionTreeDepth) {
     // Constants defining the structure and size of state and ballots.
     var STATE_LEAF_LENGTH = 3;
     var BALLOT_LENGTH = 2;
-    var MESSAGE_LENGTH = 10;
     var PACKED_COMMAND_LENGTH = 4;
     var VOTE_OPTION_TREE_ARITY = 5;
     var STATE_TREE_ARITY = 2;
@@ -37,7 +36,6 @@ template SingleMessageProcessorNonQv(stateTreeDepth, voteOptionTreeDepth) {
     var STATE_LEAF_PUBLIC_Y_INDEX = 1;
     // Voice Credit balance.
     var STATE_LEAF_VOICE_CREDIT_BALANCE_INDEX = 2;
-    var NUMBER_BITS = 252;
 
     // Number of users that have completed the sign up.
     signal input totalSignups;
@@ -121,7 +119,7 @@ template SingleMessageProcessorNonQv(stateTreeDepth, voteOptionTreeDepth) {
 
     // 4. Verify that the original ballot exists in the given ballot root.
     var computedBallot = PoseidonHasher(2)([
-        ballot[BALLOT_NONCE_INDEX], 
+        ballot[BALLOT_NONCE_INDEX],
         ballot[BALLOT_VOTE_OPTION_ROOT_INDEX]
     ]);
     var computedStateLeafPathIndices[stateTreeDepth] = Num2Bits(stateTreeDepth)(stateIndexMux);
@@ -186,8 +184,8 @@ template SingleMessageProcessorNonQv(stateTreeDepth, voteOptionTreeDepth) {
     );
 
     newStateRoot <== computedNewStateLeafQip;
- 
-    // 7. Generate a new ballot root.    
+
+    // 7. Generate a new ballot root.
     var computedNewBallot = PoseidonHasher(2)([computedNewBallotNonce, newBallotVoteOptionRoot]);
     var computedNewBallotQip = MerkleTreeInclusionProof(stateTreeDepth)(
         computedNewBallot,

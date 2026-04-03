@@ -18,16 +18,22 @@ export const getPoll = async ({ maciAddress, signer, provider, pollId }: IGetPol
     tally: tallyContract,
   } = await getPollContracts({ maciAddress, pollId, signer, provider });
 
-  const [[startDate, endDate], mergedStateRoot, pollAddress] = await Promise.all([
+  const signerOrProvider = signer ?? provider!;
+  const [[startDate, endDate], mergedStateRoot, pollAddress, block] = await Promise.all([
     pollContract.getStartAndEndDate(),
     pollContract.mergedStateRoot(),
     pollContract.getAddress(),
+    signerOrProvider.provider!.getBlock("latest"),
   ]);
   const isMerged = mergedStateRoot !== 0n;
   const totalSignups = await pollContract.totalSignups();
 
   // get the poll mode
   const mode = await tallyContract.mode();
+
+  // determine if the poll is currently open for voting
+  const currentTime = BigInt(block!.timestamp);
+  const isOpen = currentTime >= startDate && currentTime <= endDate;
 
   return {
     id,
@@ -36,6 +42,7 @@ export const getPoll = async ({ maciAddress, signer, provider, pollId }: IGetPol
     endDate,
     totalSignups,
     isMerged,
+    isOpen,
     mode,
   };
 };

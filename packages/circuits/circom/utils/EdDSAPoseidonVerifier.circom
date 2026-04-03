@@ -9,6 +9,7 @@ include "./escalarmulany.circom";
 include "./escalarmulfix.circom";
 // local imports
 include "./PoseidonHasher.circom";
+include "./IsOnCurve.circom";
 
 /**
  * Variant of the EdDSAPoseidonVerifier template from circomlib
@@ -37,9 +38,13 @@ template EdDSAPoseidonVerifier() {
     // Output signal for the validity of the signature.
     signal output isValid;
 
+    // Verify the public key and signature point are on the BabyJubJub curve.
+    var computedIsPkOnCurve = IsOnCurve()(publicKeyX, publicKeyY);
+    var computedIsSpOnCurve = IsOnCurve()(signaturePointX, signaturePointY);
+
     // Ensure signatureScalar<Subgroup Order.
     // convert the signature scalar signatureScalar into its binary representation.
-    var computedNum2Bits[254] = Num2Bits(254)(signatureScalar);
+    var computedNum2Bits[254] = Num2Bits_strict()(signatureScalar);
 
     var computedCompConstantIn[254] = computedNum2Bits;
     computedCompConstantIn[253] = 0;
@@ -82,10 +87,10 @@ template EdDSAPoseidonVerifier() {
     // Components to handle edge cases and ensure that all conditions 
     // for a valid signature are met, including the 
     // public key not being zero and other integrity checks.
-    var computedIsAxZero = IsZero()(publicKeyX);
+    var computedIsAxZero = IsZero()(computedDouble3XOut);
     var computedIsAxEqual = IsEqual()([computedIsAxZero, 0]);
     var computedIsCcZero = IsZero()(computedCompConstant);
-    var computedIsValid = IsEqual()([computedIsLeftRightValid + computedIsAxEqual + computedIsCcZero, 3]);
+    var computedIsValid = IsEqual()([computedIsLeftRightValid + computedIsAxEqual + computedIsCcZero + computedIsPkOnCurve + computedIsSpOnCurve, 5]);
 
     isValid <== computedIsValid;
 }

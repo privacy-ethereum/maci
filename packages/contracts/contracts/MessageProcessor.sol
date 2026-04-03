@@ -19,11 +19,7 @@ import { DomainObjs } from "./utilities/DomainObjs.sol";
 contract MessageProcessor is Clone, SnarkCommon, Hasher, IMessageProcessor, DomainObjs {
   /// @notice custom errors
   error NoMoreMessages();
-  error StateNotMerged();
   error InvalidProcessMessageProof();
-  error totalSignupsTooLarge();
-  error CurrentMessageBatchIndexTooLarge();
-  error BatchEndIndexTooLarge();
 
   /// @inheritdoc IMessageProcessor
   bool public processingComplete;

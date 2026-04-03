@@ -1,7 +1,7 @@
+import { getSigners } from "@maci-protocol/contracts";
 import { Keypair } from "@maci-protocol/domainobjs";
 import {
   getBlockTimestamp,
-  getDefaultSigner,
   getJoinedUserData,
   joinPoll,
   setVerifyingKeys,
@@ -37,6 +37,7 @@ const useWasm = isArm();
 
 describe("joinPoll", function test() {
   let signer: Signer;
+  let userSigners: Signer[];
   let maciAddresses: IMaciContracts;
   let initialVoiceCreditProxyContractAddress: string;
 
@@ -47,15 +48,14 @@ describe("joinPoll", function test() {
   this.timeout(900000);
   // before all tests we deploy the verifying keys registry contract and set the verifying keys
   before(async () => {
-    signer = await getDefaultSigner();
-
+    const signers = await getSigners();
+    [signer, ...userSigners] = signers;
     const [signupPolicy, , signupPolicyFactory, signupCheckerFactory] = await deployFreeForAllSignUpPolicy(
       {},
       signer,
       true,
     );
     const signupPolicyContractAddress = await signupPolicy.getAddress();
-
     const [pollPolicy] = await deployFreeForAllSignUpPolicy(
       { policy: signupPolicyFactory, checker: signupCheckerFactory },
       signer,
@@ -92,21 +92,21 @@ describe("joinPoll", function test() {
       maciAddress: maciAddresses.maciContractAddress,
       maciPublicKey: users[0].publicKey.serialize(),
       sgData: DEFAULT_SG_DATA,
-      signer,
+      signer: userSigners[0],
     });
 
     await signup({
       maciAddress: maciAddresses.maciContractAddress,
       maciPublicKey: users[1].publicKey.serialize(),
       sgData: DEFAULT_SG_DATA,
-      signer,
+      signer: userSigners[1],
     });
 
     await signup({
       maciAddress: maciAddresses.maciContractAddress,
       maciPublicKey: users[2].publicKey.serialize(),
       sgData: DEFAULT_SG_DATA,
-      signer,
+      signer: userSigners[2],
     });
 
     // deploy a poll contract
@@ -128,7 +128,7 @@ describe("joinPoll", function test() {
     await joinPoll({
       maciAddress: maciAddresses.maciContractAddress,
       privateKey: users[0].privateKey.serialize(),
-      signer,
+      signer: userSigners[0],
       pollId: 0n,
       pollJoiningZkey: testPollJoiningZkeyPath,
       useWasm,
@@ -143,7 +143,7 @@ describe("joinPoll", function test() {
       maciAddress: maciAddresses.maciContractAddress,
       pollId: 0n,
       pollPublicKey: users[0].publicKey.serialize(),
-      signer,
+      signer: userSigners[0],
       startBlock: startBlock || 0,
     });
 
@@ -156,7 +156,7 @@ describe("joinPoll", function test() {
 
     const stateTree = await generateMaciStateTreeWithEndKey({
       maciContractAddress: maciAddresses.maciContractAddress,
-      signer,
+      signer: userSigners[1],
       userPublicKey: users[1].publicKey,
     });
 
@@ -165,7 +165,7 @@ describe("joinPoll", function test() {
     await joinPollBrowser({
       maciAddress: maciAddresses.maciContractAddress,
       privateKey: users[1].privateKey.serialize(),
-      signer,
+      signer: userSigners[1],
       pollId: 0n,
       inclusionProof,
       pollJoiningZkey: testPollJoiningZkeyPath,
@@ -178,7 +178,7 @@ describe("joinPoll", function test() {
       maciAddress: maciAddresses.maciContractAddress,
       pollId: 0n,
       pollPublicKey: users[1].publicKey.serialize(),
-      signer,
+      signer: userSigners[1],
       startBlock: startBlock || 0,
     });
 

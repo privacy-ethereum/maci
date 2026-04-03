@@ -29,7 +29,7 @@
   "devDependencies": {
     "@types/chai-as-promised": "^8.0.2",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^24.2.0",
+    "@types/node": "^24.11.0",
     "chai": "^4.3.10",
     "chai-as-promised": "^8.0.1",
     "hardhat-artifactor": "^0.2.0",
@@ -43,6 +43,7 @@
     "ethers": "^6.15.0",
     "hardhat": "^2.25.0",
     "@maci-protocol/circuits": "^3.0.0",
+    "@maci-protocol/contracts": "^3.0.0",
     "@maci-protocol/cli": "^3.0.0",
     "@maci-protocol/core": "^3.0.0",
     "@maci-protocol/crypto": "^3.0.0",

@@ -42,12 +42,12 @@ describe("setVerifyingKeys", function test() {
       verifyingKeysRegistryAddress,
     });
 
-    expect(
+    await expect(
       setVerifyingKeys({
         ...(await verifyingKeysArgs(signer, [EMode.NON_QV])),
         verifyingKeysRegistryAddress,
       }),
-    ).rejectedWith("This poll joining verifying key is already set in the contract");
+    ).eventually.rejectedWith("This poll joining verifying key is already set in the contract");
   });
 
   it("should throw when setting different number of modes and different number of process verifying keys", async () => {

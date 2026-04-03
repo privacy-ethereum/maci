@@ -34,14 +34,6 @@ template MessageProcessorQv(
     var PACKED_COMMAND_LENGTH = 4;
     var STATE_LEAF_LENGTH = 3;
     var BALLOT_LENGTH = 2;
-    var BALLOT_NONCE_INDEX = 0;
-    var BALLOT_VOTE_OPTION_ROOT_INDEX = 1;
-    var STATE_LEAF_PUBLIC_X_INDEX = 0;
-    var STATE_LEAF_PUBLIC_Y_INDEX = 1;
-    var STATE_LEAF_VOICE_CREDIT_BALANCE_INDEX = 2;
-    var MESSAGE_TREE_ZERO_VALUE = 8370432830353022751713833565135785980866757267633941821328460903436894336785;
-    // Number of options for this poll.
-    var maxVoteOptions = VOTE_OPTION_TREE_ARITY ** voteOptionTreeDepth;
 
     // Number of users that have completed the sign up.
     signal input totalSignups;
@@ -58,7 +50,7 @@ template MessageProcessorQv(
     // The current state root (before the processing).
     signal input currentStateRoot;
     // The actual tree depth (might be <= stateTreeDepth).
-    // @note it is a public input to ensure fair processing from 
+    // @note it is a public input to ensure fair processing from
     // the coordinator (no censoring)
     signal input actualStateTreeDepth;
     // The coordinator public key hash
@@ -98,7 +90,7 @@ template MessageProcessorQv(
 
     // The index of the first message in the batch, inclusive.
     signal input index;
-    
+
     // The index of the last message in the batch to process, exclusive.
     // This value may be less than batchSize if this batch is
     // the last batch and the total number of messages is not a multiple of the batch size.
@@ -160,7 +152,7 @@ template MessageProcessorQv(
 
     // Decrypt each Message into a Command.
     // The command i-th is composed by the following fields.
-    // e.g., command 0 is made of commandsStateIndex[0], 
+    // e.g., command 0 is made of commandsStateIndex[0],
     // commandsNewPublicKey[0], ..., commandsPackedCommandOut[0]
     var computedCommandsStateIndex[batchSize];
     var computedCommandsNewPublicKey[batchSize][2];
@@ -203,7 +195,7 @@ template MessageProcessorQv(
         var computedCurrentStateLeavesPathElements[stateTreeDepth][STATE_TREE_ARITY - 1];
         var computedCurrentBallotPathElements[stateTreeDepth][STATE_TREE_ARITY - 1];
         var computedCurrentVoteWeightsPathElements[voteOptionTreeDepth][VOTE_OPTION_TREE_ARITY - 1];
-        
+
         for (var j = 0; j < stateTreeDepth; j++) {
             for (var k = 0; k < STATE_TREE_ARITY - 1; k++) {
                 computedCurrentStateLeavesPathElements[j][k] = currentStateLeavesPathElements[i][j][k];
@@ -216,7 +208,7 @@ template MessageProcessorQv(
                 computedCurrentVoteWeightsPathElements[j][k] = currentVoteWeightsPathElements[i][j][k];
             }
         }
-        
+
         (computedNewVoteStateRoot[i], computedNewVoteBallotRoot[i]) = SingleMessageProcessorQv(stateTreeDepth, voteOptionTreeDepth)(
             totalSignups,
             stateRoots[i + 1],

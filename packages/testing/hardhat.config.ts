@@ -11,7 +11,7 @@ const config: HardhatUserConfig = {
     hardhat: {
       gas: GAS_LIMIT,
       blockGasLimit: GAS_LIMIT,
-      accounts: { count: 30, mnemonic: WALLET_MNEMONIC },
+      accounts: { count: 101, mnemonic: WALLET_MNEMONIC },
       mining: {
         auto: true,
         interval: 100,

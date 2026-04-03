@@ -26,23 +26,23 @@
     "@docusaurus/theme-classic": "^3.8.1",
     "@docusaurus/theme-common": "^3.8.1",
     "@docusaurus/theme-mermaid": "^3.8.1",
-    "@easyops-cn/docusaurus-search-local": "^0.52.1",
+    "@easyops-cn/docusaurus-search-local": "^0.55.1",
     "@mdx-js/react": "^3.1.0",
     "clsx": "^2.1.1",
     "docusaurus-plugin-image-zoom": "^3.0.1",
     "docusaurus-plugin-matomo": "^0.0.8",
     "gray-matter": "^4.0.3",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/module-type-aliases": "^3.9.2",
     "@docusaurus/tsconfig": "^3.8.1",
     "@docusaurus/types": "^3.8.1",
-    "@types/node": "^24.2.0",
+    "@types/node": "^24.11.0",
     "@types/react": "^19.1.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
@@ -60,6 +60,6 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": "20"
   }
 }

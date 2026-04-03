@@ -2,7 +2,7 @@ import { Keypair } from "@maci-protocol/domainobjs";
 import { expect } from "chai";
 import { AbiCoder, type Signer, ZeroAddress } from "ethers";
 
-import type { MACI, MockSemaphore, SemaphorePolicy, SemaphoreChecker } from "../../typechain-types";
+import type { MACI, MockSemaphore, SemaphorePolicy, SemaphoreChecker, ISemaphore } from "../../typechain-types";
 
 import { deploySemaphoreSignupPolicy, deployContract } from "../../ts/deploy";
 import { getDefaultSigner, getSigners } from "../../ts/utils";
@@ -21,28 +21,8 @@ describe("Semaphore", () => {
   const validGroupId = 0n;
   const invalidGroupId = 1n;
 
-  const proof = {
-    merkleTreeDepth: 1n,
-    merkleTreeRoot: 0n,
-    nullifier: 0n,
-    message: 0n,
-    scope: validGroupId,
-    points: [0n, 0n, 0n, 0n, 0n, 0n, 0n, 0n],
-  };
-
-  const invalidProof = {
-    merkleTreeDepth: 1n,
-    merkleTreeRoot: 0n,
-    nullifier: 0n,
-    message: 0n,
-    scope: invalidGroupId,
-    points: [1n, 0n, 0n, 0n, 0n, 0n, 0n, 0n],
-  };
-
-  const encodedProofInvalidGroupId = AbiCoder.defaultAbiCoder().encode(
-    ["uint256", "uint256", "uint256", "uint256", "uint256", "uint256[8]"],
-    [proof.merkleTreeDepth, proof.merkleTreeRoot, proof.nullifier, proof.message, invalidGroupId, proof.points],
-  );
+  let proof: ISemaphore.SemaphoreProofStruct;
+  let invalidProof: ISemaphore.SemaphoreProofStruct;
 
   before(async () => {
     signer = await getDefaultSigner();
@@ -50,15 +30,30 @@ describe("Semaphore", () => {
     const mockSemaphoreAddress = await mockSemaphore.getAddress();
     signerAddress = await signer.getAddress();
 
-    // eslint-disable-next-line no-bitwise
-    proof.scope = (BigInt(signerAddress) << 96n) | validGroupId;
-
     [semaphorePolicy, semaphoreChecker] = await deploySemaphoreSignupPolicy(
       { semaphore: mockSemaphoreAddress, groupId: validGroupId },
       {},
       signer,
       true,
     );
+
+    proof = {
+      merkleTreeDepth: 1n,
+      merkleTreeRoot: 0n,
+      nullifier: 0n,
+      message: BigInt(signerAddress),
+      scope: validGroupId,
+      points: [0n, 0n, 0n, 0n, 0n, 0n, 0n, 0n],
+    };
+
+    invalidProof = {
+      merkleTreeDepth: 1n,
+      merkleTreeRoot: 0n,
+      nullifier: 0n,
+      message: BigInt(signerAddress),
+      scope: invalidGroupId,
+      points: [1n, 0n, 0n, 0n, 0n, 0n, 0n, 0n],
+    };
   });
 
   describe("Deployment", () => {
@@ -104,6 +99,11 @@ describe("Semaphore", () => {
     });
 
     it("should not register a user if the register function is called with invalid groupId", async () => {
+      const encodedProofInvalidGroupId = AbiCoder.defaultAbiCoder().encode(
+        ["uint256", "uint256", "uint256", "uint256", "uint256", "uint256[8]"],
+        [proof.merkleTreeDepth, proof.merkleTreeRoot, proof.nullifier, proof.message, invalidGroupId, proof.points],
+      );
+
       await expect(
         maciContract.signUp(user.publicKey.asContractParam(), encodedProofInvalidGroupId),
       ).to.be.revertedWithCustomError(semaphoreChecker, "InvalidGroup");

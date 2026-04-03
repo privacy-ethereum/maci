@@ -61,13 +61,13 @@ contract Tally is Clone, SnarkCommon, Hasher, DomainObjs, ITally {
   // spent field retrieved in the totalSpentVoiceCredits object
   uint256 public totalSpent;
 
+  /// @notice events
+  event ResultAdded(uint256 indexed voteOptionIndex, uint256 indexed tallyResult);
+
   /// @notice custom errors
   error ProcessingNotComplete();
   error InvalidTallyVotesProof();
   error AllBallotsTallied();
-  error totalSignupsTooLarge();
-  error BatchStartIndexTooLarge();
-  error TallyBatchSizeTooLarge();
   error NotSupported();
   error VotesNotTallied();
   error IncorrectSpentVoiceCredits();
@@ -420,5 +420,7 @@ contract Tally is Clone, SnarkCommon, Hasher, DomainObjs, ITally {
     }
 
     previous.value = _tallyResult;
+
+    emit ResultAdded(_voteOptionIndex, _tallyResult);
   }
 }
