@@ -175,7 +175,6 @@ export interface IGenerateProofsArgs {
 
   /**
    * The tally file
-
    */
   tallyFile: string;
 
@@ -191,7 +190,7 @@ export interface IGenerateProofsData {
    */
   processProofs: IProof[];
 
-  /*
+  /**
    * Tally proofs
    */
   tallyProofs: IProof[];
