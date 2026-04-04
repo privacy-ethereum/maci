@@ -1,6 +1,10 @@
 import fs from "fs";
+import { writeFile } from "fs/promises";
 import path from "path";
+
 import type { PollSaltsData } from "./types";
+
+import { logMagenta, info } from "../../ts/logger";
 
 const SALTS_DIR = ".maci-salts";
 const SALTS_FILE_PREFIX = "poll-salts-";
@@ -10,7 +14,7 @@ const SALTS_FILE_PREFIX = "poll-salts-";
  */
 function getSaltsFilePath(pollId: string): string {
   if (!fs.existsSync(SALTS_DIR)) {
-    fs.mkdirSync(SALTS_DIR, { recursive: true });
+   fs.mkdirSync(SALTS_DIR, { recursive: true });
   }
   return path.join(SALTS_DIR, `${SALTS_FILE_PREFIX}${pollId}.json`);
 }
@@ -18,21 +22,13 @@ function getSaltsFilePath(pollId: string): string {
 /**
  * Save salts to disk for a specific poll
  */
-export function saveSalts(pollId: string, salts: PollSaltsData): void {
+export async function saveSalts(pollId: string, salts: PollSaltsData): Promise<void> {
   const filePath = getSaltsFilePath(pollId);
+  const dataToSave = { ...salts, lastUpdated: new Date().toISOString() };
 
-  try {
-    const dataToSave = {
-      ...salts,
-      lastUpdated: new Date().toISOString(),
-    };
-
-    fs.writeFileSync(filePath, JSON.stringify(dataToSave, null, 2), "utf8");
-    console.log(`✅ Salts saved to ${filePath}`);
-  } catch (error) {
-    console.error(`❌ Error saving salts: ${error}`);
-    throw new Error(`Failed to save salts: ${error}`);
-  }
+   await writeFile(filePath, JSON.stringify(dataToSave, null, 2), "utf8").catch((error: Error) => {
+    logMagenta({ text: info(`Error saving salts: ${error}`) });
+  });
 }
 
 /**
@@ -48,10 +44,9 @@ export function loadSalts(pollId: string): PollSaltsData | null {
   try {
     const fileContent = fs.readFileSync(filePath, "utf8");
     const data = JSON.parse(fileContent) as PollSaltsData;
-    console.log(`📂 Salts loaded from ${filePath}`);
     return data;
   } catch (error) {
-    console.error(`❌ Error loading salts: ${error}`);
+    logMagenta({ text: info(`Error loading salts: ${error}`) });
     return null;
   }
 }
@@ -65,9 +60,8 @@ export function deleteSalts(pollId: string): void {
   if (fs.existsSync(filePath)) {
     try {
       fs.unlinkSync(filePath);
-      console.log(`🗑️  Salts file deleted: ${filePath}`);
     } catch (error) {
-      console.error(`❌ Error deleting salts: ${error}`);
+      logMagenta({ text: info(`Error deleting salts: ${error}`) });
     }
   }
 }
