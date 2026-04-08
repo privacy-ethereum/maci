@@ -14,7 +14,7 @@ const SALTS_FILE_PREFIX = "poll-salts-";
  */
 function getSaltsFilePath(pollId: string): string {
   if (!fs.existsSync(SALTS_DIR)) {
-   fs.mkdirSync(SALTS_DIR, { recursive: true });
+    fs.mkdirSync(SALTS_DIR, { recursive: true });
   }
   return path.join(SALTS_DIR, `${SALTS_FILE_PREFIX}${pollId}.json`);
 }
@@ -26,8 +26,8 @@ export async function saveSalts(pollId: string, salts: PollSaltsData): Promise<v
   const filePath = getSaltsFilePath(pollId);
   const dataToSave = { ...salts, lastUpdated: new Date().toISOString() };
 
-   await writeFile(filePath, JSON.stringify(dataToSave, null, 2), "utf8").catch((error: Error) => {
-    logMagenta({ text: info(`Error saving salts: ${error}`) });
+  await writeFile(filePath, JSON.stringify(dataToSave, null, 2), "utf8").catch((error: unknown) => {
+    logMagenta({ text: info(`Error saving salts: ${String(error)}`) });
   });
 }
 
@@ -46,7 +46,7 @@ export function loadSalts(pollId: string): PollSaltsData | null {
     const data = JSON.parse(fileContent) as PollSaltsData;
     return data;
   } catch (error) {
-    logMagenta({ text: info(`Error loading salts: ${error}`) });
+    logMagenta({ text: info(`Error loading salts: ${String(error)}`) });
     return null;
   }
 }
@@ -61,7 +61,7 @@ export function deleteSalts(pollId: string): void {
     try {
       fs.unlinkSync(filePath);
     } catch (error) {
-      logMagenta({ text: info(`Error deleting salts: ${error}`) });
+      logMagenta({ text: info(`Error deleting salts: ${String(error)}`) });
     }
   }
 }
