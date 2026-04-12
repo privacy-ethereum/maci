@@ -1261,22 +1261,7 @@ export class Poll implements IPoll {
 
     this.numBatchesTallied += 1;
 
-    // Store the salts that were used for this batch
-    const outputWithSalts = circuitInputs as IVoteTallyCircuitInputs & {
-      salts: {
-        newResultsRootSalt: bigint;
-        newPerVoteOptionSpentVoiceCreditsRootSalt: bigint;
-        newSpentVoiceCreditSubtotalSalt: bigint;
-      };
-    };
-
-    outputWithSalts.salts = {
-      newResultsRootSalt,
-      newPerVoteOptionSpentVoiceCreditsRootSalt,
-      newSpentVoiceCreditSubtotalSalt,
-    };
-
-    return outputWithSalts;
+    return circuitInputs;
   };
 
   /**
