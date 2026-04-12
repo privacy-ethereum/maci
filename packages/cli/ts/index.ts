@@ -1109,7 +1109,7 @@ program
           messageProcessorWitnessDatFile: messageProcessorWitnessDat,
           useWasm: wasm,
           rapidsnark,
-	  incremental,
+          incremental,
         });
       } catch (error) {
         program.error((error as Error).message, { exitCode: 1 });
