@@ -346,30 +346,21 @@ export class ProofGenerator {
 
         // Save the salts immediately after generation (if new)
         if (!batchSalts) {
-          // Cast to access the salts property we added
-          const circuitInputsWithSalts = tallyCircuitInputs as TCircuitInputs & {
-            salts?: {
-              newResultsRootSalt: bigint;
-              newPerVoteOptionSpentVoiceCreditsRootSalt: bigint;
-              newSpentVoiceCreditSubtotalSalt: bigint;
-            };
+          // Extract salts directly from circuitInputs (returned from Poll.tallyVotes)
+          batchSalts = {
+            newResultsRootSalt: String(tallyCircuitInputs.newResultsRootSalt),
+            newSpentVoiceCreditSubtotalSalt: String(tallyCircuitInputs.newSpentVoiceCreditSubtotalSalt),
+            newPerVoteOptionSpentVoiceCreditsRootSalt: String(
+              tallyCircuitInputs.newPerVoteOptionSpentVoiceCreditsRootSalt,
+            ),
+            tallyBatchNumber: batchIndex,
+            timestamp: Date.now(),
           };
 
-          if (circuitInputsWithSalts.salts) {
-            batchSalts = {
-              newResultsRootSalt: circuitInputsWithSalts.salts.newResultsRootSalt.toString(),
-              newSpentVoiceCreditSubtotalSalt: circuitInputsWithSalts.salts.newSpentVoiceCreditSubtotalSalt.toString(),
-              newPerVoteOptionSpentVoiceCreditsRootSalt:
-                circuitInputsWithSalts.salts.newPerVoteOptionSpentVoiceCreditsRootSalt.toString(),
-              tallyBatchNumber: batchIndex,
-              timestamp: Date.now(),
-            };
+          pollSaltsData.tallyProofSalts[batchIndex] = batchSalts;
 
-            pollSaltsData.tallyProofSalts[batchIndex] = batchSalts;
-
-            // eslint-disable-next-line no-await-in-loop
-            await saveSalts(this.pollId, pollSaltsData);
-          }
+          // eslint-disable-next-line no-await-in-loop
+          await saveSalts(this.pollId, pollSaltsData);
         }
 
         inputs.push(tallyCircuitInputs);
