@@ -10,8 +10,8 @@ import type {
   IPrepareStateParams,
   IProofGeneratorParams,
   TallyData,
-  type ProofGenerationSalts,
-  type PollSaltsData,
+  ProofGenerationSalts,
+  PollSaltsData,
 } from "./types";
 import type { Proof } from "../../ts/types";
 import type { IVerifyingKeyObjectParams } from "@maci-protocol/domainobjs";
@@ -21,7 +21,7 @@ import { logMagenta, info, logGreen, success } from "../../ts/logger";
 import { extractVerifyingKey, generateProofSnarkjs, generateProofRapidSnark, verifyProof } from "../../ts/proofs";
 import { asHex, cleanThreads } from "../../ts/utils";
 
-import { saveSalts, loadSalts, saltsExist } from "./saltStorage";
+import { saveSalts, loadSalts, saltsExist } from "./SaltStorage";
 
 /**
  * Proof generator class for message processing and tally.
@@ -327,8 +327,10 @@ export class ProofGenerator {
         let batchSalts: ProofGenerationSalts | undefined;
 
         // Use existing salts if available for this batch
-        if (existingSalts && existingSalts.tallyProofSalts[batchIndex]) {
+        if (existingSalts?.tallyProofSalts[batchIndex]) {
           batchSalts = existingSalts.tallyProofSalts[batchIndex];
+
+          logGreen({ text: info(`Using existing salts for batch ${batchIndex}`) });
         }
 
         // Generate or retrieve tally for this batch
@@ -365,8 +367,8 @@ export class ProofGenerator {
 
             pollSaltsData.tallyProofSalts[batchIndex] = batchSalts;
 
-            // Save after each batch to ensure persistence
-            saveSalts(this.pollId, pollSaltsData);
+            // eslint-disable-next-line no-await-in-loop
+            await saveSalts(this.pollId, pollSaltsData);
           }
         }
 
