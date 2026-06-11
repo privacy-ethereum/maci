@@ -70,9 +70,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "engines": {
-    "node": "20",
-    "pnpm": "9 || 10"
   }
 }

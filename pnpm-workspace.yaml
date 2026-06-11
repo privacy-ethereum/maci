@@ -1,3 +1,18 @@
 packages:
   - "packages/*"
   - "apps/*"
+allowBuilds:
+  "@ipshipyard/node-datachannel": true
+  "@nestjs/core": true
+  "@scarf/scarf": true
+  blake-hash: true
+  core-js: true
+  core-js-pure: true
+  cpu-features: true
+  keccak: true
+  mongodb-memory-server: true
+  nx: true
+  protobufjs: true
+  secp256k1: true
+  ssh2: true
+  unrs-resolver: true
