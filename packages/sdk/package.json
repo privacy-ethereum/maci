@@ -43,7 +43,7 @@
     "docs": "typedoc --plugin typedoc-plugin-markdown --options ./typedoc.json"
   },
   "dependencies": {
-    "@zk-kit/lean-imt": "^2.2.3",
+    "@zk-kit/lean-imt": "^2.2.4",
     "ethers": "^6.15.0",
     "@maci-protocol/contracts": "^3.0.0",
     "@maci-protocol/core": "^3.0.0",
