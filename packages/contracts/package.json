@@ -232,7 +232,7 @@
     "@openzeppelin/merkle-tree": "^1.0.8",
     "@pcd/util": "^0.9.0",
     "@zk-kit/imt.sol": "2.0.0-beta.12",
-    "@zk-kit/lean-imt": "^2.2.3",
+    "@zk-kit/lean-imt": "^2.2.4",
     "circomlibjs": "^0.1.7",
     "ethers": "^6.15.0",
     "hardhat": "^2.25.0",

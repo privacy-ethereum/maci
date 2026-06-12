@@ -28,7 +28,7 @@
   "dependencies": {
     "@maci-protocol/crypto": "^3.0.0",
     "@maci-protocol/domainobjs": "^3.0.0",
-    "@zk-kit/lean-imt": "^2.2.3",
+    "@zk-kit/lean-imt": "^2.2.4",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
