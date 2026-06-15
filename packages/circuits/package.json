@@ -47,13 +47,13 @@
     "test:pollJoined": "pnpm run mocha-test ts/__tests__/PollJoined.test.ts"
   },
   "dependencies": {
-    "@zk-kit/circuits": "^0.4.0",
-    "circomkit": "^0.3.4",
-    "circomlib": "^2.0.5",
     "@maci-protocol/core": "^3.0.0",
     "@maci-protocol/crypto": "^3.0.0",
     "@maci-protocol/domainobjs": "^3.0.0",
-    "@maci-protocol/sdk": "^1.0.0"
+    "@maci-protocol/sdk": "^3.0.0",
+    "@zk-kit/circuits": "^0.4.0",
+    "circomkit": "^0.3.4",
+    "circomlib": "^2.0.5"
   },
   "devDependencies": {
     "@types/chai": "^4.3.11",

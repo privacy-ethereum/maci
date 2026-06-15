@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.0.0 (2026-06-12)
+
+* chore: add publishConfig (#2308) ([26f28d6](https://github.com/privacy-scaling-explorations/maci/commit/26f28d6)), closes [#2308](https://github.com/privacy-scaling-explorations/maci/issues/2308)
+* chore: explicity define packages as not private ([1736fec](https://github.com/privacy-scaling-explorations/maci/commit/1736fec))
+* chore: move packages to @maci org (#2286) ([7275509](https://github.com/privacy-scaling-explorations/maci/commit/7275509)), closes [#2286](https://github.com/privacy-scaling-explorations/maci/issues/2286)
+* chore: use type imports ([9da523a](https://github.com/privacy-scaling-explorations/maci/commit/9da523a))
+* chore(deps-dev): bump @types/mocha from 10.0.8 to 10.0.10 ([a8b029a](https://github.com/privacy-scaling-explorations/maci/commit/a8b029a))
+* chore(deps-dev): bump @types/node from 20.17.19 to 22.13.9 ([aa7c356](https://github.com/privacy-scaling-explorations/maci/commit/aa7c356))
+* chore(deps-dev): bump @types/node from 22.10.7 to 22.12.0 (#2073) ([1dcb28e](https://github.com/privacy-scaling-explorations/maci/commit/1dcb28e)), closes [#2073](https://github.com/privacy-scaling-explorations/maci/issues/2073)
+* chore(deps-dev): bump @types/node from 22.12.0 to 22.13.1 ([5f06af0](https://github.com/privacy-scaling-explorations/maci/commit/5f06af0))
+* chore(deps-dev): bump @types/node from 22.13.1 to 22.13.4 ([dba94f4](https://github.com/privacy-scaling-explorations/maci/commit/dba94f4))
+* chore(deps-dev): bump @types/node from 22.13.17 to 22.14.0 ([3434168](https://github.com/privacy-scaling-explorations/maci/commit/3434168))
+* chore(deps-dev): bump @types/node from 22.13.9 to 22.13.10 (#2241) ([3f50bb6](https://github.com/privacy-scaling-explorations/maci/commit/3f50bb6)), closes [#2241](https://github.com/privacy-scaling-explorations/maci/issues/2241)
+* chore(deps-dev): bump @types/node from 22.14.0 to 22.14.1 ([38f0947](https://github.com/privacy-scaling-explorations/maci/commit/38f0947))
+* chore(deps-dev): bump @types/node from 22.14.1 to 22.15.3 ([430d214](https://github.com/privacy-scaling-explorations/maci/commit/430d214))
+* chore(deps-dev): bump @types/node from 22.15.17 to 24.0.1 ([33485a5](https://github.com/privacy-scaling-explorations/maci/commit/33485a5))
+* chore(deps-dev): bump @types/node from 22.15.8 to 22.15.17 ([b144ca2](https://github.com/privacy-scaling-explorations/maci/commit/b144ca2))
+* chore(deps-dev): bump @types/node from 22.9.0 to 22.10.7 ([3e4a5ae](https://github.com/privacy-scaling-explorations/maci/commit/3e4a5ae))
+* chore(deps-dev): bump @types/node from 24.0.1 to 24.0.3 ([834943a](https://github.com/privacy-scaling-explorations/maci/commit/834943a))
+* chore(deps-dev): bump @types/node from 24.0.12 to 24.0.13 ([f85b4b1](https://github.com/privacy-scaling-explorations/maci/commit/f85b4b1))
+* chore(deps-dev): bump @types/node from 24.0.13 to 24.2.0 (#2697) ([35e2fb7](https://github.com/privacy-scaling-explorations/maci/commit/35e2fb7)), closes [#2697](https://github.com/privacy-scaling-explorations/maci/issues/2697)
+* chore(deps-dev): bump @types/node from 24.0.3 to 24.0.4 ([a00ce55](https://github.com/privacy-scaling-explorations/maci/commit/a00ce55))
+* chore(deps-dev): bump @types/node from 24.0.4 to 24.0.7 ([fbbe0a7](https://github.com/privacy-scaling-explorations/maci/commit/fbbe0a7))
+* chore(deps-dev): bump @types/node from 24.0.7 to 24.0.12 (#2626) ([5975ca0](https://github.com/privacy-scaling-explorations/maci/commit/5975ca0)), closes [#2626](https://github.com/privacy-scaling-explorations/maci/issues/2626)
+* chore(deps-dev): bump mocha from 10.7.3 to 11.0.1 ([457a504](https://github.com/privacy-scaling-explorations/maci/commit/457a504))
+* chore(deps-dev): bump mocha from 10.8.2 to 11.1.0 ([f524a07](https://github.com/privacy-scaling-explorations/maci/commit/f524a07))
+* chore(deps-dev): bump mocha from 11.1.0 to 11.2.2 ([044ad2e](https://github.com/privacy-scaling-explorations/maci/commit/044ad2e))
+* chore(deps-dev): bump mocha from 11.2.2 to 11.4.0 ([09929d2](https://github.com/privacy-scaling-explorations/maci/commit/09929d2))
+* chore(deps-dev): bump mocha from 11.4.0 to 11.6.0 (#2546) ([54823d2](https://github.com/privacy-scaling-explorations/maci/commit/54823d2)), closes [#2546](https://github.com/privacy-scaling-explorations/maci/issues/2546)
+* chore(deps-dev): bump mocha from 11.6.0 to 11.7.0 ([739b4e5](https://github.com/privacy-scaling-explorations/maci/commit/739b4e5))
+* chore(deps-dev): bump mocha from 11.7.1 to 11.7.2 ([5646026](https://github.com/privacy-scaling-explorations/maci/commit/5646026))
+* chore(deps-dev): bump ts-mocha from 10.0.0 to 11.1.0 ([df84193](https://github.com/privacy-scaling-explorations/maci/commit/df84193))
+* chore(deps): bump @types/node to 24.11.0 ([36f727b](https://github.com/privacy-scaling-explorations/maci/commit/36f727b))
+* feat: add message processor for full voice credits mode ([d7f4240](https://github.com/privacy-scaling-explorations/maci/commit/d7f4240))
+* feat: voice credits per poll (#1967) ([f59e9c3](https://github.com/privacy-scaling-explorations/maci/commit/f59e9c3)), closes [#1967](https://github.com/privacy-scaling-explorations/maci/issues/1967)
+* feat(circuits): add partial support for full spent voting mode ([8c06abb](https://github.com/privacy-scaling-explorations/maci/commit/8c06abb))
+* feat(circuits): remove timestamp from state leaf ([831e00d](https://github.com/privacy-scaling-explorations/maci/commit/831e00d))
+* feat(core): support individual vote counts circuit inputs (#2575) ([38c76f2](https://github.com/privacy-scaling-explorations/maci/commit/38c76f2)), closes [#2575](https://github.com/privacy-scaling-explorations/maci/issues/2575)
+* refactor: expand shorthand variables to full names ([75547c0](https://github.com/privacy-scaling-explorations/maci/commit/75547c0))
+* refactor: rename from short to full names ([120cffa](https://github.com/privacy-scaling-explorations/maci/commit/120cffa))
+* refactor(circuits): rename circuits signal inputs and move templates ([c2f4e36](https://github.com/privacy-scaling-explorations/maci/commit/c2f4e36))
+
+
+
+
+
 ## [3.0.0](https://github.com/privacy-scaling-explorations/maci/compare/v2.5.0...v3.0.0) (2025-03-28)
 
 

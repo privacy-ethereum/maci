@@ -24,9 +24,72 @@ For more info on trusted setup ceremonies please refer to p0tion's [docs](https:
 
 ## Maci v3.0 Trusted Setup Ceremony
 
-:::danger
-Maci v3.0 Trusted Setup Ceremony has not started yet. Thus for production use cases, please use [MACI v2.0](https://github.com/privacy-scaling-explorations/maci/releases/tag/v2.5.0).
+:::info
+Maci v3.0 Trusted Setup Ceremony is now completed and the circuits can be used in production.
 :::
+
+For this release, we plan to run a ceremony with smaller size circuits (more accessible to contributors) due to smaller batch sizes for proving on chain, and with larger circuits and large batch sizes for proving. Smaller size artifacts can be used for smaller rounds or for operators that want to run everything on a local computer vs using a beefy server. On the other hand, we plan to use the artifacts with larger batch sizes for large rounds and solely on a server.
+
+### Small Batch Size Ceremony
+
+:::info
+To download the artifacts, please run the following command from within MACI monorepo's root directory:
+
+```bash
+pnpm download-zkeys:ceremony
+```
+
+:::
+
+Here are the **maximum** values supported by these artifacts:
+
+**_MessageProcessor_**
+
+- users: $2^14 = 16384$
+- batch size for proving: $5^2 = 25$
+- vote options: $5^3 = 125$
+
+**_VoteTally_**
+
+- users (ballots): $2^14 = 16384$
+- batch size for proving: $2^5 = 32$
+- vote options: $5^3 = 125$
+
+**_PollJoining_**
+
+- users: $2^14 = 16384$
+
+**_PollJoined_**
+
+- users: $2^14 = 16384$
+
+### Large Batch Size Ceremony
+
+:::info
+Please note that this ceremony has not started yet. We will inform when it will start and when the artifacts are available for use.
+:::
+
+Here are the **maximum** values supported by these artifacts:
+
+**_MessageProcessor_**
+
+- users: $2^14 = 16384$
+- batch size for proving: $5^3 = 125$
+- vote options: $5^3 = 125$
+
+**_VoteTally_**
+
+- users (ballots): $2^14 = 16384$
+- batch size for proving: $2^7 = 128$
+- vote options: $5^3 = 125$
+
+**_PollJoining_**
+
+- users: $2^14 = 16384$
+
+**_PollJoined_**
+
+- users: $2^14 = 16384$
 
 ## Maci v2.0 Trusted Setup Ceremony (most recent)
 
