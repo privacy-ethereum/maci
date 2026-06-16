@@ -3,6 +3,1081 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.0.0 (2026-06-12)
+
+* chore: add logger for contract helpers ([a688400](https://github.com/privacy-scaling-explorations/maci/commit/a688400))
+* chore: add more exports from contracts ([91d946d](https://github.com/privacy-scaling-explorations/maci/commit/91d946d))
+* chore: add prettier fixes after update ([dbdb74a](https://github.com/privacy-scaling-explorations/maci/commit/dbdb74a))
+* chore: add publishConfig (#2308) ([26f28d6](https://github.com/privacy-scaling-explorations/maci/commit/26f28d6)), closes [#2308](https://github.com/privacy-scaling-explorations/maci/issues/2308)
+* chore: add webhook notification for scheduled jobs ([62c4a85](https://github.com/privacy-scaling-explorations/maci/commit/62c4a85))
+* chore: apply changes for files after prettier update ([7661cc4](https://github.com/privacy-scaling-explorations/maci/commit/7661cc4))
+* chore: bump docusaurus packages to ^3.7.0 ([301f7b7](https://github.com/privacy-scaling-explorations/maci/commit/301f7b7))
+* chore: bump nest packages ([cbbaaf4](https://github.com/privacy-scaling-explorations/maci/commit/cbbaaf4))
+* chore: bump zerodev dependencies ([0e4caa8](https://github.com/privacy-scaling-explorations/maci/commit/0e4caa8))
+* chore: cast signer type from hardhat to ethers one ([c136d6f](https://github.com/privacy-scaling-explorations/maci/commit/c136d6f))
+* chore: change assert import ([bf59c7a](https://github.com/privacy-scaling-explorations/maci/commit/bf59c7a))
+* chore: cleanup config files and package.json ([25c22dc](https://github.com/privacy-scaling-explorations/maci/commit/25c22dc))
+* chore: enable get-changed-files for workflows ([6e9bd18](https://github.com/privacy-scaling-explorations/maci/commit/6e9bd18))
+* chore: explicity define packages as not private ([1736fec](https://github.com/privacy-scaling-explorations/maci/commit/1736fec))
+* chore: expose sdk function invalidateVotes ([eeab56a](https://github.com/privacy-scaling-explorations/maci/commit/eeab56a))
+* chore: fix 404 status URL (#1949) ([38cbf66](https://github.com/privacy-scaling-explorations/maci/commit/38cbf66)), closes [#1949](https://github.com/privacy-scaling-explorations/maci/issues/1949)
+* chore: fix 404 status URL (#1963) ([8488952](https://github.com/privacy-scaling-explorations/maci/commit/8488952)), closes [#1963](https://github.com/privacy-scaling-explorations/maci/issues/1963)
+* chore: fix 404 status URL (#1977) ([fb3c31e](https://github.com/privacy-scaling-explorations/maci/commit/fb3c31e)), closes [#1977](https://github.com/privacy-scaling-explorations/maci/issues/1977)
+* chore: fix multiformat version for sdk ([b765391](https://github.com/privacy-scaling-explorations/maci/commit/b765391))
+* chore: fixed typo on pr template (#1994) ([e2068a3](https://github.com/privacy-scaling-explorations/maci/commit/e2068a3)), closes [#1994](https://github.com/privacy-scaling-explorations/maci/issues/1994)
+* chore: increase memory for stress tests ([f83ca78](https://github.com/privacy-scaling-explorations/maci/commit/f83ca78))
+* chore: move e2e tests for coordinator to nightly jobs ([c43fb8f](https://github.com/privacy-scaling-explorations/maci/commit/c43fb8f))
+* chore: move from dev to main branch ([df37bb1](https://github.com/privacy-scaling-explorations/maci/commit/df37bb1))
+* chore: move packages to @maci org (#2286) ([7275509](https://github.com/privacy-scaling-explorations/maci/commit/7275509)), closes [#2286](https://github.com/privacy-scaling-explorations/maci/issues/2286)
+* chore: move sdk unit tests to reusable e2e workflow ([f296500](https://github.com/privacy-scaling-explorations/maci/commit/f296500))
+* chore: optimize lean imt and minor improvements ([a68701b](https://github.com/privacy-scaling-explorations/maci/commit/a68701b))
+* chore: optimize message processing circuits ([145ef3f](https://github.com/privacy-scaling-explorations/maci/commit/145ef3f))
+* chore: optimize poll contract ([3139d32](https://github.com/privacy-scaling-explorations/maci/commit/3139d32))
+* chore: remove private packages ([6d7801d](https://github.com/privacy-scaling-explorations/maci/commit/6d7801d))
+* chore: sync nestjs dependencies versions ([9c66b33](https://github.com/privacy-scaling-explorations/maci/commit/9c66b33))
+* chore: type fixes and bump react-dom to ^19.0.0 ([f772a5c](https://github.com/privacy-scaling-explorations/maci/commit/f772a5c))
+* chore: update CODEOWNERS ([bfe13ab](https://github.com/privacy-scaling-explorations/maci/commit/bfe13ab))
+* chore: update CODEOWNERS ([7ba2738](https://github.com/privacy-scaling-explorations/maci/commit/7ba2738))
+* chore: update contracts interfaces ([b735876](https://github.com/privacy-scaling-explorations/maci/commit/b735876))
+* chore: update pnpm/action-setup to v5 ([245c97a](https://github.com/privacy-scaling-explorations/maci/commit/245c97a))
+* chore: update solidity version and cli fixes ([e9fd8b0](https://github.com/privacy-scaling-explorations/maci/commit/e9fd8b0))
+* chore: update vk registry function names (#2417) ([48ead60](https://github.com/privacy-scaling-explorations/maci/commit/48ead60)), closes [#2417](https://github.com/privacy-scaling-explorations/maci/issues/2417)
+* chore: update zkeys link ([1c8fa1b](https://github.com/privacy-scaling-explorations/maci/commit/1c8fa1b))
+* chore: updated pr template (#1991) ([73ab2a7](https://github.com/privacy-scaling-explorations/maci/commit/73ab2a7)), closes [#1991](https://github.com/privacy-scaling-explorations/maci/issues/1991)
+* chore: use type imports ([9da523a](https://github.com/privacy-scaling-explorations/maci/commit/9da523a))
+* chore: use ubuntu-24.04 for ci jobs ([ac959a2](https://github.com/privacy-scaling-explorations/maci/commit/ac959a2))
+* chore: use view modifier for verifying poll proof ([b66cda6](https://github.com/privacy-scaling-explorations/maci/commit/b66cda6))
+* chore(contracts): benchmarks for mainnets (#2522) ([b8032a4](https://github.com/privacy-scaling-explorations/maci/commit/b8032a4)), closes [#2522](https://github.com/privacy-scaling-explorations/maci/issues/2522)
+* chore(contracts): reuse pollContracts for tally and mp addresses ([3ce1524](https://github.com/privacy-scaling-explorations/maci/commit/3ce1524))
+* chore(coordinator): remove secrets from coordinator build workflow ([8d20fb9](https://github.com/privacy-scaling-explorations/maci/commit/8d20fb9))
+* chore(coordinator): use default vars for coordinator unit test workflow ([3800723](https://github.com/privacy-scaling-explorations/maci/commit/3800723))
+* chore(coordinator): use test mnemonic for build workflow ([26ace7b](https://github.com/privacy-scaling-explorations/maci/commit/26ace7b))
+* chore(deps-dev): bump @commitlint/cli from 19.5.0 to 19.6.1 ([9f11a90](https://github.com/privacy-scaling-explorations/maci/commit/9f11a90))
+* chore(deps-dev): bump @commitlint/cli from 19.6.1 to 19.7.1 ([070921d](https://github.com/privacy-scaling-explorations/maci/commit/070921d))
+* chore(deps-dev): bump @commitlint/cli from 19.7.1 to 19.8.0 (#2235) ([dab4f90](https://github.com/privacy-scaling-explorations/maci/commit/dab4f90)), closes [#2235](https://github.com/privacy-scaling-explorations/maci/issues/2235)
+* chore(deps-dev): bump @commitlint/cli from 19.8.0 to 19.8.1 ([a856a3d](https://github.com/privacy-scaling-explorations/maci/commit/a856a3d))
+* chore(deps-dev): bump @commitlint/config-conventional ([7e9f122](https://github.com/privacy-scaling-explorations/maci/commit/7e9f122))
+* chore(deps-dev): bump @commitlint/config-conventional ([8e018f4](https://github.com/privacy-scaling-explorations/maci/commit/8e018f4))
+* chore(deps-dev): bump @commitlint/config-conventional ([23f2529](https://github.com/privacy-scaling-explorations/maci/commit/23f2529))
+* chore(deps-dev): bump @commitlint/config-conventional ([1698e91](https://github.com/privacy-scaling-explorations/maci/commit/1698e91))
+* chore(deps-dev): bump @docusaurus/module-type-aliases ([ed43ef7](https://github.com/privacy-scaling-explorations/maci/commit/ed43ef7))
+* chore(deps-dev): bump @docusaurus/module-type-aliases ([15b6556](https://github.com/privacy-scaling-explorations/maci/commit/15b6556))
+* chore(deps-dev): bump @jest/globals from 29.7.0 to 30.0.0 ([ffe6ea3](https://github.com/privacy-scaling-explorations/maci/commit/ffe6ea3))
+* chore(deps-dev): bump @jest/globals from 30.0.0 to 30.0.3 ([7cd1a3f](https://github.com/privacy-scaling-explorations/maci/commit/7cd1a3f))
+* chore(deps-dev): bump @jest/globals from 30.0.3 to 30.0.4 ([2fc8595](https://github.com/privacy-scaling-explorations/maci/commit/2fc8595))
+* chore(deps-dev): bump @jest/globals from 30.0.4 to 30.0.5 ([98ef3b3](https://github.com/privacy-scaling-explorations/maci/commit/98ef3b3))
+* chore(deps-dev): bump @matterlabs/hardhat-zksync from 1.6.0 to 1.6.1 (#2622) ([4e43951](https://github.com/privacy-scaling-explorations/maci/commit/4e43951)), closes [#2622](https://github.com/privacy-scaling-explorations/maci/issues/2622)
+* chore(deps-dev): bump @matterlabs/hardhat-zksync from 1.6.1 to 1.6.2 ([db8e16c](https://github.com/privacy-scaling-explorations/maci/commit/db8e16c))
+* chore(deps-dev): bump @nestjs packages ([a17c5e7](https://github.com/privacy-scaling-explorations/maci/commit/a17c5e7))
+* chore(deps-dev): bump @nestjs/cli from 10.4.9 to 11.0.0 ([7da263d](https://github.com/privacy-scaling-explorations/maci/commit/7da263d))
+* chore(deps-dev): bump @nestjs/cli from 11.0.0 to 11.0.2 ([7498355](https://github.com/privacy-scaling-explorations/maci/commit/7498355))
+* chore(deps-dev): bump @nestjs/cli from 11.0.2 to 11.0.4 ([bf6331f](https://github.com/privacy-scaling-explorations/maci/commit/bf6331f))
+* chore(deps-dev): bump @nestjs/cli from 11.0.4 to 11.0.5 ([159c4d3](https://github.com/privacy-scaling-explorations/maci/commit/159c4d3))
+* chore(deps-dev): bump @nestjs/cli from 11.0.5 to 11.0.6 ([e985a16](https://github.com/privacy-scaling-explorations/maci/commit/e985a16))
+* chore(deps-dev): bump @nestjs/cli from 11.0.6 to 11.0.7 ([6ff8616](https://github.com/privacy-scaling-explorations/maci/commit/6ff8616))
+* chore(deps-dev): bump @nestjs/schematics from 10.2.3 to 11.0.0 ([109889f](https://github.com/privacy-scaling-explorations/maci/commit/109889f))
+* chore(deps-dev): bump @nestjs/schematics from 11.0.0 to 11.0.1 ([c7a095e](https://github.com/privacy-scaling-explorations/maci/commit/c7a095e))
+* chore(deps-dev): bump @nestjs/schematics from 11.0.1 to 11.0.2 ([25d7e15](https://github.com/privacy-scaling-explorations/maci/commit/25d7e15))
+* chore(deps-dev): bump @nestjs/schematics from 11.0.2 to 11.0.3 ([0fd3f7a](https://github.com/privacy-scaling-explorations/maci/commit/0fd3f7a))
+* chore(deps-dev): bump @nestjs/schematics from 11.0.3 to 11.0.4 ([4743d9a](https://github.com/privacy-scaling-explorations/maci/commit/4743d9a))
+* chore(deps-dev): bump @nestjs/schematics from 11.0.4 to 11.0.5 ([bb3364e](https://github.com/privacy-scaling-explorations/maci/commit/bb3364e))
+* chore(deps-dev): bump @nestjs/testing from 10.4.15 to 11.0.11 ([63bb589](https://github.com/privacy-scaling-explorations/maci/commit/63bb589))
+* chore(deps-dev): bump @nestjs/testing from 11.0.1 to 11.0.3 ([c2fa817](https://github.com/privacy-scaling-explorations/maci/commit/c2fa817))
+* chore(deps-dev): bump @nestjs/testing from 11.0.12 to 11.0.13 ([df80da8](https://github.com/privacy-scaling-explorations/maci/commit/df80da8))
+* chore(deps-dev): bump @nestjs/testing from 11.0.13 to 11.0.17 ([82dd78b](https://github.com/privacy-scaling-explorations/maci/commit/82dd78b))
+* chore(deps-dev): bump @nestjs/testing from 11.0.17 to 11.0.19 ([a2df507](https://github.com/privacy-scaling-explorations/maci/commit/a2df507))
+* chore(deps-dev): bump @nestjs/testing from 11.0.19 to 11.0.20 ([691fca4](https://github.com/privacy-scaling-explorations/maci/commit/691fca4))
+* chore(deps-dev): bump @nestjs/testing from 11.0.20 to 11.1.0 ([2b9e063](https://github.com/privacy-scaling-explorations/maci/commit/2b9e063))
+* chore(deps-dev): bump @nestjs/testing from 11.0.3 to 11.0.6 ([69ae687](https://github.com/privacy-scaling-explorations/maci/commit/69ae687))
+* chore(deps-dev): bump @nestjs/testing from 11.0.6 to 11.0.7 ([8bfde5e](https://github.com/privacy-scaling-explorations/maci/commit/8bfde5e))
+* chore(deps-dev): bump @nestjs/testing from 11.0.7 to 11.0.9 ([8be92cf](https://github.com/privacy-scaling-explorations/maci/commit/8be92cf))
+* chore(deps-dev): bump @nestjs/testing from 11.0.9 to 11.0.10 ([df18270](https://github.com/privacy-scaling-explorations/maci/commit/df18270))
+* chore(deps-dev): bump @nestjs/testing from 11.1.0 to 11.1.3 (#2526) ([6a4db66](https://github.com/privacy-scaling-explorations/maci/commit/6a4db66)), closes [#2526](https://github.com/privacy-scaling-explorations/maci/issues/2526)
+* chore(deps-dev): bump @nestjs/testing from 11.1.3 to 11.1.5 ([01ee5cc](https://github.com/privacy-scaling-explorations/maci/commit/01ee5cc))
+* chore(deps-dev): bump @types/express from 4.17.21 to 5.0.0 ([8b2d43a](https://github.com/privacy-scaling-explorations/maci/commit/8b2d43a))
+* chore(deps-dev): bump @types/express from 5.0.0 to 5.0.1 (#2291) ([a0011c5](https://github.com/privacy-scaling-explorations/maci/commit/a0011c5)), closes [#2291](https://github.com/privacy-scaling-explorations/maci/issues/2291)
+* chore(deps-dev): bump @types/express from 5.0.1 to 5.0.3 ([b81af04](https://github.com/privacy-scaling-explorations/maci/commit/b81af04))
+* chore(deps-dev): bump @types/jest from 29.5.14 to 30.0.0 ([16f466f](https://github.com/privacy-scaling-explorations/maci/commit/16f466f))
+* chore(deps-dev): bump @types/lodash from 4.17.14 to 4.17.15 ([3fef01d](https://github.com/privacy-scaling-explorations/maci/commit/3fef01d))
+* chore(deps-dev): bump @types/lodash from 4.17.15 to 4.17.16 ([3aa1c4e](https://github.com/privacy-scaling-explorations/maci/commit/3aa1c4e))
+* chore(deps-dev): bump @types/lodash from 4.17.16 to 4.17.17 ([c3de49f](https://github.com/privacy-scaling-explorations/maci/commit/c3de49f))
+* chore(deps-dev): bump @types/lodash from 4.17.17 to 4.17.19 ([145179f](https://github.com/privacy-scaling-explorations/maci/commit/145179f))
+* chore(deps-dev): bump @types/lodash from 4.17.19 to 4.17.20 (#2623) ([5201a1d](https://github.com/privacy-scaling-explorations/maci/commit/5201a1d)), closes [#2623](https://github.com/privacy-scaling-explorations/maci/issues/2623)
+* chore(deps-dev): bump @types/mocha from 10.0.8 to 10.0.10 ([a8b029a](https://github.com/privacy-scaling-explorations/maci/commit/a8b029a))
+* chore(deps-dev): bump @types/node from 20.17.19 to 22.13.9 ([aa7c356](https://github.com/privacy-scaling-explorations/maci/commit/aa7c356))
+* chore(deps-dev): bump @types/node from 22.10.7 to 22.12.0 (#2073) ([1dcb28e](https://github.com/privacy-scaling-explorations/maci/commit/1dcb28e)), closes [#2073](https://github.com/privacy-scaling-explorations/maci/issues/2073)
+* chore(deps-dev): bump @types/node from 22.12.0 to 22.13.1 ([5f06af0](https://github.com/privacy-scaling-explorations/maci/commit/5f06af0))
+* chore(deps-dev): bump @types/node from 22.13.1 to 22.13.4 ([dba94f4](https://github.com/privacy-scaling-explorations/maci/commit/dba94f4))
+* chore(deps-dev): bump @types/node from 22.13.17 to 22.14.0 ([3434168](https://github.com/privacy-scaling-explorations/maci/commit/3434168))
+* chore(deps-dev): bump @types/node from 22.13.9 to 22.13.10 (#2241) ([3f50bb6](https://github.com/privacy-scaling-explorations/maci/commit/3f50bb6)), closes [#2241](https://github.com/privacy-scaling-explorations/maci/issues/2241)
+* chore(deps-dev): bump @types/node from 22.14.0 to 22.14.1 ([38f0947](https://github.com/privacy-scaling-explorations/maci/commit/38f0947))
+* chore(deps-dev): bump @types/node from 22.14.1 to 22.15.3 ([430d214](https://github.com/privacy-scaling-explorations/maci/commit/430d214))
+* chore(deps-dev): bump @types/node from 22.15.17 to 24.0.1 ([33485a5](https://github.com/privacy-scaling-explorations/maci/commit/33485a5))
+* chore(deps-dev): bump @types/node from 22.15.8 to 22.15.17 ([b144ca2](https://github.com/privacy-scaling-explorations/maci/commit/b144ca2))
+* chore(deps-dev): bump @types/node from 22.9.0 to 22.10.7 ([3e4a5ae](https://github.com/privacy-scaling-explorations/maci/commit/3e4a5ae))
+* chore(deps-dev): bump @types/node from 24.0.1 to 24.0.3 ([834943a](https://github.com/privacy-scaling-explorations/maci/commit/834943a))
+* chore(deps-dev): bump @types/node from 24.0.12 to 24.0.13 ([f85b4b1](https://github.com/privacy-scaling-explorations/maci/commit/f85b4b1))
+* chore(deps-dev): bump @types/node from 24.0.13 to 24.2.0 (#2697) ([35e2fb7](https://github.com/privacy-scaling-explorations/maci/commit/35e2fb7)), closes [#2697](https://github.com/privacy-scaling-explorations/maci/issues/2697)
+* chore(deps-dev): bump @types/node from 24.0.3 to 24.0.4 ([a00ce55](https://github.com/privacy-scaling-explorations/maci/commit/a00ce55))
+* chore(deps-dev): bump @types/node from 24.0.4 to 24.0.7 ([fbbe0a7](https://github.com/privacy-scaling-explorations/maci/commit/fbbe0a7))
+* chore(deps-dev): bump @types/node from 24.0.7 to 24.0.12 (#2626) ([5975ca0](https://github.com/privacy-scaling-explorations/maci/commit/5975ca0)), closes [#2626](https://github.com/privacy-scaling-explorations/maci/issues/2626)
+* chore(deps-dev): bump @types/react from 19.0.10 to 19.0.11 ([91590bd](https://github.com/privacy-scaling-explorations/maci/commit/91590bd))
+* chore(deps-dev): bump @types/react from 19.0.12 to 19.1.0 (#2311) ([570f4fe](https://github.com/privacy-scaling-explorations/maci/commit/570f4fe)), closes [#2311](https://github.com/privacy-scaling-explorations/maci/issues/2311)
+* chore(deps-dev): bump @types/react from 19.0.7 to 19.0.8 (#2065) ([b7a81ac](https://github.com/privacy-scaling-explorations/maci/commit/b7a81ac)), closes [#2065](https://github.com/privacy-scaling-explorations/maci/issues/2065)
+* chore(deps-dev): bump @types/react from 19.0.8 to 19.0.10 (#2148) ([c2bb8d0](https://github.com/privacy-scaling-explorations/maci/commit/c2bb8d0)), closes [#2148](https://github.com/privacy-scaling-explorations/maci/issues/2148)
+* chore(deps-dev): bump @types/react from 19.1.0 to 19.1.2 ([a3960d7](https://github.com/privacy-scaling-explorations/maci/commit/a3960d7))
+* chore(deps-dev): bump @types/react from 19.1.2 to 19.1.3 ([be5b052](https://github.com/privacy-scaling-explorations/maci/commit/be5b052))
+* chore(deps-dev): bump @types/react from 19.1.4 to 19.1.8 ([a1d6b73](https://github.com/privacy-scaling-explorations/maci/commit/a1d6b73))
+* chore(deps-dev): bump @types/snarkjs from 0.7.8 to 0.7.9 ([5259169](https://github.com/privacy-scaling-explorations/maci/commit/5259169))
+* chore(deps-dev): bump chai-as-promised and @types/chai-as-promised ([7ff001d](https://github.com/privacy-scaling-explorations/maci/commit/7ff001d))
+* chore(deps-dev): bump conventional-changelog-conventionalcommits ([3f2e10a](https://github.com/privacy-scaling-explorations/maci/commit/3f2e10a))
+* chore(deps-dev): bump conventional-changelog-conventionalcommits ([810a98b](https://github.com/privacy-scaling-explorations/maci/commit/810a98b))
+* chore(deps-dev): bump eslint-config-prettier from 10.0.1 to 10.0.2 ([424765b](https://github.com/privacy-scaling-explorations/maci/commit/424765b))
+* chore(deps-dev): bump eslint-config-prettier from 10.0.2 to 10.1.1 (#2240) ([34a98fd](https://github.com/privacy-scaling-explorations/maci/commit/34a98fd)), closes [#2240](https://github.com/privacy-scaling-explorations/maci/issues/2240)
+* chore(deps-dev): bump eslint-config-prettier from 10.1.1 to 10.1.2 ([b178c1c](https://github.com/privacy-scaling-explorations/maci/commit/b178c1c))
+* chore(deps-dev): bump eslint-config-prettier from 10.1.2 to 10.1.5 ([82ae00e](https://github.com/privacy-scaling-explorations/maci/commit/82ae00e))
+* chore(deps-dev): bump eslint-config-prettier from 10.1.5 to 10.1.8 ([f377f6e](https://github.com/privacy-scaling-explorations/maci/commit/f377f6e))
+* chore(deps-dev): bump eslint-config-prettier from 9.1.0 to 10.0.1 ([44bed48](https://github.com/privacy-scaling-explorations/maci/commit/44bed48))
+* chore(deps-dev): bump eslint-import-resolver-typescript ([5acf0b2](https://github.com/privacy-scaling-explorations/maci/commit/5acf0b2))
+* chore(deps-dev): bump eslint-import-resolver-typescript ([1c4f3e8](https://github.com/privacy-scaling-explorations/maci/commit/1c4f3e8))
+* chore(deps-dev): bump eslint-import-resolver-typescript ([c2eae7c](https://github.com/privacy-scaling-explorations/maci/commit/c2eae7c))
+* chore(deps-dev): bump eslint-import-resolver-typescript ([59d76cc](https://github.com/privacy-scaling-explorations/maci/commit/59d76cc))
+* chore(deps-dev): bump eslint-import-resolver-typescript ([45a51a3](https://github.com/privacy-scaling-explorations/maci/commit/45a51a3))
+* chore(deps-dev): bump eslint-import-resolver-typescript ([de81997](https://github.com/privacy-scaling-explorations/maci/commit/de81997))
+* chore(deps-dev): bump eslint-import-resolver-typescript ([38ec098](https://github.com/privacy-scaling-explorations/maci/commit/38ec098))
+* chore(deps-dev): bump eslint-import-resolver-typescript ([ff02304](https://github.com/privacy-scaling-explorations/maci/commit/ff02304))
+* chore(deps-dev): bump eslint-import-resolver-typescript ([a7e7c88](https://github.com/privacy-scaling-explorations/maci/commit/a7e7c88))
+* chore(deps-dev): bump eslint-plugin-import from 2.31.0 to 2.32.0 ([1f4a167](https://github.com/privacy-scaling-explorations/maci/commit/1f4a167))
+* chore(deps-dev): bump eslint-plugin-prettier from 5.2.1 to 5.2.2 ([50f76ba](https://github.com/privacy-scaling-explorations/maci/commit/50f76ba))
+* chore(deps-dev): bump eslint-plugin-prettier from 5.2.2 to 5.2.3 ([0e9d975](https://github.com/privacy-scaling-explorations/maci/commit/0e9d975))
+* chore(deps-dev): bump eslint-plugin-prettier from 5.2.5 to 5.2.6 ([52b50bc](https://github.com/privacy-scaling-explorations/maci/commit/52b50bc))
+* chore(deps-dev): bump eslint-plugin-prettier from 5.2.6 to 5.4.0 ([ebc230b](https://github.com/privacy-scaling-explorations/maci/commit/ebc230b))
+* chore(deps-dev): bump eslint-plugin-prettier from 5.4.0 to 5.4.1 ([4b5f24d](https://github.com/privacy-scaling-explorations/maci/commit/4b5f24d))
+* chore(deps-dev): bump eslint-plugin-prettier from 5.4.1 to 5.5.1 ([cdb642b](https://github.com/privacy-scaling-explorations/maci/commit/cdb642b))
+* chore(deps-dev): bump eslint-plugin-react from 7.37.2 to 7.37.4 ([7922648](https://github.com/privacy-scaling-explorations/maci/commit/7922648))
+* chore(deps-dev): bump eslint-plugin-react from 7.37.4 to 7.37.5 ([fd0e5fd](https://github.com/privacy-scaling-explorations/maci/commit/fd0e5fd))
+* chore(deps-dev): bump fast-check from 3.23.1 to 3.23.2 ([b6c6167](https://github.com/privacy-scaling-explorations/maci/commit/b6c6167))
+* chore(deps-dev): bump fast-check from 3.23.2 to 4.0.0 ([266738d](https://github.com/privacy-scaling-explorations/maci/commit/266738d))
+* chore(deps-dev): bump fast-check from 4.0.1 to 4.1.0 ([a224917](https://github.com/privacy-scaling-explorations/maci/commit/a224917))
+* chore(deps-dev): bump fast-check from 4.1.0 to 4.1.1 ([e1fcaee](https://github.com/privacy-scaling-explorations/maci/commit/e1fcaee))
+* chore(deps-dev): bump fast-check from 4.1.1 to 4.2.0 ([b222ed8](https://github.com/privacy-scaling-explorations/maci/commit/b222ed8))
+* chore(deps-dev): bump glob from 11.0.0 to 11.0.1 ([0382977](https://github.com/privacy-scaling-explorations/maci/commit/0382977))
+* chore(deps-dev): bump glob from 11.0.1 to 11.0.2 ([b59a1a3](https://github.com/privacy-scaling-explorations/maci/commit/b59a1a3))
+* chore(deps-dev): bump glob from 11.0.2 to 11.0.3 ([63453aa](https://github.com/privacy-scaling-explorations/maci/commit/63453aa))
+* chore(deps-dev): bump glob from 11.0.3 to 11.1.0 ([fdae21e](https://github.com/privacy-scaling-explorations/maci/commit/fdae21e))
+* chore(deps-dev): bump husky from 9.1.6 to 9.1.7 ([9833561](https://github.com/privacy-scaling-explorations/maci/commit/9833561))
+* chore(deps-dev): bump is-ci from 3.0.1 to 4.1.0 ([0529e2b](https://github.com/privacy-scaling-explorations/maci/commit/0529e2b))
+* chore(deps-dev): bump jest from 29.7.0 to 30.0.0 ([7fd6037](https://github.com/privacy-scaling-explorations/maci/commit/7fd6037))
+* chore(deps-dev): bump jest from 30.0.0 to 30.0.3 ([cfc7238](https://github.com/privacy-scaling-explorations/maci/commit/cfc7238))
+* chore(deps-dev): bump jest from 30.0.3 to 30.0.4 (#2615) ([e94886c](https://github.com/privacy-scaling-explorations/maci/commit/e94886c)), closes [#2615](https://github.com/privacy-scaling-explorations/maci/issues/2615)
+* chore(deps-dev): bump jest from 30.0.4 to 30.2.0 ([b020e46](https://github.com/privacy-scaling-explorations/maci/commit/b020e46))
+* chore(deps-dev): bump lerna from 8.1.9 to 8.2.0 ([60d179b](https://github.com/privacy-scaling-explorations/maci/commit/60d179b))
+* chore(deps-dev): bump lerna from 8.2.0 to 8.2.1 ([6450214](https://github.com/privacy-scaling-explorations/maci/commit/6450214))
+* chore(deps-dev): bump lerna from 8.2.1 to 8.2.2 ([a6a5292](https://github.com/privacy-scaling-explorations/maci/commit/a6a5292))
+* chore(deps-dev): bump lerna from 8.2.2 to 8.2.3 ([bbe8425](https://github.com/privacy-scaling-explorations/maci/commit/bbe8425))
+* chore(deps-dev): bump lerna from 8.2.3 to 9.0.0 ([1bdf519](https://github.com/privacy-scaling-explorations/maci/commit/1bdf519))
+* chore(deps-dev): bump lint-staged from 15.2.10 to 15.4.1 ([e59ab22](https://github.com/privacy-scaling-explorations/maci/commit/e59ab22))
+* chore(deps-dev): bump lint-staged from 15.4.1 to 15.4.3 (#2066) ([c37c785](https://github.com/privacy-scaling-explorations/maci/commit/c37c785)), closes [#2066](https://github.com/privacy-scaling-explorations/maci/issues/2066)
+* chore(deps-dev): bump lint-staged from 15.4.3 to 15.5.0 ([f9e1074](https://github.com/privacy-scaling-explorations/maci/commit/f9e1074))
+* chore(deps-dev): bump lint-staged from 15.5.0 to 15.5.1 ([7cc81e8](https://github.com/privacy-scaling-explorations/maci/commit/7cc81e8))
+* chore(deps-dev): bump lint-staged from 15.5.1 to 15.5.2 ([53de3c5](https://github.com/privacy-scaling-explorations/maci/commit/53de3c5))
+* chore(deps-dev): bump lint-staged from 15.5.2 to 16.0.0 ([265dfc7](https://github.com/privacy-scaling-explorations/maci/commit/265dfc7))
+* chore(deps-dev): bump lint-staged from 16.0.0 to 16.1.0 (#2532) ([30921aa](https://github.com/privacy-scaling-explorations/maci/commit/30921aa)), closes [#2532](https://github.com/privacy-scaling-explorations/maci/issues/2532)
+* chore(deps-dev): bump lint-staged from 16.1.0 to 16.1.2 ([04a5b85](https://github.com/privacy-scaling-explorations/maci/commit/04a5b85))
+* chore(deps-dev): bump mocha from 10.7.3 to 11.0.1 ([457a504](https://github.com/privacy-scaling-explorations/maci/commit/457a504))
+* chore(deps-dev): bump mocha from 10.8.2 to 11.1.0 ([f524a07](https://github.com/privacy-scaling-explorations/maci/commit/f524a07))
+* chore(deps-dev): bump mocha from 11.1.0 to 11.2.2 ([044ad2e](https://github.com/privacy-scaling-explorations/maci/commit/044ad2e))
+* chore(deps-dev): bump mocha from 11.2.2 to 11.4.0 ([09929d2](https://github.com/privacy-scaling-explorations/maci/commit/09929d2))
+* chore(deps-dev): bump mocha from 11.4.0 to 11.6.0 (#2546) ([54823d2](https://github.com/privacy-scaling-explorations/maci/commit/54823d2)), closes [#2546](https://github.com/privacy-scaling-explorations/maci/issues/2546)
+* chore(deps-dev): bump mocha from 11.6.0 to 11.7.0 ([739b4e5](https://github.com/privacy-scaling-explorations/maci/commit/739b4e5))
+* chore(deps-dev): bump mocha from 11.7.1 to 11.7.2 ([5646026](https://github.com/privacy-scaling-explorations/maci/commit/5646026))
+* chore(deps-dev): bump mongodb-memory-server from 10.1.3 to 10.1.4 ([0fd8e3b](https://github.com/privacy-scaling-explorations/maci/commit/0fd8e3b))
+* chore(deps-dev): bump mongodb-memory-server from 10.1.4 to 11.0.1 ([2ea88a0](https://github.com/privacy-scaling-explorations/maci/commit/2ea88a0))
+* chore(deps-dev): bump prettier from 3.3.3 to 3.4.2 ([e09b827](https://github.com/privacy-scaling-explorations/maci/commit/e09b827))
+* chore(deps-dev): bump prettier from 3.4.2 to 3.5.0 ([806ec56](https://github.com/privacy-scaling-explorations/maci/commit/806ec56))
+* chore(deps-dev): bump prettier from 3.5.0 to 3.5.1 (#2145) ([a7caaff](https://github.com/privacy-scaling-explorations/maci/commit/a7caaff)), closes [#2145](https://github.com/privacy-scaling-explorations/maci/issues/2145)
+* chore(deps-dev): bump prettier from 3.5.1 to 3.5.3 ([ee360bb](https://github.com/privacy-scaling-explorations/maci/commit/ee360bb))
+* chore(deps-dev): bump prettier from 3.5.3 to 3.6.1 ([a424acc](https://github.com/privacy-scaling-explorations/maci/commit/a424acc))
+* chore(deps-dev): bump prettier from 3.6.1 to 3.6.2 ([c5bdb83](https://github.com/privacy-scaling-explorations/maci/commit/c5bdb83))
+* chore(deps-dev): bump prettier-plugin-solidity from 1.4.1 to 1.4.2 ([3f7c7d7](https://github.com/privacy-scaling-explorations/maci/commit/3f7c7d7))
+* chore(deps-dev): bump prettier-plugin-solidity from 1.4.2 to 2.0.0 ([b1721cb](https://github.com/privacy-scaling-explorations/maci/commit/b1721cb))
+* chore(deps-dev): bump prettier-plugin-solidity from 2.0.0 to 2.1.0 ([bd9b492](https://github.com/privacy-scaling-explorations/maci/commit/bd9b492))
+* chore(deps-dev): bump sinon from 20.0.0 to 21.0.0 ([77cec78](https://github.com/privacy-scaling-explorations/maci/commit/77cec78))
+* chore(deps-dev): bump solhint from 5.0.3 to 5.0.5 ([b5ff44c](https://github.com/privacy-scaling-explorations/maci/commit/b5ff44c))
+* chore(deps-dev): bump solhint from 5.0.5 to 5.1.0 ([8b945da](https://github.com/privacy-scaling-explorations/maci/commit/8b945da))
+* chore(deps-dev): bump solhint from 5.1.0 to 5.2.0 ([b7610af](https://github.com/privacy-scaling-explorations/maci/commit/b7610af))
+* chore(deps-dev): bump solhint from 5.2.0 to 6.0.0 ([381f202](https://github.com/privacy-scaling-explorations/maci/commit/381f202))
+* chore(deps-dev): bump solhint from 6.0.0 to 6.0.1 ([d105d69](https://github.com/privacy-scaling-explorations/maci/commit/d105d69))
+* chore(deps-dev): bump supertest from 7.1.0 to 7.1.1 ([17f099e](https://github.com/privacy-scaling-explorations/maci/commit/17f099e))
+* chore(deps-dev): bump supertest from 7.1.1 to 7.1.3 (#2625) ([6c2ffeb](https://github.com/privacy-scaling-explorations/maci/commit/6c2ffeb)), closes [#2625](https://github.com/privacy-scaling-explorations/maci/issues/2625)
+* chore(deps-dev): bump supertest from 7.1.3 to 7.1.4 ([f211173](https://github.com/privacy-scaling-explorations/maci/commit/f211173))
+* chore(deps-dev): bump ts-jest from 29.2.5 to 29.2.6 ([aaf7978](https://github.com/privacy-scaling-explorations/maci/commit/aaf7978))
+* chore(deps-dev): bump ts-jest from 29.2.6 to 29.3.0 (#2293) ([d24dcc5](https://github.com/privacy-scaling-explorations/maci/commit/d24dcc5)), closes [#2293](https://github.com/privacy-scaling-explorations/maci/issues/2293)
+* chore(deps-dev): bump ts-jest from 29.3.1 to 29.3.2 ([2e4cf7e](https://github.com/privacy-scaling-explorations/maci/commit/2e4cf7e))
+* chore(deps-dev): bump ts-jest from 29.3.2 to 29.3.4 ([ff66a03](https://github.com/privacy-scaling-explorations/maci/commit/ff66a03))
+* chore(deps-dev): bump ts-jest from 29.3.4 to 29.4.0 ([0bf8810](https://github.com/privacy-scaling-explorations/maci/commit/0bf8810))
+* chore(deps-dev): bump ts-jest from 29.4.0 to 29.4.1 ([7ce80f9](https://github.com/privacy-scaling-explorations/maci/commit/7ce80f9))
+* chore(deps-dev): bump ts-mocha from 10.0.0 to 11.1.0 ([df84193](https://github.com/privacy-scaling-explorations/maci/commit/df84193))
+* chore(deps-dev): bump typedoc and typedoc-plugin-markdown ([0e87d02](https://github.com/privacy-scaling-explorations/maci/commit/0e87d02))
+* chore(deps-dev): bump typedoc from 0.27.6 to 0.27.7 ([d82e179](https://github.com/privacy-scaling-explorations/maci/commit/d82e179))
+* chore(deps-dev): bump typedoc from 0.27.7 to 0.27.9 ([968e928](https://github.com/privacy-scaling-explorations/maci/commit/968e928))
+* chore(deps-dev): bump typedoc from 0.28.1 to 0.28.2 ([d140ec9](https://github.com/privacy-scaling-explorations/maci/commit/d140ec9))
+* chore(deps-dev): bump typedoc from 0.28.12 to 0.28.14 ([6112a2c](https://github.com/privacy-scaling-explorations/maci/commit/6112a2c))
+* chore(deps-dev): bump typedoc from 0.28.2 to 0.28.3 ([3ca8916](https://github.com/privacy-scaling-explorations/maci/commit/3ca8916))
+* chore(deps-dev): bump typedoc from 0.28.3 to 0.28.4 ([347c570](https://github.com/privacy-scaling-explorations/maci/commit/347c570))
+* chore(deps-dev): bump typedoc from 0.28.4 to 0.28.5 (#2548) ([27438a8](https://github.com/privacy-scaling-explorations/maci/commit/27438a8)), closes [#2548](https://github.com/privacy-scaling-explorations/maci/issues/2548)
+* chore(deps-dev): bump typedoc from 0.28.5 to 0.28.7 ([6fccf7b](https://github.com/privacy-scaling-explorations/maci/commit/6fccf7b))
+* chore(deps-dev): bump typedoc from 0.28.7 to 0.28.9 (#2696) ([c669711](https://github.com/privacy-scaling-explorations/maci/commit/c669711)), closes [#2696](https://github.com/privacy-scaling-explorations/maci/issues/2696)
+* chore(deps-dev): bump typedoc from 0.28.9 to 0.28.12 ([2a18391](https://github.com/privacy-scaling-explorations/maci/commit/2a18391))
+* chore(deps-dev): bump typedoc-plugin-markdown from 4.2.10 to 4.4.1 ([96ccc7b](https://github.com/privacy-scaling-explorations/maci/commit/96ccc7b))
+* chore(deps-dev): bump typedoc-plugin-markdown from 4.4.1 to 4.4.2 ([e13113f](https://github.com/privacy-scaling-explorations/maci/commit/e13113f))
+* chore(deps-dev): bump typedoc-plugin-markdown from 4.6.0 to 4.6.1 (#2313) ([a8b537a](https://github.com/privacy-scaling-explorations/maci/commit/a8b537a)), closes [#2313](https://github.com/privacy-scaling-explorations/maci/issues/2313)
+* chore(deps-dev): bump typedoc-plugin-markdown from 4.6.1 to 4.6.2 ([a9fc448](https://github.com/privacy-scaling-explorations/maci/commit/a9fc448))
+* chore(deps-dev): bump typedoc-plugin-markdown from 4.6.2 to 4.6.3 ([784e70a](https://github.com/privacy-scaling-explorations/maci/commit/784e70a))
+* chore(deps-dev): bump typedoc-plugin-markdown from 4.6.3 to 4.6.4 ([ac097cb](https://github.com/privacy-scaling-explorations/maci/commit/ac097cb))
+* chore(deps-dev): bump typedoc-plugin-markdown from 4.6.4 to 4.7.0 ([e83817b](https://github.com/privacy-scaling-explorations/maci/commit/e83817b))
+* chore(deps-dev): bump typedoc-plugin-markdown from 4.7.0 to 4.7.1 ([673c968](https://github.com/privacy-scaling-explorations/maci/commit/673c968))
+* chore(deps-dev): bump typedoc-plugin-markdown from 4.8.0 to 4.9.0 (#2773) ([e27988a](https://github.com/privacy-scaling-explorations/maci/commit/e27988a)), closes [#2773](https://github.com/privacy-scaling-explorations/maci/issues/2773)
+* chore(deps-dev): bump typescript and typedoc ([4ee5de5](https://github.com/privacy-scaling-explorations/maci/commit/4ee5de5))
+* chore(deps-dev): bump typescript from 5.7.3 to 5.8.2 ([e37f1bf](https://github.com/privacy-scaling-explorations/maci/commit/e37f1bf))
+* chore(deps-dev): bump typescript from 5.8.2 to 5.8.3 ([048cefc](https://github.com/privacy-scaling-explorations/maci/commit/048cefc))
+* chore(deps-dev): bump typescript from 5.8.3 to 5.9.2 ([17e4a70](https://github.com/privacy-scaling-explorations/maci/commit/17e4a70))
+* chore(deps-dev): bump wabt from 1.0.36 to 1.0.37 ([5611907](https://github.com/privacy-scaling-explorations/maci/commit/5611907))
+* chore(deps): bump @commander-js/extra-typings from 12.1.0 to 13.0.0 ([fb0a635](https://github.com/privacy-scaling-explorations/maci/commit/fb0a635))
+* chore(deps): bump @commander-js/extra-typings from 13.0.0 to 13.1.0 (#2067) ([0e1fd2d](https://github.com/privacy-scaling-explorations/maci/commit/0e1fd2d)), closes [#2067](https://github.com/privacy-scaling-explorations/maci/issues/2067)
+* chore(deps): bump @commander-js/extra-typings from 13.1.0 to 14.0.0 ([845ef2a](https://github.com/privacy-scaling-explorations/maci/commit/845ef2a))
+* chore(deps): bump @docusaurus packages ([8dac2f7](https://github.com/privacy-scaling-explorations/maci/commit/8dac2f7))
+* chore(deps): bump @docusaurus/theme-classic from 3.7.0 to 3.8.1 ([203935d](https://github.com/privacy-scaling-explorations/maci/commit/203935d))
+* chore(deps): bump @easyops-cn/docusaurus-search-local ([15d332c](https://github.com/privacy-scaling-explorations/maci/commit/15d332c))
+* chore(deps): bump @easyops-cn/docusaurus-search-local ([d91e46b](https://github.com/privacy-scaling-explorations/maci/commit/d91e46b))
+* chore(deps): bump @easyops-cn/docusaurus-search-local ([e21efe2](https://github.com/privacy-scaling-explorations/maci/commit/e21efe2))
+* chore(deps): bump @easyops-cn/docusaurus-search-local ([b35b591](https://github.com/privacy-scaling-explorations/maci/commit/b35b591))
+* chore(deps): bump @easyops-cn/docusaurus-search-local ([80f300a](https://github.com/privacy-scaling-explorations/maci/commit/80f300a))
+* chore(deps): bump @easyops-cn/docusaurus-search-local ([a894194](https://github.com/privacy-scaling-explorations/maci/commit/a894194))
+* chore(deps): bump @excubiae/contracts from 0.10.0 to 0.11.0 ([f83306b](https://github.com/privacy-scaling-explorations/maci/commit/f83306b))
+* chore(deps): bump @graphprotocol/graph-cli from 0.79.2 to 0.96.0 ([b782da5](https://github.com/privacy-scaling-explorations/maci/commit/b782da5))
+* chore(deps): bump @graphprotocol/graph-cli from 0.88.0 to 0.95.0 (#2069) ([46da711](https://github.com/privacy-scaling-explorations/maci/commit/46da711)), closes [#2069](https://github.com/privacy-scaling-explorations/maci/issues/2069)
+* chore(deps): bump @graphprotocol/graph-cli from 0.95.0 to 0.96.0 ([aa88b9a](https://github.com/privacy-scaling-explorations/maci/commit/aa88b9a))
+* chore(deps): bump @graphprotocol/graph-cli from 0.96.0 to 0.97.0 ([b3f22af](https://github.com/privacy-scaling-explorations/maci/commit/b3f22af))
+* chore(deps): bump @graphprotocol/graph-cli from 0.97.0 to 0.97.1 ([8f6952e](https://github.com/privacy-scaling-explorations/maci/commit/8f6952e))
+* chore(deps): bump @graphprotocol/graph-ts from 0.35.1 to 0.37.0 ([c355be3](https://github.com/privacy-scaling-explorations/maci/commit/c355be3))
+* chore(deps): bump @graphprotocol/graph-ts from 0.37.0 to 0.38.0 ([8057e4a](https://github.com/privacy-scaling-explorations/maci/commit/8057e4a))
+* chore(deps): bump @graphprotocol/graph-ts from 0.38.0 to 0.38.1 ([f3eea92](https://github.com/privacy-scaling-explorations/maci/commit/f3eea92))
+* chore(deps): bump @helia/json from 4.0.1 to 4.0.2 ([a423fa1](https://github.com/privacy-scaling-explorations/maci/commit/a423fa1))
+* chore(deps): bump @helia/json from 4.0.2 to 4.0.3 ([74ee87d](https://github.com/privacy-scaling-explorations/maci/commit/74ee87d))
+* chore(deps): bump @helia/json from 4.0.3 to 4.0.5 ([68185dd](https://github.com/privacy-scaling-explorations/maci/commit/68185dd))
+* chore(deps): bump @helia/json from 4.0.5 to 4.0.6 (#2515) ([69586e7](https://github.com/privacy-scaling-explorations/maci/commit/69586e7)), closes [#2515](https://github.com/privacy-scaling-explorations/maci/issues/2515)
+* chore(deps): bump @nestjs/common from 10.4.15 to 11.0.11 ([1a1256d](https://github.com/privacy-scaling-explorations/maci/commit/1a1256d))
+* chore(deps): bump @nestjs/common from 11.0.1 to 11.0.3 ([34ac159](https://github.com/privacy-scaling-explorations/maci/commit/34ac159))
+* chore(deps): bump @nestjs/common from 11.0.11 to 11.0.12 ([79f3f53](https://github.com/privacy-scaling-explorations/maci/commit/79f3f53))
+* chore(deps): bump @nestjs/common from 11.0.12 to 11.0.13 ([e790c27](https://github.com/privacy-scaling-explorations/maci/commit/e790c27))
+* chore(deps): bump @nestjs/common from 11.0.13 to 11.0.16 (#2360) ([628d1b1](https://github.com/privacy-scaling-explorations/maci/commit/628d1b1)), closes [#2360](https://github.com/privacy-scaling-explorations/maci/issues/2360)
+* chore(deps): bump @nestjs/common from 11.0.16 to 11.0.17 ([02563ea](https://github.com/privacy-scaling-explorations/maci/commit/02563ea))
+* chore(deps): bump @nestjs/common from 11.0.17 to 11.0.20 ([b09c91b](https://github.com/privacy-scaling-explorations/maci/commit/b09c91b))
+* chore(deps): bump @nestjs/common from 11.0.20 to 11.1.0 ([6871839](https://github.com/privacy-scaling-explorations/maci/commit/6871839))
+* chore(deps): bump @nestjs/common from 11.0.3 to 11.0.6 ([a80a308](https://github.com/privacy-scaling-explorations/maci/commit/a80a308))
+* chore(deps): bump @nestjs/common from 11.0.6 to 11.0.7 ([81272e6](https://github.com/privacy-scaling-explorations/maci/commit/81272e6))
+* chore(deps): bump @nestjs/common from 11.0.7 to 11.0.9 ([f579ffd](https://github.com/privacy-scaling-explorations/maci/commit/f579ffd))
+* chore(deps): bump @nestjs/common from 11.0.9 to 11.0.10 ([9ff8f7b](https://github.com/privacy-scaling-explorations/maci/commit/9ff8f7b))
+* chore(deps): bump @nestjs/common from 11.1.0 to 11.1.3 (#2530) ([16017f7](https://github.com/privacy-scaling-explorations/maci/commit/16017f7)), closes [#2530](https://github.com/privacy-scaling-explorations/maci/issues/2530)
+* chore(deps): bump @nestjs/common from 11.1.3 to 11.1.5 (#2660) ([66f9b31](https://github.com/privacy-scaling-explorations/maci/commit/66f9b31)), closes [#2660](https://github.com/privacy-scaling-explorations/maci/issues/2660)
+* chore(deps): bump @nestjs/core from 10.4.15 to 11.0.1 ([b0490d6](https://github.com/privacy-scaling-explorations/maci/commit/b0490d6))
+* chore(deps): bump @nestjs/core from 10.4.15 to 11.0.11 ([061c778](https://github.com/privacy-scaling-explorations/maci/commit/061c778))
+* chore(deps): bump @nestjs/core from 11.0.1 to 11.0.3 ([9ca9937](https://github.com/privacy-scaling-explorations/maci/commit/9ca9937))
+* chore(deps): bump @nestjs/core from 11.0.12 to 11.0.13 ([d928ede](https://github.com/privacy-scaling-explorations/maci/commit/d928ede))
+* chore(deps): bump @nestjs/core from 11.0.13 to 11.0.17 ([84ffa4c](https://github.com/privacy-scaling-explorations/maci/commit/84ffa4c))
+* chore(deps): bump @nestjs/core from 11.0.17 to 11.0.19 ([52ec7c3](https://github.com/privacy-scaling-explorations/maci/commit/52ec7c3))
+* chore(deps): bump @nestjs/core from 11.0.19 to 11.0.20 ([162480f](https://github.com/privacy-scaling-explorations/maci/commit/162480f))
+* chore(deps): bump @nestjs/core from 11.0.20 to 11.1.0 ([2e40b41](https://github.com/privacy-scaling-explorations/maci/commit/2e40b41))
+* chore(deps): bump @nestjs/core from 11.0.3 to 11.0.6 ([2469a09](https://github.com/privacy-scaling-explorations/maci/commit/2469a09))
+* chore(deps): bump @nestjs/core from 11.0.6 to 11.0.7 ([643be9f](https://github.com/privacy-scaling-explorations/maci/commit/643be9f))
+* chore(deps): bump @nestjs/core from 11.0.7 to 11.0.9 ([90314c9](https://github.com/privacy-scaling-explorations/maci/commit/90314c9))
+* chore(deps): bump @nestjs/core from 11.0.9 to 11.0.10 ([0bde8c3](https://github.com/privacy-scaling-explorations/maci/commit/0bde8c3))
+* chore(deps): bump @nestjs/core from 11.1.0 to 11.1.3 (#2531) ([efbbb42](https://github.com/privacy-scaling-explorations/maci/commit/efbbb42)), closes [#2531](https://github.com/privacy-scaling-explorations/maci/issues/2531)
+* chore(deps): bump @nestjs/mongoose from 10.1.0 to 11.0.0 ([c349e9b](https://github.com/privacy-scaling-explorations/maci/commit/c349e9b))
+* chore(deps): bump @nestjs/mongoose from 11.0.0 to 11.0.1 ([a07dca5](https://github.com/privacy-scaling-explorations/maci/commit/a07dca5))
+* chore(deps): bump @nestjs/mongoose from 11.0.1 to 11.0.3 ([05620d7](https://github.com/privacy-scaling-explorations/maci/commit/05620d7))
+* chore(deps): bump @nestjs/platform-express from 10.4.15 to 11.0.11 ([12fb1d4](https://github.com/privacy-scaling-explorations/maci/commit/12fb1d4))
+* chore(deps): bump @nestjs/platform-express from 11.0.1 to 11.0.3 ([b6351ca](https://github.com/privacy-scaling-explorations/maci/commit/b6351ca))
+* chore(deps): bump @nestjs/platform-express from 11.0.11 to 11.0.12 (#2290) ([5a311bc](https://github.com/privacy-scaling-explorations/maci/commit/5a311bc)), closes [#2290](https://github.com/privacy-scaling-explorations/maci/issues/2290)
+* chore(deps): bump @nestjs/platform-express from 11.0.12 to 11.0.13 ([84efdbe](https://github.com/privacy-scaling-explorations/maci/commit/84efdbe))
+* chore(deps): bump @nestjs/platform-express from 11.0.13 to 11.0.19 ([e330198](https://github.com/privacy-scaling-explorations/maci/commit/e330198))
+* chore(deps): bump @nestjs/platform-express from 11.0.19 to 11.0.20 ([22243d4](https://github.com/privacy-scaling-explorations/maci/commit/22243d4))
+* chore(deps): bump @nestjs/platform-express from 11.0.20 to 11.1.0 ([5c43ea2](https://github.com/privacy-scaling-explorations/maci/commit/5c43ea2))
+* chore(deps): bump @nestjs/platform-express from 11.0.3 to 11.0.6 ([f86f9fc](https://github.com/privacy-scaling-explorations/maci/commit/f86f9fc))
+* chore(deps): bump @nestjs/platform-express from 11.0.6 to 11.0.7 ([2ca5c97](https://github.com/privacy-scaling-explorations/maci/commit/2ca5c97))
+* chore(deps): bump @nestjs/platform-express from 11.0.7 to 11.0.9 ([54145e7](https://github.com/privacy-scaling-explorations/maci/commit/54145e7))
+* chore(deps): bump @nestjs/platform-express from 11.0.9 to 11.0.10 ([0b3634e](https://github.com/privacy-scaling-explorations/maci/commit/0b3634e))
+* chore(deps): bump @nestjs/platform-express from 11.1.0 to 11.1.1 ([e55ce30](https://github.com/privacy-scaling-explorations/maci/commit/e55ce30))
+* chore(deps): bump @nestjs/platform-express from 11.1.1 to 11.1.2 ([021c702](https://github.com/privacy-scaling-explorations/maci/commit/021c702))
+* chore(deps): bump @nestjs/platform-express from 11.1.2 to 11.1.3 ([ff9e5be](https://github.com/privacy-scaling-explorations/maci/commit/ff9e5be))
+* chore(deps): bump @nestjs/platform-express from 11.1.5 to 11.1.6 ([ebabca9](https://github.com/privacy-scaling-explorations/maci/commit/ebabca9))
+* chore(deps): bump @nestjs/platform-socket.io from 10.4.15 to 11.0.11 ([23ff1f2](https://github.com/privacy-scaling-explorations/maci/commit/23ff1f2))
+* chore(deps): bump @nestjs/platform-socket.io from 11.0.1 to 11.0.3 ([04d1d55](https://github.com/privacy-scaling-explorations/maci/commit/04d1d55))
+* chore(deps): bump @nestjs/platform-socket.io from 11.0.12 to 11.0.13 ([be96a25](https://github.com/privacy-scaling-explorations/maci/commit/be96a25))
+* chore(deps): bump @nestjs/platform-socket.io from 11.0.13 to 11.0.17 ([7f11eb8](https://github.com/privacy-scaling-explorations/maci/commit/7f11eb8))
+* chore(deps): bump @nestjs/platform-socket.io from 11.0.17 to 11.0.20 ([2760456](https://github.com/privacy-scaling-explorations/maci/commit/2760456))
+* chore(deps): bump @nestjs/platform-socket.io from 11.0.20 to 11.1.0 ([8302a2e](https://github.com/privacy-scaling-explorations/maci/commit/8302a2e))
+* chore(deps): bump @nestjs/platform-socket.io from 11.0.3 to 11.0.6 (#2076) ([4e37210](https://github.com/privacy-scaling-explorations/maci/commit/4e37210)), closes [#2076](https://github.com/privacy-scaling-explorations/maci/issues/2076)
+* chore(deps): bump @nestjs/platform-socket.io from 11.0.6 to 11.0.7 ([3b952a5](https://github.com/privacy-scaling-explorations/maci/commit/3b952a5))
+* chore(deps): bump @nestjs/platform-socket.io from 11.0.7 to 11.0.9 ([6c3c20f](https://github.com/privacy-scaling-explorations/maci/commit/6c3c20f))
+* chore(deps): bump @nestjs/platform-socket.io from 11.0.9 to 11.0.10 ([2ece68c](https://github.com/privacy-scaling-explorations/maci/commit/2ece68c))
+* chore(deps): bump @nestjs/platform-socket.io from 11.1.0 to 11.1.3 ([b850f38](https://github.com/privacy-scaling-explorations/maci/commit/b850f38))
+* chore(deps): bump @nestjs/platform-socket.io from 11.1.5 to 11.1.6 ([b6736f7](https://github.com/privacy-scaling-explorations/maci/commit/b6736f7))
+* chore(deps): bump @nestjs/schedule from 4.1.2 to 5.0.0 ([eeda1e8](https://github.com/privacy-scaling-explorations/maci/commit/eeda1e8))
+* chore(deps): bump @nestjs/schedule from 5.0.0 to 5.0.1 ([601add3](https://github.com/privacy-scaling-explorations/maci/commit/601add3))
+* chore(deps): bump @nestjs/schedule from 5.0.1 to 6.0.0 ([07690db](https://github.com/privacy-scaling-explorations/maci/commit/07690db))
+* chore(deps): bump @nestjs/swagger from 11.0.0 to 11.0.1 ([1d4d296](https://github.com/privacy-scaling-explorations/maci/commit/1d4d296))
+* chore(deps): bump @nestjs/swagger from 11.0.1 to 11.0.2 ([59d272e](https://github.com/privacy-scaling-explorations/maci/commit/59d272e))
+* chore(deps): bump @nestjs/swagger from 11.0.2 to 11.0.3 (#2075) ([2d6ce6d](https://github.com/privacy-scaling-explorations/maci/commit/2d6ce6d)), closes [#2075](https://github.com/privacy-scaling-explorations/maci/issues/2075)
+* chore(deps): bump @nestjs/swagger from 11.0.3 to 11.0.4 ([8c9b9ee](https://github.com/privacy-scaling-explorations/maci/commit/8c9b9ee))
+* chore(deps): bump @nestjs/swagger from 11.1.0 to 11.1.1 ([7fc6d73](https://github.com/privacy-scaling-explorations/maci/commit/7fc6d73))
+* chore(deps): bump @nestjs/swagger from 11.1.1 to 11.1.3 ([535687d](https://github.com/privacy-scaling-explorations/maci/commit/535687d))
+* chore(deps): bump @nestjs/swagger from 11.1.3 to 11.1.4 ([a488d6e](https://github.com/privacy-scaling-explorations/maci/commit/a488d6e))
+* chore(deps): bump @nestjs/swagger from 11.1.4 to 11.1.5 ([e2e735c](https://github.com/privacy-scaling-explorations/maci/commit/e2e735c))
+* chore(deps): bump @nestjs/swagger from 11.1.5 to 11.2.0 ([7fed6f4](https://github.com/privacy-scaling-explorations/maci/commit/7fed6f4))
+* chore(deps): bump @nestjs/swagger from 8.1.1 to 11.0.6 ([4e8aca9](https://github.com/privacy-scaling-explorations/maci/commit/4e8aca9))
+* chore(deps): bump @nestjs/throttler from 6.3.0 to 6.4.0 ([f49f730](https://github.com/privacy-scaling-explorations/maci/commit/f49f730))
+* chore(deps): bump @nestjs/websockets from 10.4.15 to 11.0.1 ([600b1ec](https://github.com/privacy-scaling-explorations/maci/commit/600b1ec))
+* chore(deps): bump @nestjs/websockets from 11.0.1 to 11.0.3 ([b29e483](https://github.com/privacy-scaling-explorations/maci/commit/b29e483))
+* chore(deps): bump @nestjs/websockets from 11.0.12 to 11.0.13 ([8ffaa34](https://github.com/privacy-scaling-explorations/maci/commit/8ffaa34))
+* chore(deps): bump @nestjs/websockets from 11.0.13 to 11.0.17 ([69f736f](https://github.com/privacy-scaling-explorations/maci/commit/69f736f))
+* chore(deps): bump @nestjs/websockets from 11.0.17 to 11.0.20 ([14942c2](https://github.com/privacy-scaling-explorations/maci/commit/14942c2))
+* chore(deps): bump @nestjs/websockets from 11.0.20 to 11.1.0 ([d9d7d6c](https://github.com/privacy-scaling-explorations/maci/commit/d9d7d6c))
+* chore(deps): bump @nestjs/websockets from 11.0.3 to 11.0.6 ([f0de52f](https://github.com/privacy-scaling-explorations/maci/commit/f0de52f))
+* chore(deps): bump @nestjs/websockets from 11.0.6 to 11.0.7 ([9ed83a0](https://github.com/privacy-scaling-explorations/maci/commit/9ed83a0))
+* chore(deps): bump @nestjs/websockets from 11.0.7 to 11.0.9 ([9a09dd4](https://github.com/privacy-scaling-explorations/maci/commit/9a09dd4))
+* chore(deps): bump @nestjs/websockets from 11.0.9 to 11.0.10 ([11a8d90](https://github.com/privacy-scaling-explorations/maci/commit/11a8d90))
+* chore(deps): bump @nestjs/websockets from 11.1.0 to 11.1.2 ([950486a](https://github.com/privacy-scaling-explorations/maci/commit/950486a))
+* chore(deps): bump @nestjs/websockets from 11.1.2 to 11.1.3 ([6011c54](https://github.com/privacy-scaling-explorations/maci/commit/6011c54))
+* chore(deps): bump @nestjs/websockets from 11.1.5 to 11.1.6 (#2751) ([17f017c](https://github.com/privacy-scaling-explorations/maci/commit/17f017c)), closes [#2751](https://github.com/privacy-scaling-explorations/maci/issues/2751)
+* chore(deps): bump @nomicfoundation/hardhat-ethers from 3.0.8 to 3.0.9 (#2529) ([4946891](https://github.com/privacy-scaling-explorations/maci/commit/4946891)), closes [#2529](https://github.com/privacy-scaling-explorations/maci/issues/2529)
+* chore(deps): bump @nomicfoundation/hardhat-ethers from 3.0.9 to 3.1.0 ([a1ac5d8](https://github.com/privacy-scaling-explorations/maci/commit/a1ac5d8))
+* chore(deps): bump @nomicfoundation/hardhat-toolbox from 5.0.0 to 6.0.0 ([efc5e53](https://github.com/privacy-scaling-explorations/maci/commit/efc5e53))
+* chore(deps): bump @nomicfoundation/hardhat-toolbox from 6.0.0 to 6.1.0 ([30d53d5](https://github.com/privacy-scaling-explorations/maci/commit/30d53d5))
+* chore(deps): bump @nomicfoundation/hardhat-verify from 2.0.14 to 2.1.0 (#2658) ([153b117](https://github.com/privacy-scaling-explorations/maci/commit/153b117)), closes [#2658](https://github.com/privacy-scaling-explorations/maci/issues/2658)
+* chore(deps): bump @openzeppelin/contracts from 5.1.0 to 5.2.0 ([513f9c1](https://github.com/privacy-scaling-explorations/maci/commit/513f9c1))
+* chore(deps): bump @openzeppelin/contracts from 5.2.0 to 5.3.0 ([914ad69](https://github.com/privacy-scaling-explorations/maci/commit/914ad69))
+* chore(deps): bump @openzeppelin/contracts from 5.3.0 to 5.4.0 ([ad4f415](https://github.com/privacy-scaling-explorations/maci/commit/ad4f415))
+* chore(deps): bump @openzeppelin/merkle-tree from 1.0.7 to 1.0.8 ([7af14cc](https://github.com/privacy-scaling-explorations/maci/commit/7af14cc))
+* chore(deps): bump @redis/client from 5.6.0 to 5.8.2 (#2750) ([9819a21](https://github.com/privacy-scaling-explorations/maci/commit/9819a21)), closes [#2750](https://github.com/privacy-scaling-explorations/maci/issues/2750)
+* chore(deps): bump @redis/client from 5.8.2 to 5.8.3 ([6686f71](https://github.com/privacy-scaling-explorations/maci/commit/6686f71))
+* chore(deps): bump @types/node to 24.11.0 ([36f727b](https://github.com/privacy-scaling-explorations/maci/commit/36f727b))
+* chore(deps): bump @vercel/blob from 0.27.1 to 0.27.2 ([67a6ab8](https://github.com/privacy-scaling-explorations/maci/commit/67a6ab8))
+* chore(deps): bump @zerodev/ecdsa-validator from 5.4.4 to 5.4.5 ([db407eb](https://github.com/privacy-scaling-explorations/maci/commit/db407eb))
+* chore(deps): bump @zerodev/ecdsa-validator from 5.4.5 to 5.4.8 ([88854c2](https://github.com/privacy-scaling-explorations/maci/commit/88854c2))
+* chore(deps): bump @zerodev/permissions from 5.5.10 to 5.5.11 ([9c915f5](https://github.com/privacy-scaling-explorations/maci/commit/9c915f5))
+* chore(deps): bump @zerodev/permissions from 5.5.11 to 5.5.12 ([477acb0](https://github.com/privacy-scaling-explorations/maci/commit/477acb0))
+* chore(deps): bump @zerodev/permissions from 5.5.12 to 5.5.14 (#2694) ([02439c0](https://github.com/privacy-scaling-explorations/maci/commit/02439c0)), closes [#2694](https://github.com/privacy-scaling-explorations/maci/issues/2694)
+* chore(deps): bump @zerodev/permissions from 5.5.2 to 5.5.3 ([bff258f](https://github.com/privacy-scaling-explorations/maci/commit/bff258f))
+* chore(deps): bump @zerodev/permissions from 5.5.3 to 5.5.4 ([1c6dfa2](https://github.com/privacy-scaling-explorations/maci/commit/1c6dfa2))
+* chore(deps): bump @zerodev/permissions from 5.5.5 to 5.5.8 ([7e7cb95](https://github.com/privacy-scaling-explorations/maci/commit/7e7cb95))
+* chore(deps): bump @zerodev/permissions from 5.5.8 to 5.5.9 ([5a13357](https://github.com/privacy-scaling-explorations/maci/commit/5a13357))
+* chore(deps): bump @zerodev/permissions from 5.5.9 to 5.5.10 ([d0ed756](https://github.com/privacy-scaling-explorations/maci/commit/d0ed756))
+* chore(deps): bump @zerodev/sdk from 5.4.26 to 5.4.34 ([7954466](https://github.com/privacy-scaling-explorations/maci/commit/7954466))
+* chore(deps): bump @zerodev/sdk from 5.4.34 to 5.4.36 ([8ad68c7](https://github.com/privacy-scaling-explorations/maci/commit/8ad68c7))
+* chore(deps): bump @zerodev/sdk from 5.4.36 to 5.4.39 ([2319be7](https://github.com/privacy-scaling-explorations/maci/commit/2319be7))
+* chore(deps): bump @zerodev/sdk from 5.4.39 to 5.4.40 ([a5e032c](https://github.com/privacy-scaling-explorations/maci/commit/a5e032c))
+* chore(deps): bump @zerodev/sdk from 5.4.40 to 5.4.41 ([ca39a60](https://github.com/privacy-scaling-explorations/maci/commit/ca39a60))
+* chore(deps): bump @zk-kit/lean-imt from 2.2.1 to 2.2.2 ([73fddce](https://github.com/privacy-scaling-explorations/maci/commit/73fddce))
+* chore(deps): bump @zk-kit/lean-imt from 2.2.2 to 2.2.3 ([a269d5c](https://github.com/privacy-scaling-explorations/maci/commit/a269d5c))
+* chore(deps): bump @zk-kit/lean-imt from 2.2.3 to 2.2.4 ([cccd882](https://github.com/privacy-scaling-explorations/maci/commit/cccd882))
+* chore(deps): bump actions/cache from 4 to 5 ([9be3a63](https://github.com/privacy-scaling-explorations/maci/commit/9be3a63))
+* chore(deps): bump actions/checkout from 4 to 5 (#2716) ([7fafe11](https://github.com/privacy-scaling-explorations/maci/commit/7fafe11)), closes [#2716](https://github.com/privacy-scaling-explorations/maci/issues/2716)
+* chore(deps): bump actions/checkout from 5 to 6 ([4dafac0](https://github.com/privacy-scaling-explorations/maci/commit/4dafac0))
+* chore(deps): bump actions/setup-node from 4 to 5 ([0ef52b1](https://github.com/privacy-scaling-explorations/maci/commit/0ef52b1))
+* chore(deps): bump actions/setup-node from 5 to 6 ([fbe98d1](https://github.com/privacy-scaling-explorations/maci/commit/fbe98d1))
+* chore(deps): bump circomkit from 0.3.1 to 0.3.2 ([5ca05bb](https://github.com/privacy-scaling-explorations/maci/commit/5ca05bb))
+* chore(deps): bump circomkit from 0.3.2 to 0.3.3 (#2533) ([1b21794](https://github.com/privacy-scaling-explorations/maci/commit/1b21794)), closes [#2533](https://github.com/privacy-scaling-explorations/maci/issues/2533)
+* chore(deps): bump circomkit from 0.3.3 to 0.3.4 ([798ed97](https://github.com/privacy-scaling-explorations/maci/commit/798ed97))
+* chore(deps): bump class-validator from 0.14.1 to 0.14.2 ([18d26a9](https://github.com/privacy-scaling-explorations/maci/commit/18d26a9))
+* chore(deps): bump commander from 12.1.0 to 13.0.0 ([919907d](https://github.com/privacy-scaling-explorations/maci/commit/919907d))
+* chore(deps): bump commander from 13.0.0 to 13.1.0 ([c951f73](https://github.com/privacy-scaling-explorations/maci/commit/c951f73))
+* chore(deps): bump commander from 13.1.0 to 14.0.0 ([88e75c7](https://github.com/privacy-scaling-explorations/maci/commit/88e75c7))
+* chore(deps): bump crate-ci/typos from 1.27.3 to 1.28.2 (#1952) ([c0b32e2](https://github.com/privacy-scaling-explorations/maci/commit/c0b32e2)), closes [#1952](https://github.com/privacy-scaling-explorations/maci/issues/1952)
+* chore(deps): bump crate-ci/typos from 1.28.2 to 1.28.3 (#1973) ([20092d1](https://github.com/privacy-scaling-explorations/maci/commit/20092d1)), closes [#1973](https://github.com/privacy-scaling-explorations/maci/issues/1973)
+* chore(deps): bump crate-ci/typos from 1.28.3 to 1.29.4 (#1986) ([275e4a3](https://github.com/privacy-scaling-explorations/maci/commit/275e4a3)), closes [#1986](https://github.com/privacy-scaling-explorations/maci/issues/1986)
+* chore(deps): bump crate-ci/typos from 1.29.4 to 1.29.5 ([b252dcf](https://github.com/privacy-scaling-explorations/maci/commit/b252dcf))
+* chore(deps): bump crate-ci/typos from 1.29.5 to 1.29.7 ([ff023a7](https://github.com/privacy-scaling-explorations/maci/commit/ff023a7))
+* chore(deps): bump crate-ci/typos from 1.29.7 to 1.30.0 ([1be34a3](https://github.com/privacy-scaling-explorations/maci/commit/1be34a3))
+* chore(deps): bump crate-ci/typos from 1.30.0 to 1.30.1 (#2234) ([d135053](https://github.com/privacy-scaling-explorations/maci/commit/d135053)), closes [#2234](https://github.com/privacy-scaling-explorations/maci/issues/2234)
+* chore(deps): bump crate-ci/typos from 1.30.1 to 1.30.2 ([bdc6fd9](https://github.com/privacy-scaling-explorations/maci/commit/bdc6fd9))
+* chore(deps): bump crate-ci/typos from 1.30.2 to 1.31.0 (#2288) ([12afb6b](https://github.com/privacy-scaling-explorations/maci/commit/12afb6b)), closes [#2288](https://github.com/privacy-scaling-explorations/maci/issues/2288)
+* chore(deps): bump crate-ci/typos from 1.31.1 to 1.32.0 ([84f5c2a](https://github.com/privacy-scaling-explorations/maci/commit/84f5c2a))
+* chore(deps): bump crate-ci/typos from 1.32.0 to 1.33.1 (#2524) ([5af126c](https://github.com/privacy-scaling-explorations/maci/commit/5af126c)), closes [#2524](https://github.com/privacy-scaling-explorations/maci/issues/2524)
+* chore(deps): bump crate-ci/typos from 1.33.1 to 1.34.0 ([625bb1b](https://github.com/privacy-scaling-explorations/maci/commit/625bb1b))
+* chore(deps): bump crate-ci/typos from 1.34.0 to 1.35.0 (#2699) ([956fe48](https://github.com/privacy-scaling-explorations/maci/commit/956fe48)), closes [#2699](https://github.com/privacy-scaling-explorations/maci/issues/2699)
+* chore(deps): bump crate-ci/typos from 1.35.0 to 1.35.4 (#2717) ([53702dc](https://github.com/privacy-scaling-explorations/maci/commit/53702dc)), closes [#2717](https://github.com/privacy-scaling-explorations/maci/issues/2717)
+* chore(deps): bump crate-ci/typos from 1.35.4 to 1.35.5 (#2747) ([344c1be](https://github.com/privacy-scaling-explorations/maci/commit/344c1be)), closes [#2747](https://github.com/privacy-scaling-explorations/maci/issues/2747)
+* chore(deps): bump crate-ci/typos from 1.35.5 to 1.35.7 ([1110406](https://github.com/privacy-scaling-explorations/maci/commit/1110406))
+* chore(deps): bump crate-ci/typos from 1.36.0 to 1.36.2 ([c1e2590](https://github.com/privacy-scaling-explorations/maci/commit/c1e2590))
+* chore(deps): bump crate-ci/typos from 1.36.2 to 1.36.3 ([78922d8](https://github.com/privacy-scaling-explorations/maci/commit/78922d8))
+* chore(deps): bump crate-ci/typos from 1.36.3 to 1.38.1 ([e495398](https://github.com/privacy-scaling-explorations/maci/commit/e495398))
+* chore(deps): bump crate-ci/typos from 1.38.1 to 1.39.0 ([75c9790](https://github.com/privacy-scaling-explorations/maci/commit/75c9790))
+* chore(deps): bump crate-ci/typos from 1.39.0 to 1.39.2 ([ac218a5](https://github.com/privacy-scaling-explorations/maci/commit/ac218a5))
+* chore(deps): bump crate-ci/typos from 1.39.2 to 1.43.5 ([bd050f0](https://github.com/privacy-scaling-explorations/maci/commit/bd050f0))
+* chore(deps): bump crytic/slither-action from 0.4.0 to 0.4.1 (#2287) ([16dd575](https://github.com/privacy-scaling-explorations/maci/commit/16dd575)), closes [#2287](https://github.com/privacy-scaling-explorations/maci/issues/2287)
+* chore(deps): bump crytic/slither-action from 0.4.1 to 0.4.2 ([c7f60aa](https://github.com/privacy-scaling-explorations/maci/commit/c7f60aa))
+* chore(deps): bump docker/setup-compose-action from 1 to 2 ([ee952ee](https://github.com/privacy-scaling-explorations/maci/commit/ee952ee))
+* chore(deps): bump docusaurus-plugin-image-zoom from 2.0.0 to 3.0.1 ([c7c7f85](https://github.com/privacy-scaling-explorations/maci/commit/c7c7f85))
+* chore(deps): bump dotenv from 16.4.5 to 16.4.7 (#2032) ([43eec88](https://github.com/privacy-scaling-explorations/maci/commit/43eec88)), closes [#2032](https://github.com/privacy-scaling-explorations/maci/issues/2032)
+* chore(deps): bump dotenv from 16.4.7 to 16.5.0 ([5a51cba](https://github.com/privacy-scaling-explorations/maci/commit/5a51cba))
+* chore(deps): bump dotenv from 16.5.0 to 17.0.0 ([4a0cb2e](https://github.com/privacy-scaling-explorations/maci/commit/4a0cb2e))
+* chore(deps): bump dotenv from 17.0.0 to 17.0.1 ([d8f0253](https://github.com/privacy-scaling-explorations/maci/commit/d8f0253))
+* chore(deps): bump dotenv from 17.1.0 to 17.2.0 ([baaf672](https://github.com/privacy-scaling-explorations/maci/commit/baaf672))
+* chore(deps): bump dotenv from 17.2.0 to 17.2.2 ([7bd56d2](https://github.com/privacy-scaling-explorations/maci/commit/7bd56d2))
+* chore(deps): bump ethers from 6.13.4 to 6.13.5 ([5e0256c](https://github.com/privacy-scaling-explorations/maci/commit/5e0256c))
+* chore(deps): bump ethers from 6.13.5 to 6.13.7 ([ea37135](https://github.com/privacy-scaling-explorations/maci/commit/ea37135))
+* chore(deps): bump ethers from 6.13.7 to 6.14.0 ([e806553](https://github.com/privacy-scaling-explorations/maci/commit/e806553))
+* chore(deps): bump ethers from 6.14.0 to 6.14.3 ([05118f4](https://github.com/privacy-scaling-explorations/maci/commit/05118f4))
+* chore(deps): bump ethers from 6.14.3 to 6.14.4 ([00bccaa](https://github.com/privacy-scaling-explorations/maci/commit/00bccaa))
+* chore(deps): bump ethers from 6.14.4 to 6.15.0 ([525ff51](https://github.com/privacy-scaling-explorations/maci/commit/525ff51))
+* chore(deps): bump github/codeql-action from 3 to 4 ([ca8c91f](https://github.com/privacy-scaling-explorations/maci/commit/ca8c91f))
+* chore(deps): bump hardhat from 2.22.15 to 2.22.18 ([cd2950f](https://github.com/privacy-scaling-explorations/maci/commit/cd2950f))
+* chore(deps): bump hardhat from 2.22.18 to 2.22.19 ([49af291](https://github.com/privacy-scaling-explorations/maci/commit/49af291))
+* chore(deps): bump hardhat from 2.22.19 to 2.23.0 ([38bc36f](https://github.com/privacy-scaling-explorations/maci/commit/38bc36f))
+* chore(deps): bump hardhat from 2.23.0 to 2.24.0 ([37f2b85](https://github.com/privacy-scaling-explorations/maci/commit/37f2b85))
+* chore(deps): bump hardhat from 2.24.1 to 2.24.3 ([3727b4e](https://github.com/privacy-scaling-explorations/maci/commit/3727b4e))
+* chore(deps): bump hardhat from 2.24.3 to 2.25.0 ([333297e](https://github.com/privacy-scaling-explorations/maci/commit/333297e))
+* chore(deps): bump helia from 5.1.1 to 5.2.0 ([77a2db2](https://github.com/privacy-scaling-explorations/maci/commit/77a2db2))
+* chore(deps): bump helia from 5.2.0 to 5.2.1 ([3ba8ce5](https://github.com/privacy-scaling-explorations/maci/commit/3ba8ce5))
+* chore(deps): bump helia from 5.2.1 to 5.3.0 ([7ea38ee](https://github.com/privacy-scaling-explorations/maci/commit/7ea38ee))
+* chore(deps): bump helia from 5.3.0 to 5.4.1 ([87f1638](https://github.com/privacy-scaling-explorations/maci/commit/87f1638))
+* chore(deps): bump helia from 5.4.1 to 5.4.2 ([83cc734](https://github.com/privacy-scaling-explorations/maci/commit/83cc734))
+* chore(deps): bump helmet from 8.0.0 to 8.1.0 ([9e544e2](https://github.com/privacy-scaling-explorations/maci/commit/9e544e2))
+* chore(deps): bump lodash from 4.17.21 to 4.17.23 ([1297572](https://github.com/privacy-scaling-explorations/maci/commit/1297572))
+* chore(deps): bump mongoose from 8.10.0 to 8.10.1 ([660bfe5](https://github.com/privacy-scaling-explorations/maci/commit/660bfe5))
+* chore(deps): bump mongoose from 8.10.1 to 8.12.0 ([f5587a8](https://github.com/privacy-scaling-explorations/maci/commit/f5587a8))
+* chore(deps): bump mongoose from 8.12.0 to 8.12.1 ([4a6d6e0](https://github.com/privacy-scaling-explorations/maci/commit/4a6d6e0))
+* chore(deps): bump mongoose from 8.12.1 to 8.13.1 ([2f47884](https://github.com/privacy-scaling-explorations/maci/commit/2f47884))
+* chore(deps): bump mongoose from 8.13.1 to 8.13.2 ([bb94fa3](https://github.com/privacy-scaling-explorations/maci/commit/bb94fa3))
+* chore(deps): bump mongoose from 8.13.2 to 8.14.0 ([10a3659](https://github.com/privacy-scaling-explorations/maci/commit/10a3659))
+* chore(deps): bump mongoose from 8.14.0 to 8.14.2 ([8a66b0b](https://github.com/privacy-scaling-explorations/maci/commit/8a66b0b))
+* chore(deps): bump mongoose from 8.14.2 to 8.15.0 ([455e027](https://github.com/privacy-scaling-explorations/maci/commit/455e027))
+* chore(deps): bump mongoose from 8.15.0 to 8.15.1 ([e1a02ff](https://github.com/privacy-scaling-explorations/maci/commit/e1a02ff))
+* chore(deps): bump mongoose from 8.15.1 to 8.15.2 ([35c23ab](https://github.com/privacy-scaling-explorations/maci/commit/35c23ab))
+* chore(deps): bump mongoose from 8.15.2 to 8.16.1 ([d6dd0e4](https://github.com/privacy-scaling-explorations/maci/commit/d6dd0e4))
+* chore(deps): bump mongoose from 8.16.1 to 8.16.2 (#2624) ([54209f1](https://github.com/privacy-scaling-explorations/maci/commit/54209f1)), closes [#2624](https://github.com/privacy-scaling-explorations/maci/issues/2624)
+* chore(deps): bump mongoose from 8.16.2 to 8.16.3 ([b2fa8b3](https://github.com/privacy-scaling-explorations/maci/commit/b2fa8b3))
+* chore(deps): bump mongoose from 8.16.3 to 8.17.0 ([bc40ba4](https://github.com/privacy-scaling-explorations/maci/commit/bc40ba4))
+* chore(deps): bump mongoose from 8.17.0 to 8.18.0 ([c2b1ae8](https://github.com/privacy-scaling-explorations/maci/commit/c2b1ae8))
+* chore(deps): bump mongoose from 8.9.3 to 8.9.5 ([79c44dd](https://github.com/privacy-scaling-explorations/maci/commit/79c44dd))
+* chore(deps): bump mongoose from 8.9.3 to 8.9.5 ([147a89f](https://github.com/privacy-scaling-explorations/maci/commit/147a89f))
+* chore(deps): bump mongoose from 8.9.5 to 8.9.7 ([d0aedca](https://github.com/privacy-scaling-explorations/maci/commit/d0aedca))
+* chore(deps): bump mongoose from 8.9.7 to 8.10.0 ([a2815e8](https://github.com/privacy-scaling-explorations/maci/commit/a2815e8))
+* chore(deps): bump multiformats from 13.3.1 to 13.3.2 (#2146) ([56a05a0](https://github.com/privacy-scaling-explorations/maci/commit/56a05a0)), closes [#2146](https://github.com/privacy-scaling-explorations/maci/issues/2146)
+* chore(deps): bump multiformats from 9.9.0 to 13.3.2 ([4a9853f](https://github.com/privacy-scaling-explorations/maci/commit/4a9853f))
+* chore(deps): bump prism-react-renderer from 2.4.0 to 2.4.1 ([fe00c0c](https://github.com/privacy-scaling-explorations/maci/commit/fe00c0c))
+* chore(deps): bump react and @types/react ([46355f2](https://github.com/privacy-scaling-explorations/maci/commit/46355f2))
+* chore(deps): bump react and @types/react ([a17b09b](https://github.com/privacy-scaling-explorations/maci/commit/a17b09b))
+* chore(deps): bump react and @types/react ([b239845](https://github.com/privacy-scaling-explorations/maci/commit/b239845))
+* chore(deps): bump react to 19.2.4 ([12d76ce](https://github.com/privacy-scaling-explorations/maci/commit/12d76ce))
+* chore(deps): bump react-dom from 19.1.1 to 19.2.4 ([7e2556d](https://github.com/privacy-scaling-explorations/maci/commit/7e2556d))
+* chore(deps): bump react-dom to ^19.1.0 ([86000c1](https://github.com/privacy-scaling-explorations/maci/commit/86000c1))
+* chore(deps): bump rxjs from 7.8.1 to 7.8.2 ([e683e9e](https://github.com/privacy-scaling-explorations/maci/commit/e683e9e))
+* chore(deps): bump solady from 0.1.10 to 0.1.12 (#2238) ([cacf47a](https://github.com/privacy-scaling-explorations/maci/commit/cacf47a)), closes [#2238](https://github.com/privacy-scaling-explorations/maci/issues/2238)
+* chore(deps): bump solady from 0.1.13 to 0.1.14 ([562b946](https://github.com/privacy-scaling-explorations/maci/commit/562b946))
+* chore(deps): bump solady from 0.1.14 to 0.1.15 ([c85eb50](https://github.com/privacy-scaling-explorations/maci/commit/c85eb50))
+* chore(deps): bump solady from 0.1.15 to 0.1.18 ([39faa91](https://github.com/privacy-scaling-explorations/maci/commit/39faa91))
+* chore(deps): bump solady from 0.1.18 to 0.1.19 (#2549) ([2f69240](https://github.com/privacy-scaling-explorations/maci/commit/2f69240)), closes [#2549](https://github.com/privacy-scaling-explorations/maci/issues/2549)
+* chore(deps): bump solady from 0.1.19 to 0.1.23 ([9a9e9df](https://github.com/privacy-scaling-explorations/maci/commit/9a9e9df))
+* chore(deps): bump solady from 0.1.23 to 0.1.24 (#2662) ([b2069c0](https://github.com/privacy-scaling-explorations/maci/commit/b2069c0)), closes [#2662](https://github.com/privacy-scaling-explorations/maci/issues/2662)
+* chore(deps): bump solady from 0.1.24 to 0.1.26 ([d231815](https://github.com/privacy-scaling-explorations/maci/commit/d231815))
+* chore(deps): bump tar from 7.4.3 to 7.5.1 ([a3a9b1b](https://github.com/privacy-scaling-explorations/maci/commit/a3a9b1b))
+* chore(deps): bump tar from 7.5.1 to 7.5.2 ([2ac98de](https://github.com/privacy-scaling-explorations/maci/commit/2ac98de))
+* chore(deps): bump tar from 7.5.10 to 7.5.11 ([3e0c275](https://github.com/privacy-scaling-explorations/maci/commit/3e0c275))
+* chore(deps): bump tar from 7.5.2 to 7.5.10 ([d475c83](https://github.com/privacy-scaling-explorations/maci/commit/d475c83))
+* chore(deps): bump uuid from 11.0.2 to 11.0.5 ([5ad1afd](https://github.com/privacy-scaling-explorations/maci/commit/5ad1afd))
+* chore(deps): bump uuid from 11.0.5 to 11.1.0 ([6ba0eac](https://github.com/privacy-scaling-explorations/maci/commit/6ba0eac))
+* chore(deps): bump viem from 2.23.2 to 2.23.5 ([d19cb50](https://github.com/privacy-scaling-explorations/maci/commit/d19cb50))
+* chore(deps): bump viem from 2.23.5 to 2.23.6 ([63d15a0](https://github.com/privacy-scaling-explorations/maci/commit/63d15a0))
+* chore(deps): bump viem from 2.23.6 to 2.23.9 (#2239) ([64eb1e0](https://github.com/privacy-scaling-explorations/maci/commit/64eb1e0)), closes [#2239](https://github.com/privacy-scaling-explorations/maci/issues/2239)
+* chore(deps): bump viem from 2.23.9 to 2.23.12 ([d055307](https://github.com/privacy-scaling-explorations/maci/commit/d055307))
+* chore(deps): bump viem from 2.24.3 to 2.25.0 ([c1f0d4f](https://github.com/privacy-scaling-explorations/maci/commit/c1f0d4f))
+* chore(deps): bump viem from 2.25.0 to 2.26.0 ([0bb6d26](https://github.com/privacy-scaling-explorations/maci/commit/0bb6d26))
+* chore(deps): bump viem from 2.26.0 to 2.27.0 ([7870562](https://github.com/privacy-scaling-explorations/maci/commit/7870562))
+* chore(deps): bump viem from 2.27.0 to 2.29.1 ([e103f9f](https://github.com/privacy-scaling-explorations/maci/commit/e103f9f))
+* chore(deps): bump viem from 2.29.1 to 2.29.2 ([d2860cd](https://github.com/privacy-scaling-explorations/maci/commit/d2860cd))
+* chore(deps): bump viem from 2.29.2 to 2.31.0 ([9d45d02](https://github.com/privacy-scaling-explorations/maci/commit/9d45d02))
+* chore(deps): bump viem from 2.31.2 to 2.31.3 ([f065412](https://github.com/privacy-scaling-explorations/maci/commit/f065412))
+* chore(deps): bump viem from 2.31.3 to 2.31.4 ([d97452c](https://github.com/privacy-scaling-explorations/maci/commit/d97452c))
+* chore(deps): bump viem from 2.31.4 to 2.31.6 ([8f03a39](https://github.com/privacy-scaling-explorations/maci/commit/8f03a39))
+* chore(deps): bump viem from 2.31.6 to 2.31.7 ([a00c326](https://github.com/privacy-scaling-explorations/maci/commit/a00c326))
+* chore(deps): bump viem from 2.31.7 to 2.33.2 (#2698) ([01abbc7](https://github.com/privacy-scaling-explorations/maci/commit/01abbc7)), closes [#2698](https://github.com/privacy-scaling-explorations/maci/issues/2698)
+* chore(relayer): disable typescript type import error for jest setup ([b823c59](https://github.com/privacy-scaling-explorations/maci/commit/b823c59))
+* chore(relayer): do not forbid unknown entity fields for validation ([7bfc825](https://github.com/privacy-scaling-explorations/maci/commit/7bfc825))
+* chore(sdk): sort out types for browser export ([0d04a73](https://github.com/privacy-scaling-explorations/maci/commit/0d04a73))
+* chore(testing): update chai expect with promise ([73274d3](https://github.com/privacy-scaling-explorations/maci/commit/73274d3))
+* chore(website): add maci aragon plugin ([fb683bc](https://github.com/privacy-scaling-explorations/maci/commit/fb683bc))
+* chore(website): coordinator docs and blog ([d8d79a3](https://github.com/privacy-scaling-explorations/maci/commit/d8d79a3))
+* feat: add erc20Votes policy deployment ([77e3a65](https://github.com/privacy-scaling-explorations/maci/commit/77e3a65))
+* feat: add invalidate votes function (#2219) ([6531fee](https://github.com/privacy-scaling-explorations/maci/commit/6531fee)), closes [#2219](https://github.com/privacy-scaling-explorations/maci/issues/2219)
+* feat: add logs output option for debugging and auditing ([d638fb6](https://github.com/privacy-scaling-explorations/maci/commit/d638fb6))
+* feat: add message processor for full voice credits mode ([d7f4240](https://github.com/privacy-scaling-explorations/maci/commit/d7f4240))
+* feat: add nightly workflow for mac (#1953) ([ea5b2fb](https://github.com/privacy-scaling-explorations/maci/commit/ea5b2fb)), closes [#1953](https://github.com/privacy-scaling-explorations/maci/issues/1953)
+* feat: add number of valid vote options ([cdba5a3](https://github.com/privacy-scaling-explorations/maci/commit/cdba5a3))
+* feat: add percentage log to zkeys download ([e6a8881](https://github.com/privacy-scaling-explorations/maci/commit/e6a8881))
+* feat: add pnpm genMaciKeyPair script (#1992) ([71d9d9b](https://github.com/privacy-scaling-explorations/maci/commit/71d9d9b)), closes [#1992](https://github.com/privacy-scaling-explorations/maci/issues/1992)
+* feat: add poll state tree depth ([3d74d4b](https://github.com/privacy-scaling-explorations/maci/commit/3d74d4b))
+* feat: add start and end timestmap for poll ([cf67b53](https://github.com/privacy-scaling-explorations/maci/commit/cf67b53))
+* feat: add support for mainnet deployment ([d4b23a7](https://github.com/privacy-scaling-explorations/maci/commit/d4b23a7))
+* feat: add support for polygon zkevm ([b4d1762](https://github.com/privacy-scaling-explorations/maci/commit/b4d1762))
+* feat: add tally result added event ([ba05dcb](https://github.com/privacy-scaling-explorations/maci/commit/ba05dcb))
+* feat: add zksync, linea deployment support ([0f18eba](https://github.com/privacy-scaling-explorations/maci/commit/0f18eba))
+* feat: allow to download artifacts on browser ([58a163f](https://github.com/privacy-scaling-explorations/maci/commit/58a163f))
+* feat: allow to fetch state index from contracts (#2092) ([cc869fc](https://github.com/privacy-scaling-explorations/maci/commit/cc869fc)), closes [#2092](https://github.com/privacy-scaling-explorations/maci/issues/2092)
+* feat: anonymous poll joining milestone 1 (#1625) ([5566cfe](https://github.com/privacy-scaling-explorations/maci/commit/5566cfe)), closes [#1625](https://github.com/privacy-scaling-explorations/maci/issues/1625)
+* feat: anonymous poll joining milestone 2 and 3 (#1750) ([47d6937](https://github.com/privacy-scaling-explorations/maci/commit/47d6937)), closes [#1750](https://github.com/privacy-scaling-explorations/maci/issues/1750)
+* feat: bump excubiae version ([b0b6996](https://github.com/privacy-scaling-explorations/maci/commit/b0b6996))
+* feat: check if a user is registered (#2278) ([6c0a2d9](https://github.com/privacy-scaling-explorations/maci/commit/6c0a2d9)), closes [#2278](https://github.com/privacy-scaling-explorations/maci/issues/2278)
+* feat: deploy initial voice credit proxy factory with maci tasks ([3b5aa65](https://github.com/privacy-scaling-explorations/maci/commit/3b5aa65))
+* feat: force the same key for each poll (#2063) ([11e5b8a](https://github.com/privacy-scaling-explorations/maci/commit/11e5b8a)), closes [#2063](https://github.com/privacy-scaling-explorations/maci/issues/2063)
+* feat: implement erc20votes initial voice credits proxy ([b7f24da](https://github.com/privacy-scaling-explorations/maci/commit/b7f24da))
+* feat: make ESupportedChains exportable so apps can use it ([b474a0c](https://github.com/privacy-scaling-explorations/maci/commit/b474a0c))
+* feat: make nullifier not leak identity between polls (#1974) ([c9e7efc](https://github.com/privacy-scaling-explorations/maci/commit/c9e7efc)), closes [#1974](https://github.com/privacy-scaling-explorations/maci/issues/1974)
+* feat: prevent duplicate maci key signup (#2273) ([4da7858](https://github.com/privacy-scaling-explorations/maci/commit/4da7858)), closes [#2273](https://github.com/privacy-scaling-explorations/maci/issues/2273)
+* feat: rebase anon poll joining with dev ([c384a5b](https://github.com/privacy-scaling-explorations/maci/commit/c384a5b))
+* feat: remove dependabot ([22106c8](https://github.com/privacy-scaling-explorations/maci/commit/22106c8))
+* feat: update codeowners ([32e1160](https://github.com/privacy-scaling-explorations/maci/commit/32e1160))
+* feat: use excubiae policies instead of gatekeepers ([a2319b1](https://github.com/privacy-scaling-explorations/maci/commit/a2319b1))
+* feat: use gatekeeper per poll (#1961) ([8e1ab15](https://github.com/privacy-scaling-explorations/maci/commit/8e1ab15)), closes [#1961](https://github.com/privacy-scaling-explorations/maci/issues/1961)
+* feat: voice credits per poll (#1967) ([f59e9c3](https://github.com/privacy-scaling-explorations/maci/commit/f59e9c3)), closes [#1967](https://github.com/privacy-scaling-explorations/maci/issues/1967)
+* feat(circuits): add partial support for full spent voting mode ([8c06abb](https://github.com/privacy-scaling-explorations/maci/commit/8c06abb))
+* feat(circuits): add poll joined circuit ([30c4f6a](https://github.com/privacy-scaling-explorations/maci/commit/30c4f6a))
+* feat(circuits): remove timestamp from state leaf ([831e00d](https://github.com/privacy-scaling-explorations/maci/commit/831e00d))
+* feat(circuits): reuse tally non-qv for full spent mode (#2437) ([ae1d978](https://github.com/privacy-scaling-explorations/maci/commit/ae1d978)), closes [#2437](https://github.com/privacy-scaling-explorations/maci/issues/2437)
+* feat(contracts): add anon aadhaar gatekeeper checker ([13f14b0](https://github.com/privacy-scaling-explorations/maci/commit/13f14b0))
+* feat(contracts): add checker and deployment for proxy gatekeepers ([87f6d3b](https://github.com/privacy-scaling-explorations/maci/commit/87f6d3b))
+* feat(contracts): add eas gatekeeper checker ([6e90591](https://github.com/privacy-scaling-explorations/maci/commit/6e90591))
+* feat(contracts): add gitcoin passport gatekeeper checker ([1eef631](https://github.com/privacy-scaling-explorations/maci/commit/1eef631))
+* feat(contracts): add hats gatekeeper checker ([8ba97ae](https://github.com/privacy-scaling-explorations/maci/commit/8ba97ae))
+* feat(contracts): add ipfs service and prepare parsing ipfs data ([2a2d0d4](https://github.com/privacy-scaling-explorations/maci/commit/2a2d0d4))
+* feat(contracts): add merkle proof gatekeeper checker ([e386f91](https://github.com/privacy-scaling-explorations/maci/commit/e386f91))
+* feat(contracts): add proxy clone for initial voice credit proxy ([52d5c0d](https://github.com/privacy-scaling-explorations/maci/commit/52d5c0d))
+* feat(contracts): add semaphore gatekeeper checker ([b7419c9](https://github.com/privacy-scaling-explorations/maci/commit/b7419c9))
+* feat(contracts): add signup token gatekeeper checker ([8b3556f](https://github.com/privacy-scaling-explorations/maci/commit/8b3556f))
+* feat(contracts): add zupass gatekeeper checker ([d69702b](https://github.com/privacy-scaling-explorations/maci/commit/d69702b))
+* feat(contracts): enhance ITally interface as per Tally.sol, remove mockTally.sol ([ba940a7](https://github.com/privacy-scaling-explorations/maci/commit/ba940a7))
+* feat(contracts): improve prove tasks ([de16dd0](https://github.com/privacy-scaling-explorations/maci/commit/de16dd0))
+* feat(contracts): integrate erc20 policy ([28d7bfc](https://github.com/privacy-scaling-explorations/maci/commit/28d7bfc))
+* feat(contracts): integrate excubiae for gatekeepers ([fae260b](https://github.com/privacy-scaling-explorations/maci/commit/fae260b))
+* feat(contracts): relay messages ([1f10971](https://github.com/privacy-scaling-explorations/maci/commit/1f10971))
+* feat(contracts): return voice credit proxy clone address on deploy (#2358) ([8ce4c0a](https://github.com/privacy-scaling-explorations/maci/commit/8ce4c0a)), closes [#2358](https://github.com/privacy-scaling-explorations/maci/issues/2358)
+* feat(contracts): reuse policy proxies factories for deployment ([ed918ea](https://github.com/privacy-scaling-explorations/maci/commit/ed918ea))
+* feat(contracts): store verifier and verifying keys in maci contract ([f3de633](https://github.com/privacy-scaling-explorations/maci/commit/f3de633))
+* feat(contracts): support etherscan v2 ([b419b9b](https://github.com/privacy-scaling-explorations/maci/commit/b419b9b))
+* feat(contracts): update excubiae package ([321b9bb](https://github.com/privacy-scaling-explorations/maci/commit/321b9bb))
+* feat(contracts): use proxy clone for poll contracts ([3caf47b](https://github.com/privacy-scaling-explorations/maci/commit/3caf47b))
+* feat(coordinator): add redis module ([a943051](https://github.com/privacy-scaling-explorations/maci/commit/a943051))
+* feat(coordinator): add workflow + health check ([6009fca](https://github.com/privacy-scaling-explorations/maci/commit/6009fca))
+* feat(coordinator): changes to use it with Aragon UI ([15a0b9e](https://github.com/privacy-scaling-explorations/maci/commit/15a0b9e))
+* feat(coordinator): finalize function in scheduler ([0196976](https://github.com/privacy-scaling-explorations/maci/commit/0196976))
+* feat(coordinator): scheduler module ([4dbcc36](https://github.com/privacy-scaling-explorations/maci/commit/4dbcc36))
+* feat(coordinator): submit on chain using SDK ([a8fac26](https://github.com/privacy-scaling-explorations/maci/commit/a8fac26))
+* feat(coordinator): update function in redis + adapt tests and utils ([963fc9e](https://github.com/privacy-scaling-explorations/maci/commit/963fc9e))
+* feat(coordinator): workflow + fixed tests + reuse factories ([0b0bd93](https://github.com/privacy-scaling-explorations/maci/commit/0b0bd93))
+* feat(core): support individual vote counts circuit inputs (#2575) ([38c76f2](https://github.com/privacy-scaling-explorations/maci/commit/38c76f2)), closes [#2575](https://github.com/privacy-scaling-explorations/maci/issues/2575)
+* feat(deployer): add service in maci repo ([3cbf167](https://github.com/privacy-scaling-explorations/maci/commit/3cbf167))
+* feat(relayer): add auth guard for message publishing ([813bfc7](https://github.com/privacy-scaling-explorations/maci/commit/813bfc7))
+* feat(relayer): add database integration ([5170627](https://github.com/privacy-scaling-explorations/maci/commit/5170627))
+* feat(relayer): add deploy scripts ([39c6119](https://github.com/privacy-scaling-explorations/maci/commit/39c6119))
+* feat(relayer): add ipfs integration ([648414a](https://github.com/privacy-scaling-explorations/maci/commit/648414a))
+* feat(relayer): add publish message api method ([b083ec7](https://github.com/privacy-scaling-explorations/maci/commit/b083ec7))
+* feat(relayer): add relayer service boilerplate ([985f572](https://github.com/privacy-scaling-explorations/maci/commit/985f572))
+* feat(relayer): fetch message batches ([0048939](https://github.com/privacy-scaling-explorations/maci/commit/0048939))
+* feat(relayer): relay messages onchain ([1aa4ea3](https://github.com/privacy-scaling-explorations/maci/commit/1aa4ea3))
+* feat(sdk): add relayer functions ([6273ef8](https://github.com/privacy-scaling-explorations/maci/commit/6273ef8))
+* feat(sdk): add set flag to tally result ([6afe368](https://github.com/privacy-scaling-explorations/maci/commit/6afe368))
+* feat(sdk): add stateTreeDepth param to download client artifacts (#2419) ([45905e9](https://github.com/privacy-scaling-explorations/maci/commit/45905e9)), closes [#2419](https://github.com/privacy-scaling-explorations/maci/issues/2419)
+* feat(sdk): allow to reuse inclusion proof for joinPoll ([be08c2c](https://github.com/privacy-scaling-explorations/maci/commit/be08c2c))
+* feat(sdk): export EMode + user types ([5048c01](https://github.com/privacy-scaling-explorations/maci/commit/5048c01))
+* feat(sdk): get results from tally contract (#2415) ([df71430](https://github.com/privacy-scaling-explorations/maci/commit/df71430)), closes [#2415](https://github.com/privacy-scaling-explorations/maci/issues/2415)
+* feat(sdk): implement Subgraph fetcher for signup tree (#2479) ([f6c2b7f](https://github.com/privacy-scaling-explorations/maci/commit/f6c2b7f)), closes [#2479](https://github.com/privacy-scaling-explorations/maci/issues/2479)
+* feat(sdk): return processProofs, tallyProofs and tallyData in generateProofs (#2193) ([dfbc410](https://github.com/privacy-scaling-explorations/maci/commit/dfbc410)), closes [#2193](https://github.com/privacy-scaling-explorations/maci/issues/2193)
+* feat(sdk): setVerifyingKeys for multiple modes ([cd55263](https://github.com/privacy-scaling-explorations/maci/commit/cd55263))
+* feat(subgraph): add chain hashes and ipfs messages to subgraph ([cb139ea](https://github.com/privacy-scaling-explorations/maci/commit/cb139ea))
+* feat(subgraph): add PollJoined handler and registrationCount #2803 ([c14fc17](https://github.com/privacy-scaling-explorations/maci/commit/c14fc17)), closes [#2803](https://github.com/privacy-scaling-explorations/maci/issues/2803)
+* feat(testing): use await in test ([7801627](https://github.com/privacy-scaling-explorations/maci/commit/7801627))
+* feat(sdk,cli): add isOpen status to poll data and improve CLI output ([409e410](https://github.com/privacy-scaling-explorations/maci/commit/409e410))
+* fix: add export without deploy functions (#2284) ([2252806](https://github.com/privacy-scaling-explorations/maci/commit/2252806)), closes [#2284](https://github.com/privacy-scaling-explorations/maci/issues/2284)
+* fix: add missing parts after anon poll joining rebase ([6349806](https://github.com/privacy-scaling-explorations/maci/commit/6349806))
+* fix: allow parent directories for prove output dir ([c5e5a01](https://github.com/privacy-scaling-explorations/maci/commit/c5e5a01))
+* fix: anon poll joining ([bc6d4c2](https://github.com/privacy-scaling-explorations/maci/commit/bc6d4c2))
+* fix: check if poll joining is withing voting deadline ([539bf95](https://github.com/privacy-scaling-explorations/maci/commit/539bf95))
+* fix: coordinator workflow for dependabot and external collaborators ([713963e](https://github.com/privacy-scaling-explorations/maci/commit/713963e))
+* fix: disable stress testing for macos nightly job ([21eaf12](https://github.com/privacy-scaling-explorations/maci/commit/21eaf12))
+* fix: ensure browser sdk does not import maci-contracts ([c4dc113](https://github.com/privacy-scaling-explorations/maci/commit/c4dc113))
+* fix: ensure invalidVotes uses the correct nonce ([30df559](https://github.com/privacy-scaling-explorations/maci/commit/30df559))
+* fix: ensure is-tallied and totalSignups are correct (#2503) ([6380833](https://github.com/privacy-scaling-explorations/maci/commit/6380833)), closes [#2503](https://github.com/privacy-scaling-explorations/maci/issues/2503)
+* fix: envs for nightly workflows ([432ad05](https://github.com/privacy-scaling-explorations/maci/commit/432ad05))
+* fix: improve contract log in ContractStorage and update ts exports (#2576) ([ebb44e9](https://github.com/privacy-scaling-explorations/maci/commit/ebb44e9)), closes [#2576](https://github.com/privacy-scaling-explorations/maci/issues/2576)
+* fix: improve sorting of proof files by numeric value (#2136) ([bc55826](https://github.com/privacy-scaling-explorations/maci/commit/bc55826)), closes [#2136](https://github.com/privacy-scaling-explorations/maci/issues/2136)
+* fix: maci 18 incorrect comments for poll functions ([b40e37b](https://github.com/privacy-scaling-explorations/maci/commit/b40e37b))
+* fix: maci 2 incorrect subgroup check for public key ([8b65e95](https://github.com/privacy-scaling-explorations/maci/commit/8b65e95))
+* fix: maci 3 missing group validation for public key and signature ([88ff5ed](https://github.com/privacy-scaling-explorations/maci/commit/88ff5ed))
+* fix: maci 5 unconstrained signal input ([f932e83](https://github.com/privacy-scaling-explorations/maci/commit/f932e83))
+* fix: maci 6 under constrained num2bits ([380a696](https://github.com/privacy-scaling-explorations/maci/commit/380a696))
+* fix: maci 7 missing public key group check ([ea0a98a](https://github.com/privacy-scaling-explorations/maci/commit/ea0a98a))
+* fix: nightly workflows ([0729bfd](https://github.com/privacy-scaling-explorations/maci/commit/0729bfd))
+* fix: nightly workflows ([66a1261](https://github.com/privacy-scaling-explorations/maci/commit/66a1261))
+* fix: nightly workflows and coordinator e2e ([45931d0](https://github.com/privacy-scaling-explorations/maci/commit/45931d0))
+* fix: optimize nightly workflows ([0cb76c0](https://github.com/privacy-scaling-explorations/maci/commit/0cb76c0))
+* fix: remove caching zkeys for downloading ([cb5e146](https://github.com/privacy-scaling-explorations/maci/commit/cb5e146))
+* fix: remove max vote options param ([765ca42](https://github.com/privacy-scaling-explorations/maci/commit/765ca42))
+* fix: resolve parsing issue for pnpm-lock.yaml ([0fd7af5](https://github.com/privacy-scaling-explorations/maci/commit/0fd7af5))
+* fix: set default port to 3001 ([e9dbefd](https://github.com/privacy-scaling-explorations/maci/commit/e9dbefd))
+* fix: storage write for e2e tests ([1370f82](https://github.com/privacy-scaling-explorations/maci/commit/1370f82))
+* fix: tests for poll joining ([e33c5dc](https://github.com/privacy-scaling-explorations/maci/commit/e33c5dc))
+* fix: typo for crate-ci/typos ([d50219a](https://github.com/privacy-scaling-explorations/maci/commit/d50219a))
+* fix: typos for crate-ci/typos ([a052103](https://github.com/privacy-scaling-explorations/maci/commit/a052103))
+* fix: under-constrained bug in BinaryMerkleRoot ([4fe3cec](https://github.com/privacy-scaling-explorations/maci/commit/4fe3cec))
+* fix: update subgraph schema ([bd0e401](https://github.com/privacy-scaling-explorations/maci/commit/bd0e401))
+* fix(circuits): remove unused variables ([cb8ce92](https://github.com/privacy-scaling-explorations/maci/commit/cb8ce92))
+* fix(cli): adjust duplicate cli flag (#2438) ([0c66f42](https://github.com/privacy-scaling-explorations/maci/commit/0c66f42)), closes [#2438](https://github.com/privacy-scaling-explorations/maci/issues/2438)
+* fix(cli): deploy poll params conflict ([b8640a3](https://github.com/privacy-scaling-explorations/maci/commit/b8640a3))
+* fix(contracts): add sinon for mocking fetch ([70556af](https://github.com/privacy-scaling-explorations/maci/commit/70556af))
+* fix(contracts): deploy poll with specified voice credit (#2402) ([71ed5ba](https://github.com/privacy-scaling-explorations/maci/commit/71ed5ba)), closes [#2402](https://github.com/privacy-scaling-explorations/maci/issues/2402)
+* fix(contracts): maci #10 poseidon library verification ([23ae8ed](https://github.com/privacy-scaling-explorations/maci/commit/23ae8ed)), closes [#10](https://github.com/privacy-scaling-explorations/maci/issues/10)
+* fix(contracts): maci #11 check vote option tree depth ([2695df1](https://github.com/privacy-scaling-explorations/maci/commit/2695df1)), closes [#11](https://github.com/privacy-scaling-explorations/maci/issues/11)
+* fix(contracts): maci #13 delete unused errors (#2862) ([2dfb84b](https://github.com/privacy-scaling-explorations/maci/commit/2dfb84b)), closes [#13](https://github.com/privacy-scaling-explorations/maci/issues/13) [#2862](https://github.com/privacy-scaling-explorations/maci/issues/2862)
+* fix(contracts): poll finalization ([0bd1c78](https://github.com/privacy-scaling-explorations/maci/commit/0bd1c78))
+* fix(contracts): publish benchmark script ([93d60d2](https://github.com/privacy-scaling-explorations/maci/commit/93d60d2))
+* fix(contracts): run all tests for the package ([e8be7f4](https://github.com/privacy-scaling-explorations/maci/commit/e8be7f4))
+* fix(contracts): small typo ([c7efcd4](https://github.com/privacy-scaling-explorations/maci/commit/c7efcd4))
+* fix(contracts): use correct param for poll contract verification ([6d7ea86](https://github.com/privacy-scaling-explorations/maci/commit/6d7ea86))
+* fix(coordinator): allow reuse of poseidon addresses ([87c3d60](https://github.com/privacy-scaling-explorations/maci/commit/87c3d60))
+* fix(coordinator): modify getAll to return keys and values ([5c51e71](https://github.com/privacy-scaling-explorations/maci/commit/5c51e71))
+* fix(coordinator): remove permissionless dependency (#2416) ([85bba2d](https://github.com/privacy-scaling-explorations/maci/commit/85bba2d)), closes [#2416](https://github.com/privacy-scaling-explorations/maci/issues/2416)
+* fix(coordinator): support local run for e2e tests ([92f5615](https://github.com/privacy-scaling-explorations/maci/commit/92f5615))
+* fix(coordinator): use appropriate HTTP status codes across endpoints ([fef4e1c](https://github.com/privacy-scaling-explorations/maci/commit/fef4e1c))
+* fix(docs): fix docusaurus edit path ([d89e427](https://github.com/privacy-scaling-explorations/maci/commit/d89e427))
+* fix(docs): installation link ([bbe9d46](https://github.com/privacy-scaling-explorations/maci/commit/bbe9d46))
+* fix(sdk): add padKey to array of retrieved MACI public keys ([ffa7055](https://github.com/privacy-scaling-explorations/maci/commit/ffa7055))
+* fix(sdk): remove stateIndex from joinPoll + verify in ETH sepolia ([c48f9f6](https://github.com/privacy-scaling-explorations/maci/commit/c48f9f6))
+* fix(sdk): sort users by creation date in subgraph query (#2664) ([dc8c564](https://github.com/privacy-scaling-explorations/maci/commit/dc8c564)), closes [#2664](https://github.com/privacy-scaling-explorations/maci/issues/2664)
+* fix(sdk): start block before fetching events ([01af3e3](https://github.com/privacy-scaling-explorations/maci/commit/01af3e3))
+* fix(sdk): use full import paths ([d87fb50](https://github.com/privacy-scaling-explorations/maci/commit/d87fb50))
+* fix(sdk): use full path import for sdk users functions (#2354) ([e3476db](https://github.com/privacy-scaling-explorations/maci/commit/e3476db)), closes [#2354](https://github.com/privacy-scaling-explorations/maci/issues/2354)
+* fix(testing): set specific mode in verifying keys ([de0c701](https://github.com/privacy-scaling-explorations/maci/commit/de0c701))
+* fix(testing): use unique state index for messages ([062565e](https://github.com/privacy-scaling-explorations/maci/commit/062565e))
+* refactor: circuit structure (#2485) ([2cf83db](https://github.com/privacy-scaling-explorations/maci/commit/2cf83db)), closes [#2485](https://github.com/privacy-scaling-explorations/maci/issues/2485)
+* refactor: cleanup anon poll joining ([c94bd8e](https://github.com/privacy-scaling-explorations/maci/commit/c94bd8e))
+* refactor: cleanup contracts folder ([8c23149](https://github.com/privacy-scaling-explorations/maci/commit/8c23149))
+* refactor: contract imports and proofs (#2074) ([66dfab7](https://github.com/privacy-scaling-explorations/maci/commit/66dfab7)), closes [#2074](https://github.com/privacy-scaling-explorations/maci/issues/2074)
+* refactor: contracts optimisations and cleanup ([a906e8f](https://github.com/privacy-scaling-explorations/maci/commit/a906e8f))
+* refactor: deploy maci command ([3eb6915](https://github.com/privacy-scaling-explorations/maci/commit/3eb6915))
+* refactor: expand shorthand variables to full names ([75547c0](https://github.com/privacy-scaling-explorations/maci/commit/75547c0))
+* refactor: gen proofs ([7bba1c5](https://github.com/privacy-scaling-explorations/maci/commit/7bba1c5))
+* refactor: join poll sdk ([52607a7](https://github.com/privacy-scaling-explorations/maci/commit/52607a7))
+* refactor: make separate testing package (#2229) ([bd07a7f](https://github.com/privacy-scaling-explorations/maci/commit/bd07a7f)), closes [#2229](https://github.com/privacy-scaling-explorations/maci/issues/2229)
+* refactor: poll deploy sdk (#2189) ([da1b785](https://github.com/privacy-scaling-explorations/maci/commit/da1b785)), closes [#2189](https://github.com/privacy-scaling-explorations/maci/issues/2189)
+* refactor: remove redundant init from poll contract ([d990802](https://github.com/privacy-scaling-explorations/maci/commit/d990802))
+* refactor: remove redundant param (#2161) ([2cc986f](https://github.com/privacy-scaling-explorations/maci/commit/2cc986f)), closes [#2161](https://github.com/privacy-scaling-explorations/maci/issues/2161)
+* refactor: rename from short to full names ([120cffa](https://github.com/privacy-scaling-explorations/maci/commit/120cffa))
+* refactor: setVerifyingKeys ([8ce195b](https://github.com/privacy-scaling-explorations/maci/commit/8ce195b))
+* refactor: test suite cleanup (#2233) ([5795741](https://github.com/privacy-scaling-explorations/maci/commit/5795741)), closes [#2233](https://github.com/privacy-scaling-explorations/maci/issues/2233)
+* refactor: test suite cleanup (#2233) (#2232) ([0d42bb0](https://github.com/privacy-scaling-explorations/maci/commit/0d42bb0)), closes [#2233](https://github.com/privacy-scaling-explorations/maci/issues/2233) [#2232](https://github.com/privacy-scaling-explorations/maci/issues/2232)
+* refactor: user sdk (#2064) ([aac1ce7](https://github.com/privacy-scaling-explorations/maci/commit/aac1ce7)), closes [#2064](https://github.com/privacy-scaling-explorations/maci/issues/2064)
+* refactor: verifying keys sdk (#2070) ([44c9e1e](https://github.com/privacy-scaling-explorations/maci/commit/44c9e1e)), closes [#2070](https://github.com/privacy-scaling-explorations/maci/issues/2070)
+* refactor: vote sdk (#2089) ([fed0e25](https://github.com/privacy-scaling-explorations/maci/commit/fed0e25)), closes [#2089](https://github.com/privacy-scaling-explorations/maci/issues/2089)
+* refactor: vote submission ([a66da9e](https://github.com/privacy-scaling-explorations/maci/commit/a66da9e))
+* refactor(circuits): modularize Merkle tree templates ([f4a2843](https://github.com/privacy-scaling-explorations/maci/commit/f4a2843))
+* refactor(circuits): rename circuits signal inputs and move templates ([c2f4e36](https://github.com/privacy-scaling-explorations/maci/commit/c2f4e36))
+* refactor(cli): cleanup signup command ([601269c](https://github.com/privacy-scaling-explorations/maci/commit/601269c))
+* refactor(cli): move deploy vk registry and testing commands to sdk ([bcd8d12](https://github.com/privacy-scaling-explorations/maci/commit/bcd8d12))
+* refactor(cli): move key generation commands to sdk ([08634a1](https://github.com/privacy-scaling-explorations/maci/commit/08634a1))
+* refactor(cli): move maci state generation to sdk ([f922298](https://github.com/privacy-scaling-explorations/maci/commit/f922298))
+* refactor(cli): move proof generation and poll deploy to sdk ([31922b2](https://github.com/privacy-scaling-explorations/maci/commit/31922b2))
+* refactor(cli): move prove onchain to sdk ([452a68a](https://github.com/privacy-scaling-explorations/maci/commit/452a68a))
+* refactor(cli): move publish commands to sdk ([aa16343](https://github.com/privacy-scaling-explorations/maci/commit/aa16343))
+* refactor(cli): move signups merging to sdk ([36a8d6d](https://github.com/privacy-scaling-explorations/maci/commit/36a8d6d))
+* refactor(cli): move vk commands to sdk ([1f2a81e](https://github.com/privacy-scaling-explorations/maci/commit/1f2a81e))
+* refactor(cli): use contract storage for cli ([b417ee7](https://github.com/privacy-scaling-explorations/maci/commit/b417ee7))
+* refactor(cli): use verify from sdk ([eadd2e4](https://github.com/privacy-scaling-explorations/maci/commit/eadd2e4))
+* refactor(sdk): change sdk package structure ([3255909](https://github.com/privacy-scaling-explorations/maci/commit/3255909))
+* refactor(sdk): rename pollWasm param to pollJoiningZkey for consistency ([d4aae1f](https://github.com/privacy-scaling-explorations/maci/commit/d4aae1f)), closes [#2568](https://github.com/privacy-scaling-explorations/maci/issues/2568)
+* refactor(sdk): separate keys functions ([e22cb16](https://github.com/privacy-scaling-explorations/maci/commit/e22cb16))
+* refactor(user): get signUp data from contract call instead of events (#2464) ([063ef62](https://github.com/privacy-scaling-explorations/maci/commit/063ef62)), closes [#2464](https://github.com/privacy-scaling-explorations/maci/issues/2464)
+* refactor(zupass-gatekeeper): improved gatekeeper script to avoid doing conversion on config ([028b203](https://github.com/privacy-scaling-explorations/maci/commit/028b203))
+* test: add stress tests for all the modes ([f7e8c46](https://github.com/privacy-scaling-explorations/maci/commit/f7e8c46))
+* test: e2e full spent voting mode ([2429ff4](https://github.com/privacy-scaling-explorations/maci/commit/2429ff4))
+* test: move tests over to testing package ([fad40c3](https://github.com/privacy-scaling-explorations/maci/commit/fad40c3))
+* test: remove redundant tests and cleanup ([9946687](https://github.com/privacy-scaling-explorations/maci/commit/9946687))
+* test: zkevm fork running support ([dd3ee9a](https://github.com/privacy-scaling-explorations/maci/commit/dd3ee9a))
+* test(coordinator): use mocks and run unit tests locally ([a699a4b](https://github.com/privacy-scaling-explorations/maci/commit/a699a4b))
+* test(relayer): add checks for onchain publishing ([a25f4bd](https://github.com/privacy-scaling-explorations/maci/commit/a25f4bd))
+* test(relayer): add more e2e tests ([0cbfc40](https://github.com/privacy-scaling-explorations/maci/commit/0cbfc40))
+* docs: add entries for coordinator and relayer services ([737e673](https://github.com/privacy-scaling-explorations/maci/commit/737e673))
+* docs: add full credits information ([e65476e](https://github.com/privacy-scaling-explorations/maci/commit/e65476e))
+* docs: add MACI key generation instructions and typo correction (#1996) ([ee420d4](https://github.com/privacy-scaling-explorations/maci/commit/ee420d4)), closes [#1996](https://github.com/privacy-scaling-explorations/maci/issues/1996)
+* docs: add maci platform blogpost (#1942) ([83066fc](https://github.com/privacy-scaling-explorations/maci/commit/83066fc)), closes [#1942](https://github.com/privacy-scaling-explorations/maci/issues/1942)
+* docs: add PGA to project list (#1983) ([7d6c77d](https://github.com/privacy-scaling-explorations/maci/commit/7d6c77d)), closes [#1983](https://github.com/privacy-scaling-explorations/maci/issues/1983)
+* docs: ensure solidity docs are displayed ([d0aa2e9](https://github.com/privacy-scaling-explorations/maci/commit/d0aa2e9))
+* docs: fix broken links (#2442) ([2a2b6ab](https://github.com/privacy-scaling-explorations/maci/commit/2a2b6ab)), closes [#2442](https://github.com/privacy-scaling-explorations/maci/issues/2442)
+* docs: remove outdated info (#2033) ([2085839](https://github.com/privacy-scaling-explorations/maci/commit/2085839)), closes [#2033](https://github.com/privacy-scaling-explorations/maci/issues/2033)
+* docs: replace space in slug with dash (#2001) ([d0138d3](https://github.com/privacy-scaling-explorations/maci/commit/d0138d3)), closes [#2001](https://github.com/privacy-scaling-explorations/maci/issues/2001)
+* docs: roadmap 2025 blogpost (#2267) ([24432b4](https://github.com/privacy-scaling-explorations/maci/commit/24432b4)), closes [#2267](https://github.com/privacy-scaling-explorations/maci/issues/2267)
+* docs: update contribution guidelines (#1975) ([11c5b29](https://github.com/privacy-scaling-explorations/maci/commit/11c5b29)), closes [#1975](https://github.com/privacy-scaling-explorations/maci/issues/1975)
+* docs: update process messages circuit diagram ([0d5fa3c](https://github.com/privacy-scaling-explorations/maci/commit/0d5fa3c))
+* docs: update README links (#2352) ([533e19d](https://github.com/privacy-scaling-explorations/maci/commit/533e19d)), closes [#2352](https://github.com/privacy-scaling-explorations/maci/issues/2352)
+* docs: update roadmap entry ([d73bca5](https://github.com/privacy-scaling-explorations/maci/commit/d73bca5))
+* docs: update sdk docs ([df10108](https://github.com/privacy-scaling-explorations/maci/commit/df10108))
+* docs: update the readme (#2242) ([ffdceee](https://github.com/privacy-scaling-explorations/maci/commit/ffdceee)), closes [#2242](https://github.com/privacy-scaling-explorations/maci/issues/2242)
+* docs: update v3 docs and cleanup ([d27c13f](https://github.com/privacy-scaling-explorations/maci/commit/d27c13f))
+* docs: update v3 docs to ensure they are up to date ([0d1df70](https://github.com/privacy-scaling-explorations/maci/commit/0d1df70))
+* docs: update v3 docs with policy contracts ([914c51c](https://github.com/privacy-scaling-explorations/maci/commit/914c51c))
+* docs(blog): getting started blog post ([6073a78](https://github.com/privacy-scaling-explorations/maci/commit/6073a78))
+* docs(case-studies): added eth tgu and eth mx (#2022) ([93a1ebb](https://github.com/privacy-scaling-explorations/maci/commit/93a1ebb)), closes [#2022](https://github.com/privacy-scaling-explorations/maci/issues/2022)
+* docs(case-studies): updated case studies (#1999) ([5d91bcd](https://github.com/privacy-scaling-explorations/maci/commit/5d91bcd)), closes [#1999](https://github.com/privacy-scaling-explorations/maci/issues/1999)
+* docs(docs): added v3 to docs (#2123) ([48baee8](https://github.com/privacy-scaling-explorations/maci/commit/48baee8)), closes [#2123](https://github.com/privacy-scaling-explorations/maci/issues/2123)
+* docs(documentation): added getting started with maci article to docs (#1962) ([23518b0](https://github.com/privacy-scaling-explorations/maci/commit/23518b0)), closes [#1962](https://github.com/privacy-scaling-explorations/maci/issues/1962)
+* docs(frontend-guide): added version (#1959) ([2f03bd8](https://github.com/privacy-scaling-explorations/maci/commit/2f03bd8)), closes [#1959](https://github.com/privacy-scaling-explorations/maci/issues/1959)
+* docs(relayer): add general documentation for service ([84e8c16](https://github.com/privacy-scaling-explorations/maci/commit/84e8c16))
+* docs(subgraph-docs): added alchemy to subgraph docs (#1964) ([f180601](https://github.com/privacy-scaling-explorations/maci/commit/f180601)), closes [#1964](https://github.com/privacy-scaling-explorations/maci/issues/1964)
+* docs(talks): add ETHBelgrade MACI talk ([1e1ab40](https://github.com/privacy-scaling-explorations/maci/commit/1e1ab40))
+* docs(use-cases): updated use cases and case studies (#1969) ([a994d4d](https://github.com/privacy-scaling-explorations/maci/commit/a994d4d)), closes [#1969](https://github.com/privacy-scaling-explorations/maci/issues/1969)
+
+
+### BREAKING CHANGE
+
+* message processing is changed
+
+* fix(ipoll): add missing parameter
+
+* fix(poll-tests): add missing parameter maxMessagebatchSize
+
+* feat(poll.ts): add chain hash updating
+
+* test(poll tests): add test for checking chain hash computation
+
+* feat(poll.ts): add batch hashes array computation
+
+* feat(poll.sol): pad zeroes to the maximum size of batch
+
+* feat(messageprocessor): update process messages to use chain hash
+
+* refactor(vkregistry): refactor function call
+
+* feat(processmessages.circom): add chainHash feature in circuits and test for that
+
+* test(processmessages): rearrange test for key-change
+
+* refactor(mergemessages): refactor functions calls which include mergemessages
+
+* refactor(mergemessages): add some more changes about functions call which  include mergemessages
+
+* test(all tests): fixing tests after refactoring code
+
+* refactor(accqueue): remove all calls for accqueue
+
+* fix(currentmessagebatchindex): fix message batch indexing
+
+* refactor(circuit tests): refactor code for circuit testing
+
+* test(ceremonyparams.test): correct constants for CeremonyParams test
+
+* perf(processmessages.circom + contracts): optimize last batch padding, remove unused inputs
+
+* docs(padlastbatch method): update doc comment
+
+* docs(poll.ts): remove stale comments
+
+* docs(test comments): fix typos
+
+* ci(treedepths mock): modify interface for mocked function
+
+* fix(ceremony params test): fix circuit inputs
+
+* test(messagevalidator): fix function calls for messagevalidator circuit in tests
+
+* chore(comments): fix unusefull comments
+
+* refactor(poll.sol): replace external contracts with maci only
+
+* perf(messageprocessor.sol): hardcode initialization for batchHashes array
+
+* docs(comments): fix some more comments
+
+* test(test for pr checks): correct some of tests for PR checks
+
+* ci: 🎡 renamed old ProcessMessages_10-2-1-2_test
+
+* ci: 🎡 correct rapidsnark/build/prover path
+
+* style(reviews): solve some reviews for merging
+
+* refactor(messageaqq): remove more message merging and message aqq
+
+* style(messageaqq): remove more message merging and message aqq
+
+* refactor(messageaqq): remove message aqq from subgraph
+
+* test(coordinator): hide NOT_MERGED_MESSAGE_TREE error
+
+* test(coordinator): fix test about message merging
+
+* test(proveonchain): change chainHash calculation
+
+* test(proveonchain): fix chainHashes declaration
+
+* test(proveonchain): fix chainHash calculation
+
+* test(proveonchain): fix chainHashes calculations
+
+* test(proveonchain): fix chainHashes calculation
+
+* test(proveonchain): fix loop limit
+
+* style(review comments): resolve some of review comments
+
+* style(review comments): resolve some of review comments
+
+* test(lint:ts): fix e2e test because of lint:ts check
+
+* docs(wrong changes): fix wrong changes about documentation that is not in our scope
+
+* refactor(batchsizes): change batchSizes struct with messageBatchSize variable
+
+* refactor(contracts): rollback to provide external contract references
+
+* docs(messageprocessor.sol): fix typo
+
+* refactor(messagebatchsize): chenge messageBatchSize location from Params.sol to Poll.sol
+
+* refactor(maxmessages): remove maxMessages from maxValues
+
+* refactor(sltimestemp): remove slTimestamp from circuits
+
+* refactor(review comments): resolve more review comments
+
+* fix(subgraph): fix bug about maxVoteOptions dunction call
+
+* fix(sltimestamp): fix test for removing slTimestap signal
+
+* refactor(promise.all): refactor promise.all for only one async call
+
+* fix(subgraph): try to fix subgraph build
+
+* revert(.nx folder): remove .nx folder from cli folder
+* message processing is changed
+
+* fix(ipoll): add missing parameter
+
+* fix(poll-tests): add missing parameter maxMessagebatchSize
+
+* feat(poll.ts): add chain hash updating
+
+* test(poll tests): add test for checking chain hash computation
+
+* feat(poll.ts): add batch hashes array computation
+
+* feat(poll.sol): pad zeroes to the maximum size of batch
+
+* feat(messageprocessor): update process messages to use chain hash
+
+* refactor(vkregistry): refactor function call
+
+* feat(processmessages.circom): add chainHash feature in circuits and test for that
+
+* test(processmessages): rearrange test for key-change
+
+* refactor(mergemessages): refactor functions calls which include mergemessages
+
+* refactor(mergemessages): add some more changes about functions call which  include mergemessages
+
+* test(all tests): fixing tests after refactoring code
+
+* refactor(accqueue): remove all calls for accqueue
+
+* fix(currentmessagebatchindex): fix message batch indexing
+
+* refactor(circuit tests): refactor code for circuit testing
+
+* test(ceremonyparams.test): correct constants for CeremonyParams test
+
+* perf(processmessages.circom + contracts): optimize last batch padding, remove unused inputs
+
+* docs(padlastbatch method): update doc comment
+
+* docs(poll.ts): remove stale comments
+
+* docs(test comments): fix typos
+
+* ci(treedepths mock): modify interface for mocked function
+
+* fix(ceremony params test): fix circuit inputs
+
+* test(messagevalidator): fix function calls for messagevalidator circuit in tests
+
+* chore(comments): fix unusefull comments
+
+* refactor(poll.sol): replace external contracts with maci only
+
+* perf(messageprocessor.sol): hardcode initialization for batchHashes array
+
+* docs(comments): fix some more comments
+
+* test(test for pr checks): correct some of tests for PR checks
+
+* ci: 🎡 renamed old ProcessMessages_10-2-1-2_test
+
+* ci: 🎡 correct rapidsnark/build/prover path
+
+* style(reviews): solve some reviews for merging
+
+* refactor(messageaqq): remove more message merging and message aqq
+
+* style(messageaqq): remove more message merging and message aqq
+
+* refactor(messageaqq): remove message aqq from subgraph
+
+* test(coordinator): hide NOT_MERGED_MESSAGE_TREE error
+
+* test(coordinator): fix test about message merging
+
+* test(proveonchain): change chainHash calculation
+
+* test(proveonchain): fix chainHashes declaration
+
+* test(proveonchain): fix chainHash calculation
+
+* test(proveonchain): fix chainHashes calculations
+
+* test(proveonchain): fix chainHashes calculation
+
+* test(proveonchain): fix loop limit
+
+* style(review comments): resolve some of review comments
+
+* style(review comments): resolve some of review comments
+
+* test(lint:ts): fix e2e test because of lint:ts check
+
+* docs(wrong changes): fix wrong changes about documentation that is not in our scope
+
+* refactor(batchsizes): change batchSizes struct with messageBatchSize variable
+
+* refactor(contracts): rollback to provide external contract references
+
+* docs(messageprocessor.sol): fix typo
+
+* refactor(messagebatchsize): chenge messageBatchSize location from Params.sol to Poll.sol
+
+* refactor(maxmessages): remove maxMessages from maxValues
+
+* refactor(sltimestemp): remove slTimestamp from circuits
+
+* refactor(review comments): resolve more review comments
+
+* fix(subgraph): fix bug about maxVoteOptions dunction call
+
+* fix(sltimestamp): fix test for removing slTimestap signal
+
+* refactor(promise.all): refactor promise.all for only one async call
+
+* fix(subgraph): try to fix subgraph build
+
+* revert(.nx folder): remove .nx folder from cli folder
+
+* fix(merge): tmp-anon-poll-joining merge
+
+* fix(merge): tmp-anon-poll-joining merge
+
+* test(ceremonyparams): add poll joining in the test
+
+* test(processmessages): add poll joining for the test
+
+without key-change test
+
+* test(polljoining): add poll joining in the test
+
+* test(tallyvotes): add poll joining in the test
+
+* test(core): add joinPoll function in tests
+
+* style(typo): inclusion proof
+
+* style(todo): remove finished todo
+
+* style(merge): after merge style
+
+* style(return): inline return
+
+* style(eslint): remove unnecessary eslint-disable
+
+* refactor(joiningcircuitargs): add interface IJoiningCircuitArgs
+
+* refactor(joinpoll): async read state file
+
+* style(genmacisignup): add function description
+
+* refactor(gensignuptree): add IGenSignUpTreeArgs interface
+
+* style(polljoining): remove extra inlcudes and comments
+
+* feat(pollvkkeys): init
+
+* feat(vkregistry): separate set functions (process/tally/poll)
+
+* test(pollvkkey): adjust test to setPollVkKey
+
+* refactor(vkregistry): use setVerifyingKeys in setVerifyingKeysBatch
+
+* refactor(poll): add verifier and vkRegystry in constructor
+
+* refactor(poll): put verifier and vkRegistry into extContracts
+
+* test(core e2e): fix sanity checks test for incorrect signature
+
+* refactor(test): removing only from tests
+
+* refactor(macistatetree): use LeanIMT instead of QuinTree
+
+* refactor(crypto): export hashLeanIMT from index
+
+* feat(joinpoll): use genSignUpTree instead of genMaciStateFromContract
+
+* feat(joinpoll cli): add optional parameters
+
+* test(coordinator): add pollJoiningZkeyPath in app.test
+
+* refactor(joinpoll): prettier
+
+* test(coordinator): add joinPoll
+
+* fix(poll): joiningCircuitInputs with correct siblings, indices and actualStateTreeDepth
+
+* test(integration): add joinPoll
+
+* build(coordinator): add COORDINATOR_POLL_ZKEY_NAME
+
+* refactor(mergestate): remove Maci from MergeState
+
+* test(e2e): test:e2e add joinPoll
+
+* test(e2e): test:keyChange add joinPoll
+
+* docs(complete documentation): complete documentation of the new workflow
+
+* docs(documentation): add v3 docs, revert v2 docs
+
+* style(docs): prettier
+
+* refactor(joinpoll): add generateAndVerifyProof and getStateIndexAndCreditBalance
+
+* docs(blogpost): blogpost cuvering the latest updates
+
+* docs(blogpost): kudos to our team members!
+
+* style(prettier): blog
+
+* fix(joinpoll): index value of the user in the state tree leaves
+
+* docs(blog): remove poll-joining
+
+
+
+
 ## [3.0.0](https://github.com/privacy-scaling-explorations/maci/compare/v2.5.0...v3.0.0) (2025-03-28)
 
 

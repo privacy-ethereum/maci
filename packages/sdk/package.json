@@ -1,6 +1,6 @@
 {
   "name": "@maci-protocol/sdk",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "private": false,
   "description": "MACI's SDK",
   "main": "build/ts/index.js",
@@ -43,12 +43,12 @@
     "docs": "typedoc --plugin typedoc-plugin-markdown --options ./typedoc.json"
   },
   "dependencies": {
-    "@zk-kit/lean-imt": "^2.2.4",
-    "ethers": "^6.15.0",
     "@maci-protocol/contracts": "^3.0.0",
     "@maci-protocol/core": "^3.0.0",
     "@maci-protocol/crypto": "^3.0.0",
     "@maci-protocol/domainobjs": "^3.0.0",
+    "@zk-kit/lean-imt": "^2.2.4",
+    "ethers": "^6.15.0",
     "multiformats": "9.9.0",
     "snarkjs": "^0.7.5"
   },

@@ -9,6 +9,7 @@ sidebar_position: 1
 
 ## Full reports
 
+- Audit by HashCloak 2026/03 [report](/audit_reports/20260317_Hashcloak_audit_report.pdf)
 - Audit by PSE Audit 2024/07 [report](/audit_reports/20240731_PSE_Audit_audit_report.pdf)
 - Audit by PSE Audit 2024/02 [report](/audit_reports/20240223_PSE_Audit_audit_report.pdf)
 - Audit by HashCloak 2022/09 [report](/audit_reports/202220930_Hashcloak_audit_report.pdf)

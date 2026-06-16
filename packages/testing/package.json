@@ -1,6 +1,6 @@
 {
   "name": "@maci-protocol/testing",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "private": false,
   "description": "A package with testing utilities for MACI",
   "main": "build/ts/index.js",
@@ -39,16 +39,16 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
-    "ethers": "^6.15.0",
-    "hardhat": "^2.25.0",
     "@maci-protocol/circuits": "^3.0.0",
-    "@maci-protocol/contracts": "^3.0.0",
     "@maci-protocol/cli": "^3.0.0",
+    "@maci-protocol/contracts": "^3.0.0",
     "@maci-protocol/core": "^3.0.0",
     "@maci-protocol/crypto": "^3.0.0",
     "@maci-protocol/domainobjs": "^3.0.0",
-    "@maci-protocol/sdk": "^1.0.0",
-    "@types/chai": "^4.3.11"
+    "@maci-protocol/sdk": "^3.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@types/chai": "^4.3.11",
+    "ethers": "^6.15.0",
+    "hardhat": "^2.25.0"
   }
 }

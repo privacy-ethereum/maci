@@ -35,7 +35,7 @@
     "@maci-protocol/contracts": "^3.0.0",
     "@maci-protocol/crypto": "^3.0.0",
     "@maci-protocol/domainobjs": "^3.0.0",
-    "@maci-protocol/sdk": "^1.0.0",
+    "@maci-protocol/sdk": "^3.0.0",
     "@maci-protocol/subgraph": "^3.0.0",
     "@nestjs/common": "^11.1.5",
     "@nestjs/core": "^11.1.5",

@@ -30,13 +30,13 @@
   },
   "dependencies": {
     "@commander-js/extra-typings": "^14.0.0",
+    "@maci-protocol/domainobjs": "^3.0.0",
+    "@maci-protocol/sdk": "^3.0.0",
     "@nomicfoundation/hardhat-toolbox": "^6.1.0",
     "commander": "^14.0.0",
     "dotenv": "^17.2.2",
     "ethers": "^6.15.0",
     "hardhat": "^2.25.0",
-    "@maci-protocol/domainobjs": "^3.0.0",
-    "@maci-protocol/sdk": "^1.0.0",
     "prompt": "^1.3.0"
   },
   "devDependencies": {
