@@ -2,8 +2,6 @@ name: Nightly Unit Tests
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 6 * * *
 
 env:
   NODE_OPTIONS: "--max-old-space-size=8192"

@@ -2,8 +2,6 @@ name: Nightly Ceremony
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 0 * * *
 
 jobs:
   test-with-ceremony-keys:
