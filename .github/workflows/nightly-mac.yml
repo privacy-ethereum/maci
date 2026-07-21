@@ -2,8 +2,6 @@ name: Nightly Unit Tests Macos
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 4 * * *
 
 env:
   NODE_OPTIONS: "--max-old-space-size=8192"

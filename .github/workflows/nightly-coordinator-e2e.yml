@@ -2,8 +2,6 @@ name: Nightly Coordinator E2E Tests
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 2 * * *
 
 env:
   NODE_OPTIONS: "--max-old-space-size=8192"
