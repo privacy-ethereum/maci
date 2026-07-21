@@ -15,6 +15,14 @@ sidebar_position: 1
 - Audit by HashCloak 2022/09 [report](/audit_reports/202220930_Hashcloak_audit_report.pdf)
 - Audit by HashCloak 2021/09 [report](/audit_reports/20210922_Hashcloak_audit_report.pdf)
 
+## HashCloak audit 2026
+
+HashCloak audited MACI v3, covering the smart contracts, Circom circuits, and TypeScript core.
+
+The audit surfaced 18 findings ranging from Critical to Informational: one Critical, three High, five Medium, three Low, and six Informational. All of them have been resolved by the MACI team, with the fixes documented per finding in the report.
+
+Please see the [HashCloak report](/audit_reports/20260317_Hashcloak_audit_report.pdf) for details.
+
 ## PSE audit 2024/07
 
 In July 2024 the PSE Audit team audited the MACI codebase with a focus on the smart contracts, TypeScript core, and Circom circuits. Nothing serious was found but we made some optimizations to the codebase.
