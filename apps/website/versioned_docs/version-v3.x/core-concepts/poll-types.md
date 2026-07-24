@@ -17,13 +17,13 @@ To run a poll with quadratic voting, the coordinator must deploy the Poll with t
 
 ### Using Hardhat tasks
 
-In the deploy-config.json file set the `mode` value to **qv**.
+In the deploy-config.json file set the `mode` value to `0`.
 
 ```json
 "Poll": {
     "pollDuration": 604800,
     "coordinatorPublicKey": "macipk",
-    "mode": "qv"
+    "mode": 0
 }
 ```
 
@@ -37,17 +37,17 @@ pnpm deploy-poll:NETWORK
 
 The non quadratic voting option is a new feature that has been added to MACI with the v1.2 release. It allows to conduct polls without the quadratic voting mechanism. This means that the number of voice credits is not reduced by the square of the weight of the vote casted. This option is useful for polls where the quadratic voting mechanism is not necessary, and it is also slightly cheaper for coordinators to tally votes, as there are less checks required in the Tally smart contract.
 
-To run a poll with non quadratic voting, the coordinator must set the `mode` parameter to `non-qv` when creating the MACI instance. This will make the MACI instance use the `TallyNonQv` smart contract, which is a smaller version of the `Tally` smart contract, as it does not require the checks for the quadratic voting mechanism.
+To run a poll with non quadratic voting, the coordinator must set the `mode` parameter to `1` when deploying the poll. This will make the MACI instance use the `TallyNonQv` smart contract, which is a smaller version of the `Tally` smart contract, as it does not require the checks for the quadratic voting mechanism.
 
 ### Using Hardhat tasks
 
-In the deploy-config.json file set the `mode` value to **non-qv**.
+In the deploy-config.json file set the `mode` value to `1`.
 
 ```json
 "Poll": {
     "pollDuration": 604800,
     "coordinatorPublicKey": "macipk",
-    "mode": "non-qv"
+    "mode": 1
 }
 ```
 
@@ -61,17 +61,17 @@ pnpm deploy-poll:NETWORK
 
 Full Credits Voting is a new feature introduced in MACI v3. This voting mode disables the quadratic voting mechanism and requires participants to allocate their entire voice credit balance to a single option. Unlike quadratic voting, where the cost of votes increases quadratically with the number of votes cast, Full Credits Voting uses a linear model: participants spend all their available voice credits on one chosen option. No splitting across multiple options is allowed. This option is useful for polls where the quadratic voting mechanism is not necessary and where it's important to ensure voters fully commit to a single choice—eliminating fragmented or spread-out voting behavior. It also offers a slight cost advantage for coordinators, as tallying is more efficient with fewer checks required in the Tally smart contract.
 
-To run a poll full credits voting, the coordinator must set the `mode` parameter to `full` when creating the MACI instance. This will make the MACI instance use the `TallyNonQv` smart contract, which is a smaller version of the `Tally` smart contract, as it does not require the checks for the quadratic voting mechanism.
+To run a poll with full credits voting, the coordinator must set the `mode` parameter to `2` when deploying the poll. This will make the MACI instance use the `TallyNonQv` smart contract, which is a smaller version of the `Tally` smart contract, as it does not require the checks for the quadratic voting mechanism.
 
 ### Using Hardhat tasks
 
-In the deploy-config.json file set the `mode` value to **full**.
+In the deploy-config.json file set the `mode` value to `2`.
 
 ```json
 "Poll": {
     "pollDuration": 604800,
     "coordinatorPublicKey": "macipk",
-    "mode": "full"
+    "mode": 2
 }
 ```
 

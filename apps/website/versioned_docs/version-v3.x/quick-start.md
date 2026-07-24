@@ -157,7 +157,7 @@ The recommended values for test keys are: **10-1-2-2-1**. For ceremony keys: **1
 | **pollStartDate**           | Defines when the poll starts in seconds.                          |
 | **pollEndDate**             | Defines how long is going to be the poll in seconds.              |
 | **coordinatorPublicKey**    | Defines the coordinator public MACI key.                          |
-| **useQuadraticVoting**      | Defines if the poll uses quadratic voting or not.                 |
+| **mode**                    | Defines the voting mode: `0` QV, `1` non-QV, `2` full credits.    |
 | **policy**                  | Defines the policy of the poll.                                   |
 | **relayers**                | Defines an array of addresses that are allowed to relay messages. |
 | **initialVoiceCreditProxy** | Defines the type of voice credit proxy to use for this poll.      |
