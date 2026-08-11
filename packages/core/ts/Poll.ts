@@ -46,6 +46,7 @@ import type {
   IGetVoiceCreditsLeft,
   IJoinedCircuitArgs,
   IPollJoinedCircuitInputs,
+  TallyVotesSalts,
 } from "./utils/types";
 import type { PathElements } from "@maci-protocol/crypto";
 
@@ -1027,7 +1028,7 @@ export class Poll implements IPoll {
    *
    * @returns the circuit inputs for the VoteTally circuit.
    */
-  tallyVotes = (): IVoteTallyCircuitInputs => {
+  tallyVotes = (salts?: TallyVotesSalts): IVoteTallyCircuitInputs => {
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (this.sbSalts[this.currentMessageBatchIndex] === undefined) {
       throw new Error("You must process the messages first");
@@ -1163,10 +1164,11 @@ export class Poll implements IPoll {
       voteCounts.push(emptyVoteCounts);
     }
 
-    // generate the new salts
-    const newResultsRootSalt = generateRandomSalt();
-    const newPerVoteOptionSpentVoiceCreditsRootSalt = generateRandomSalt();
-    const newSpentVoiceCreditSubtotalSalt = generateRandomSalt();
+    // generate the new salts (or use provided ones for incremental generation)
+    const newResultsRootSalt = salts?.newResultsRootSalt ?? generateRandomSalt();
+    const newPerVoteOptionSpentVoiceCreditsRootSalt =
+      salts?.newPerVoteOptionSpentVoiceCreditsRootSalt ?? generateRandomSalt();
+    const newSpentVoiceCreditSubtotalSalt = salts?.newSpentVoiceCreditSubtotalSalt ?? generateRandomSalt();
 
     // and save them to be used in the next batch
     this.resultRootSalts[batchStartIndex] = newResultsRootSalt;

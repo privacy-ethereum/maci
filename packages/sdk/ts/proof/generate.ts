@@ -37,6 +37,7 @@ export const generateProofs = async ({
   voteTallyWitnessDatFile,
   tallyFile,
   useWasm,
+  incremental,
 }: IGenerateProofsArgs): Promise<IGenerateProofsData> => {
   // differentiate whether we are using wasm or rapidsnark
   if (useWasm) {
@@ -172,6 +173,8 @@ export const generateProofs = async ({
     outputDir,
     tallyOutputFile: tallyFile,
     mode,
+    incremental: incremental ?? false,
+    pollId: foundPoll.pollId.toString(),
   });
 
   const processProofs = await proofGenerator.generateMpProofs();

@@ -29,7 +29,7 @@ export interface IProveOnChainArgs {
   maciAddress: string;
 
   /**
-   * The tally file with results, per vote option spent credits, spent voice credits total
+   * The tally file
    */
   tallyFile?: string;
 
@@ -177,6 +177,11 @@ export interface IGenerateProofsArgs {
    * The tally file
    */
   tallyFile: string;
+
+  /**
+   * Whether to use incremental proof generation
+   */
+  incremental?: boolean;
 }
 
 /**
@@ -184,7 +189,7 @@ export interface IGenerateProofsArgs {
  */
 export interface IGenerateProofsData {
   /**
-   * Process proofs
+   * The Process proofs
    */
   processProofs: IProof[];
 

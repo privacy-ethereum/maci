@@ -172,6 +172,8 @@ task("prove", "Command to generate proofs")
         outputDir,
         tallyOutputFile: tallyFile,
         mode,
+        incremental: false,
+        pollId: foundPoll.pollId.toString(),
       });
 
       const data = {

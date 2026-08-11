@@ -158,3 +158,5 @@ packages/circuits/circom/test
 proofs
 
 inputs.json 
+
+.maci-salts/

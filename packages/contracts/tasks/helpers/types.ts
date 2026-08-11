@@ -222,6 +222,16 @@ export interface IProofGeneratorParams {
    * Path to the rapidsnark binary
    */
   rapidsnark?: string;
+
+  /**
+   * Whether to enable incremental proof generation, resuming from saved salts
+   */
+  incremental?: boolean;
+
+  /**
+   * The poll ID, used to store and retrieve salts for incremental generation
+   */
+  pollId: string;
 }
 
 /**
@@ -899,4 +909,32 @@ export interface IDeployContractWithLinkedLibrariesParams {
    * Eth signer
    */
   signer?: Signer;
+}
+
+/**
+ * Interface for storing proof generation salts
+ */
+export interface ProofGenerationSalts {
+  /** The salt for the new results root */
+  newResultsRootSalt: string;
+  /** The salt for the new spent voice credit subtotal */
+  newSpentVoiceCreditSubtotalSalt: string;
+  /** The salt for the new per vote option spent voice credits root */
+  newPerVoteOptionSpentVoiceCreditsRootSalt: string;
+  /** The tally batch number this salt belongs to */
+  tallyBatchNumber?: number;
+  /** Unix timestamp when this salt was generated */
+  timestamp?: number;
+}
+
+/**
+ * Interface for storing all salts for a poll
+ */
+export interface PollSaltsData {
+  pollId: string;
+  tallyProofSalts: ProofGenerationSalts[];
+  processProofSalts?: {
+    newSbCommitment: string;
+    numBatchesProcessed?: number;
+  }[];
 }

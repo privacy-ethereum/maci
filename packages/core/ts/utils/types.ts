@@ -23,6 +23,15 @@ import type {
 export type TCircuitInputs = Record<string, string | bigint | bigint[] | bigint[][] | string[] | bigint[][][]>;
 
 /**
+ * Interface for optional salts in tally votes
+ */
+export interface TallyVotesSalts {
+  newResultsRootSalt?: bigint;
+  newSpentVoiceCreditSubtotalSalt?: bigint;
+  newPerVoteOptionSpentVoiceCreditsRootSalt?: bigint;
+}
+
+/**
  * This interface defines the tree depths.
  * @property tallyProcessingStateTreeDepth - The depth of the intermediate state tree.
  * @property voteOptionTreeDepth - The depth of the vote option tree.
@@ -75,7 +84,7 @@ export interface IPoll {
   publishMessage(message: Message, encryptionPublicKey: PublicKey): void;
   // These methods are used to generate circuit inputs
   processMessages(pollId: bigint): IProcessMessagesCircuitInputs;
-  tallyVotes(mode: EMode): IVoteTallyCircuitInputs;
+  tallyVotes(salts?: TallyVotesSalts): IVoteTallyCircuitInputs;
   // These methods are helper functions
   hasUnprocessedMessages(): boolean;
   processAllMessages(): { stateLeaves: StateLeaf[]; ballots: Ballot[] };
